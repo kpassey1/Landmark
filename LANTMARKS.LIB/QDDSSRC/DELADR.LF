@@ -1,0 +1,50 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         DELADR                                             *
+     A*  File Description:  SOP Delivery addresses      DL                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R DELADRF                   PFILE(DELADRSQ)
+     A            DLCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            DLCUST         6A         TEXT('Customer Number')
+     A                                      COLHDG('Cust No.' )
+     A            DLBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            DLASEQ         3P 0       TEXT('Alt address Seq')
+     A                                      COLHDG('Alt Address Seq' )
+     A            DLNAME        40A         TEXT('Customer name')
+     A                                      COLHDG('Customer name' )
+     A            DLLIN1        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DLLIN2        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DLLIN3        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DLLIN4        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DLLIN5        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DLLIN6        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DLPSTCD        9A         TEXT('Post code')
+     A                                      COLHDG('Post cd' )
+     A            DLDTCR         8S 0       TEXT('Date record created')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            DLDTAM         8S 0       TEXT('Date last amended')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            DLUSER        10A         TEXT('Last user to amend')
+     A                                      COLHDG('User' )
+     A          K DLCOYNO
+     A          K DLCUST
+     A          K DLBRNBR
+     A          K DLASEQ
+     A*

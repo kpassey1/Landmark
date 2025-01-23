@@ -1,0 +1,37 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         CRCRDSL                                            *
+     A*  File Description:  Cr.Card Sales by Cr.Code                           *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R CRCRDSF                   PFILE(CRCRDSSQ  )
+     A            CRCOYN         3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CRINVN         7P 0       TEXT('Invoice Number')
+     A            CRACNO         6A         TEXT('Customer Number')
+     A                                      COLHDG('Cust No.' )
+     A            CRBRAN         3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            CRCCCD         3A         TEXT('Credit Card Code')
+     A                                      COLHDG('Credit|Card Code' )
+     A            CRCCNO        20A         TEXT('Credit Card Number')
+     A            CRCEXD         4S 0       TEXT('Credit Card Month Year')
+     A                                      COLHDG('Credit Card|Month Ye' )
+     A            CRIDTE         8S 0       TEXT('Invoice/Tax Point Date YYMMDD-
+     A                                        ')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            CRNETT        13P 2       TEXT('Taxable Amount')
+     A                                      COLHDG('VALUE' )
+     A                                      EDTCDE(3)
+     A            CRPROC         1A         TEXT('Processed Record Flag')
+     A                                      COLHDG('Yes/No' )
+     A          K CRCCCD
+     A*
+     A*

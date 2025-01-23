@@ -1,0 +1,38 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         FSRR                                               *
+     A*  File Description:  Farmstores Receiving Record                        *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R FSRRR                     PFILE(FSRRSQ)
+     A            RCCLOC         4S 0       TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            RCCNO          7S 0       TEXT('Receiving Location')
+     A                                      COLHDG('Receiving Location' )
+     A            RCCIT#        14A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            RCCIV#        10A         TEXT('Invoice Number')
+     A                                      COLHDG('Invoice Number' )
+     A            RCCIVD         8S 0       TEXT('Invoice Date')
+     A                                      COLHDG('Invoice Date' )
+     A            RCCVD#         7A         TEXT('Vendor Number')
+     A                                      COLHDG('Vendor Number' )
+     A            RCCCAT         4S 0       TEXT('Category')
+     A                                      COLHDG('Category' )
+     A            RCCSBC         4S 0       TEXT('Sub-category')
+     A                                      COLHDG('Sub-category' )
+     A            RCCRE#        14A         TEXT('Reorder Number')
+     A                                      COLHDG('Reorder Number' )
+     A            RCCQTY         9S 0       TEXT('Quantity Received')
+     A                                      COLHDG('Quantity Received' )
+     A            RCCEAC        12S 3       TEXT('Each Cost')
+     A                                      COLHDG('Each Cost' )
+     A            RCCUNC        12S 3       TEXT('Unit Cost')
+     A                                      COLHDG('Unit Cost' )
+     A*

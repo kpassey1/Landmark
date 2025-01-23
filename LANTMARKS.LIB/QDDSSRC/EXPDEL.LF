@@ -1,0 +1,34 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         EXPDEL                                             *
+     A*  File Description:  IMS Expected Deliveries     ED                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R EXPDELF                   PFILE(EXPDELSQ)
+     A            EDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            EDDTTR         8S 0       TEXT('Expected Date')
+     A                                      COLHDG('Transact|Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            EDTIME         6P 0       TEXT('Expected time')
+     A                                      COLHDG('Expect|Time' )
+     A                                      EDTCDE(Z)
+     A            EDTREF        15A         TEXT('Transaction Reference')
+     A                                      COLHDG('TR. Reference' )
+     A            EDCARR        20A         TEXT('Carrier')
+     A                                      COLHDG('Carrier' )
+     A            EDSUPPN        6A         TEXT('Supplier Number')
+     A                                      COLHDG('Supplier' )
+     A            EDBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A          K EDCOYNO
+     A          K EDDTTR
+     A          K EDTIME
+     A          K EDTREF
+     A*

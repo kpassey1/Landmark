@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         INVCOM                                             *
+     A*  File Description:  SOP Invoice comments        IC                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R INVCOMF                   PFILE(INVCOMSQ)
+     A            ICCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            ICINVC         3A         TEXT('Invoice Comment code')
+     A                                      COLHDG('Invoice|Commt Code' )
+     A            ICCOMM        60A         TEXT('Invoice Comment')
+     A                                      COLHDG('Comment' )
+     A          K ICCOYNO
+     A          K ICINVC
+     A*

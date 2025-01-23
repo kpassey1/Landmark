@@ -1,0 +1,43 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         PCKLSD1                                            *
+     A*  File Description:  IMS Whse trans                                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R PCKLSDF                   PFILE(PCKLSDSQ  )
+     A            PDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            PDSEQ          5P 0       TEXT('Picking list')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            PDWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            PDPCKR         5A         TEXT('Picking Route')
+     A                                      COLHDG('Picking|Route' )
+     A            PDLOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            PDITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            PDTQTY         9P 0       TEXT('Transaction Quantity')
+     A                                      COLHDG('Trans Qty' )
+     A                                      EDTCDE(Z)
+     A            PDTRNC         2A         TEXT('Transaction Type')
+     A                                      COLHDG('Trans|Type' )
+     A            PDCOST        12P 5       TEXT('Unit Cost')
+     A                                      COLHDG('Unit Cost' )
+     A                                      EDTCDE(3)
+     A          K PDCOYNO
+     A          K PDSEQ
+     A          K PDWHSE
+     A          K PDTRNC
+     A          K PDPCKR
+     A          K PDLOCN
+     A          K PDITEM
+     A*
+     A*

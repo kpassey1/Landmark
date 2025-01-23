@@ -1,0 +1,28 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         CASDIS                                             *
+     A*  File Description:  SOP Cash Discount Codes     CD                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R CASDISF                   PFILE(CASDISSQ)
+     A            CDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CDCDSC         3A         TEXT('Cash discount code')
+     A                                      COLHDG('Cash|Disc' )
+     A            CDDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            CDCDIS         5P 2       TEXT('Cash discount %')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            CDPAYD         3P 0       TEXT('No Days')
+     A                                      COLHDG('Payment|Days' )
+     A                                      EDTCDE(Z)
+     A          K CDCOYNO
+     A          K CDCDSC
+     A*

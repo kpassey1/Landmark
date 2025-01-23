@@ -1,0 +1,23 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         FSSTORL1                                           *
+     A*  File Description:  Farmstores RR By Warehouse                         *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R FSSTORR                   PFILE(FSSTORSQ  )
+     A            WLCNO          3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            WLUSDF         5A         TEXT('Store Number')
+     A                                      COLHDG('USDF' )
+     A            WLWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A          K WLCNO
+     A          K WLWHSE
+     A*
+     A*

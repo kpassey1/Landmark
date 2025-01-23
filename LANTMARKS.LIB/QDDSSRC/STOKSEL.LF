@@ -1,0 +1,36 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STOKSEL                                            *
+     A*  File Description:  IMS Stocktake items rqustd  SS                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STOKSELF                  PFILE(STOKSELSQ)
+     A            SSCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SSSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            SSWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            SSPCKR         5A         TEXT('Picking Route')
+     A                                      COLHDG('Picking|Route' )
+     A            SSLOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            SSITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            SSQUANT        9P 0       TEXT('Quantity counted')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A          K SSCOYNO
+     A          K SSSEQ
+     A          K SSWHSE
+     A          K SSPCKR
+     A          K SSLOCN
+     A          K SSITEM
+     A*

@@ -1,0 +1,36 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SECSOP                                             *
+     A*  File Description:  SOP User security details.  US                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SECSOPF                   PFILE(SECSOPSQ)
+     A            USCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            USUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            USORDE         1A         TEXT('Access Order Entry')
+     A                                      COLHDG('Acc O/E|  Y/N' )
+     A            USORDC         1A         TEXT('Enter Credits')
+     A                                      COLHDG('Enter|Credit' )
+     A            USORDA         1A         TEXT('Authorise Release')
+     A                                      COLHDG('Auth.|Rels.' )
+     A            USDELO         1A         TEXT('Delete whole orders')
+     A                                      COLHDG('Delete|Orders' )
+     A            USDELL         1A         TEXT('Delete order lines')
+     A                                      COLHDG('Delete|Lines' )
+     A            USINVB         1A         TEXT('Invoice in Batch')
+     A                                      COLHDG('Batch|Invoice' )
+     A            USINVF         1A         TEXT('Fast Invoice')
+     A                                      COLHDG('Fast|Inv.' )
+     A            USPCRD         1A         TEXT('Print Credits')
+     A                                      COLHDG('Print|Cred.' )
+     A          K USCOYNO
+     A          K USUSER
+     A*

@@ -1,0 +1,25 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         VATCOD                                             *
+     A*  File Description:  IMS VAT code                                       *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R VATCODF                   PFILE(VATCODSQ)
+     A            VCCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            VCVATC         2A         TEXT('VAT Code')
+     A                                      COLHDG('VAT' )
+     A            VCDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            VCVATR         5P 2       TEXT('Vat rate')
+     A                                      COLHDG('VAT rate' )
+     A                                      EDTCDE(M)
+     A          K VCCOYNO
+     A          K VCVATC
+     A*

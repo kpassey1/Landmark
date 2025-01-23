@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         WARETYP                                            *
+     A*  File Description:  IMS Warehouse Types         WT                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R WARETYPF                  PFILE(WARETYPSQ)
+     A            WTCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            WTWTYP         2A         TEXT('Warehouse Type')
+     A                                      COLHDG('Whse|Type' )
+     A            WTWDESC       40A         TEXT('Warehouse Description')
+     A                                      COLHDG('Whse Description' )
+     A          K WTCOYNO
+     A          K WTWTYP
+     A*

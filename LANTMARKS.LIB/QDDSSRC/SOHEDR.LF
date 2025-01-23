@@ -1,0 +1,29 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SOHEDR                                             *
+     A*  File Description:  SOP Standing order header   SH                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SOHEDRF                   PFILE(SOHEDRSQ)
+     A            SHCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SHSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            SHDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            SHNCUS         3P 0       TEXT('Number Of customers')
+     A                                      COLHDG('Users in|Program' )
+     A                                      EDTCDE(3)
+     A            SHNITM         3P 0       TEXT('Number of items')
+     A                                      COLHDG('Users in|Program' )
+     A                                      EDTCDE(3)
+     A          K SHCOYNO
+     A          K SHSEQ
+     A*

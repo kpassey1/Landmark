@@ -1,0 +1,55 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         WLOCITM                                            *
+     A*  File Description:  IMS Warehouse Location Item WI                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A                                      UNIQUE
+     A          R WLOCITMF
+     A            WICOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            WIWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            WILOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            WIITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            WIMINB         9P 0       TEXT('Minimum Balance')
+     A                                      COLHDG('Min Balance' )
+     A                                      EDTCDE(Z)
+     A            WIQOH          9P 0       TEXT('Quantity on hand')
+     A                                      COLHDG('Qty On hand' )
+     A                                      EDTCDE(Z)
+     A            WIQAL          9P 0       TEXT('Quantity Allocated')
+     A                                      COLHDG('Qty Allocated' )
+     A                                      EDTCDE(Z)
+     A            WIQOR          9P 0       TEXT('Quantity on reserve')
+     A                                      COLHDG('Qty on Reserve' )
+     A                                      EDTCDE(Z)
+     A            WIPHYC         9P 0       TEXT('Physical Count')
+     A                                      COLHDG('Physical count' )
+     A                                      EDTCDE(Z)
+     A            WIPHYR         9P 0       TEXT('Physical count on reserve')
+     A                                      COLHDG('Pysical Count|on Res' )
+     A                                      EDTCDE(Z)
+     A            WICRBY        10A         TEXT('Created By')
+     A                                      COLHDG('Created By' )
+     A            WICRDT         8S 0       TEXT('Created Date')
+     A                                      COLHDG('Created|date' )
+     A                                      EDTWRD('    /  /  ')
+     A            WILMBY        10A         TEXT('Amended By')
+     A                                      COLHDG('Last Maint' )
+     A            WILMDT         8S 0       TEXT('Amended date')
+     A                                      COLHDG('Maintained|date' )
+     A                                      EDTWRD('    /  /  ')
+     A          K WICOYNO
+     A          K WIWHSE
+     A          K WILOCN
+     A          K WIITEM
+     A*

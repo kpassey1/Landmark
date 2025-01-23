@@ -1,0 +1,32 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ITMPRC                                             *
+     A*  File Description:  SOP Item price details      IP                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ITMPRCF                   PFILE(ITMPRCSQ)
+     A            ITCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            ITITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            ITPRCG         3A         TEXT('Price Group')
+     A                                      COLHDG('Price|Group' )
+     A            ITPRIN        12P 5       TEXT('Next Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            ITDATN         8S 0       TEXT('Next price date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            ITDATL         8S 0       TEXT('Last price date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A          K ITCOYNO
+     A          K ITITEM
+     A*

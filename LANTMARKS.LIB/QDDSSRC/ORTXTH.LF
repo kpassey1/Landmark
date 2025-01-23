@@ -1,0 +1,37 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORTXTH                                             *
+     A*  File Description:  SOP Order Header Text       TH                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORTXTHF                   PFILE(ORTXTHSQ)
+     A            THCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            THSONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            THSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            THAUD          9P 0       TEXT('Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            THPOSF         1A         TEXT('Position Flag for Documents')
+     A                                      COLHDG('Position' )
+     A            THDSPF         1A         TEXT('Despatch Flag')
+     A                                      COLHDG('Yes/No' )
+     A            THINVF         1A         TEXT('Invoice Flag')
+     A                                      COLHDG('Yes/No' )
+     A            THTEXT        40A         TEXT('Comment Text')
+     A                                      COLHDG('Text' )
+     A            THAKNF         1A         TEXT('Acknowledgement Flag')
+     A                                      COLHDG('Yes/No' )
+     A          K THCOYNO
+     A          K THSONO
+     A          K THSEQ
+     A*

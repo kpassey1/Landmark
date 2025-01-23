@@ -1,0 +1,39 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORDINA                                             *
+     A*  File Description:  SOP Order Invoice Address   IA                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORDINAF                   PFILE(ORDINASQ)
+     A            IACOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            IASONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            IAAUDIT        9P 0       TEXT('Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            IANAME        40A         TEXT('Customer name')
+     A                                      COLHDG('Customer name' )
+     A            IALIN1        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            IALIN2        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            IALIN3        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            IALIN4        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            IALIN5        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            IALIN6        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            IAPSTCD        9A         TEXT('Post code')
+     A                                      COLHDG('Post cd' )
+     A          K IACOYNO
+     A          K IASONO
+     A*

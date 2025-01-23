@@ -1,0 +1,36 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IMSTRN                                             *
+     A*  File Description:  IMS Transaction Types       TT                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R IMSTRMF                   PFILE(IMSTRNSQ)
+     A            TTCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            TTTRNC         2A         TEXT('Transaction Type')
+     A                                      COLHDG('Trans|Type' )
+     A            TTDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            TTNEGA         1A         TEXT('Negative allowed')
+     A                                      COLHDG('Neg|Alwd' )
+     A            TTONHC         1A         TEXT('On Hand Calculation')
+     A                                      COLHDG('On Hand|calc' )
+     A            TTREFE         1A         TEXT('Enter Reference')
+     A                                      COLHDG('Enter|ref' )
+     A            TTUPDC         1A         TEXT('Update Cost')
+     A                                      COLHDG('Upd|Cost' )
+     A            TTUSDC         1A         TEXT('Used Calculation')
+     A                                      COLHDG('Used|Calc' )
+     A            TTOTHT         2A         TEXT('Other Transaction Code')
+     A                                      COLHDG('Other|Code' )
+     A            TTPCKL         1A         TEXT('Picking List Y/N')
+     A                                      COLHDG('Pick|List' )
+     A          K TTCOYNO
+     A          K TTTRNC
+     A*

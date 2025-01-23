@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STIGRP                                             *
+     A*  File Description:  IMS Stock Inventory group   SI                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STIGRP                    PFILE(STIGRPSQ)
+     A            SICOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SISTIG         2A         TEXT('Stock Inventory Group')
+     A                                      COLHDG('Stock|Inv Grp' )
+     A            SIDESC        40A         TEXT('S.I.G. Description')
+     A                                      COLHDG('Description' )
+     A          K SICOYNO
+     A          K SISTIG
+     A*

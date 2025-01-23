@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ITMCLAS                                            *
+     A*  File Description:  IMS Item class parameters   IC                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ITMCLASF                  PFILE(ITMCLASSQ)
+     A            ICCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            ICCLAS         3A         TEXT('Item Class')
+     A                                      COLHDG('Item|Class' )
+     A            ICDESC        40A         TEXT('Item Class Description')
+     A                                      COLHDG('Description' )
+     A          K ICCOYNO
+     A          K ICCLAS
+     A*

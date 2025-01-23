@@ -1,0 +1,41 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         MNUUSR                                             *
+     A*  File Description:  Menu Users                  MA                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R MNUUSRF                   PFILE(MNUUSRSQ)
+     A            MAUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            MAGUSER       10A         TEXT('Group User')
+     A                                      COLHDG('User' )
+     A            MAACTA         1A         TEXT('Add')
+     A                                      COLHDG('Add|Delete|Revise' )
+     A            MAACTR         1A         TEXT('Revise')
+     A                                      COLHDG('Add|Delete|Revise' )
+     A            MAACTD         1A         TEXT('Delete')
+     A                                      COLHDG('Add|Delete|Revise' )
+     A            MAFORN        20A         TEXT('Forename')
+     A                                      COLHDG('Forename' )
+     A            MASURN        20A         TEXT('Surname')
+     A                                      COLHDG('Surname' )
+     A            MADFV1        10A         TEXT('Default Value for Level 1')
+     A                                      COLHDG('Default Value for Lo' +
+     A                                             'cation' )
+     A            MADFV2        10A         TEXT('Default Value for Level 2')
+     A                                      COLHDG('Default Value for Lo' +
+     A                                             'cation' )
+     A            MADFV3        10A         TEXT('Default Value for Level 3')
+     A                                      COLHDG('Default Value for Lo' +
+     A                                             'cation' )
+     A            MACHG          1A         TEXT('Allow Change of Location')
+     A                                      COLHDG('Allow' +
+     A                                             'Change' )
+     A          K MAUSER
+     A*

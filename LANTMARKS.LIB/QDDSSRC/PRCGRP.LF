@@ -1,0 +1,41 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         PRCGRP                                             *
+     A*  File Description:  SOP Pricing Groups          PG                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R PRCGRPF                   PFILE(PRCGRPSQ)
+     A            PGCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            PGPRCG         3A         TEXT('Price Group')
+     A                                      COLHDG('Price|Group' )
+     A            PGDESC        20A         TEXT('Description')
+     A                                      COLHDG('Parm. Desc.' )
+     A            PGPRICE       12P 5       TEXT('Group Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PGDATL         8S 0       TEXT('Last update date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            PGAMNP         5P 2       TEXT('Next price change %')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            PGDATN         8S 0       TEXT('Next price date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            PGINDE         1A         TEXT('Increase Y/N')
+     A                                      COLHDG('Yes/No' )
+     A            PGUPDL         1A         TEXT('Update List prices')
+     A                                      COLHDG('Yes/No' )
+     A            PGUPDO         1A         TEXT('Update other prices')
+     A                                      COLHDG('Yes/No' )
+     A          K PGCOYNO
+     A          K PGPRCG
+     A*

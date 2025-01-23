@@ -1,0 +1,63 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STKMDTI                                            *
+     A*  File Description:  Stock movements in date item                       *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STOKMOVF                  PFILE(STOKMOVSQ )
+     A            STCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            STWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            STITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            STLOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            STDTTR         8S 0       TEXT('Transaction Date')
+     A                                      COLHDG('Transact|Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            STTTYP         2A         TEXT('Transaction Type')
+     A                                      COLHDG('Trans|Type' )
+     A            STDTAC         8S 0       TEXT('Actual Date')
+     A                                      COLHDG('Actual|Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            STTQTY         9P 0       TEXT('Transaction Quantity')
+     A                                      COLHDG('Trans Qty' )
+     A                                      EDTCDE(Z)
+     A            STTREF        15A         TEXT('Transaction Reference')
+     A                                      COLHDG('TR. Reference' )
+     A            STUCST        12P 5       TEXT('Unit Cost')
+     A                                      COLHDG('Unit Cost' )
+     A                                      EDTCDE(3)
+     A            STPCKL         1A         TEXT('Picking List Y/N')
+     A                                      COLHDG('Pick|List' )
+     A            STSEQ          5P 0       TEXT('Picking List No.')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            STWHST         3A         TEXT('Other Warehouse')
+     A                                      COLHDG('Whse|No.' )
+     A            STLOCT        10A         TEXT('Other Location')
+     A                                      COLHDG('Location' )
+     A            STTIME         6P 0       TEXT('Expected Time')
+     A                                      COLHDG('Expect|Time' )
+     A                                      EDTCDE(Z)
+     A            STSUPPN        6A         TEXT('Supplier Number')
+     A                                      COLHDG('Supplier' )
+     A            STBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            STWEIG        13P 2       TEXT('Weight')
+     A                                      COLHDG('Weight' )
+     A                                      EDTCDE(3)
+     A          K STCOYNO
+     A          K STDTAC
+     A          K STWHSE
+     A          K STITEM
+     A          K STTTYP
+     A*
+     A*

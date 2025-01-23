@@ -1,0 +1,28 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IPSTXTH                                            *
+     A*  File Description:  IPS POD Text header         TH                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R IPSTXTHF                  PFILE(IPSTXTHSQ)
+     A            THCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            THPORD        10A         TEXT('Purchase Order Number')
+     A                                      COLHDG('P.O.Number' )
+     A            THSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            THTCDE         1A         TEXT('Print text code')
+     A                                      COLHDG('Text|code' )
+     A            THTEXT        40A         TEXT('Text')
+     A                                      COLHDG('Text' )
+     A          K THCOYNO
+     A          K THPORD
+     A          K THSEQ
+     A*

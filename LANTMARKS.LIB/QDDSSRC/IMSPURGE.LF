@@ -1,0 +1,37 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IMSPURGE                                           *
+     A*  File Description:  IMS Stock Movement History                         *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STOKMOVF                  PFILE(IMSPURGESQ)
+     A            STCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            STWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            STITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            STDTAC         8S 0       TEXT('Actual Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            STDTTR         8S 0       TEXT('Transaction Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            STTQTY         9P 0       TEXT('Transaction Quantity')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            STTREF        15A         TEXT('Transaction Reference')
+     A                                      COLHDG('TR. Reference' )
+     A            STTTYP         2A         TEXT('Transaction Type')
+     A                                      COLHDG('Transaction|Type' )
+     A            STUCST        12P 5       TEXT('Unit Cost')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A*

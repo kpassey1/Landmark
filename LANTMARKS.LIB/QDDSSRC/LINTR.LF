@@ -1,0 +1,87 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         LINTR                                              *
+     A*  File Description:  SOP General Interface                              *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R LINTRF                    PFILE(LINTRSQ)
+     A            LICOYN         3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            LIINVN         7P 0       TEXT('Invoice Number')
+     A            LIINVL         5P 0       TEXT('Line Number')
+     A            LIACNO         6A         TEXT('Customer Account Number')
+     A                                      COLHDG('Customer|Number' )
+     A            LIBRAN         3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            LICORD        15A         TEXT('Customer Order Number')
+     A            LISLSM         3A         TEXT('Salesperson code')
+     A                                      COLHDG('_' )
+     A            LIORDS         3A         TEXT('Order Description Code')
+     A            LIIDTE         8S 0       TEXT('Date invoiced''Tax point date-
+     A                                      . ')
+     A                                      COLHDG('Date|Invoiced' )
+     A                                      EDTWRD('    /  /  ')
+     A            LISDPC         5P 2       TEXT('Settlement discount %')
+     A            LINETT        13P 2       TEXT('Taxable amount.')
+     A                                      COLHDG('Value' )
+     A                                      EDTCDE(3)
+     A            LICOST        13P 2       TEXT('Cost of Sale')
+     A                                      COLHDG('Cost Value' )
+     A                                      EDTCDE(3)
+     A            LITXAM        13P 2       TEXT('Tax amount')
+     A                                      COLHDG('Tax Value' )
+     A                                      EDTCDE(3)
+     A            LISDAM        13P 2       TEXT('Settlement discount amount')
+     A            LIWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            LIITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            LIIDSC        40A         TEXT('Item Description')
+     A                                      COLHDG('Item Description' )
+     A            LILOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            LIIUOM         5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            LIINVQ         9P 0       TEXT('Quantity Invoiced')
+     A                                      COLHDG('Quantity|Invoiced' )
+     A                                      EDTCDE(Z)
+     A            LIPRCE        11P 4       TEXT('Price')
+     A                                      COLHDG('Price' )
+     A                                      EDTCDE(3)
+     A            LIINVV        13P 2       TEXT('Line Value')
+     A                                      COLHDG('Line Value' )
+     A                                      EDTCDE(3)
+     A            LITDSC        13P 2       TEXT('Discount %')
+     A            LIVATD        13P 2       TEXT('Tax amount')
+     A                                      COLHDG('Tax Value' )
+     A                                      EDTCDE(3)
+     A            LINLAC        15A         TEXT('N/L Sales Account')
+     A                                      COLHDG('Sales Account' )
+     A            LINLAS        15A         TEXT('N/L Cost of Sales Account')
+     A                                      COLHDG('Cost of Sales' )
+     A            LINLST        15A         TEXT('N/L Stock Account')
+     A                                      COLHDG('Stock Account' )
+     A            LIPERD         5P 0       TEXT('Period Number')
+     A            LIFINY         4P 0       TEXT('Financial Year')
+     A            LIORDN         7P 0       TEXT('Order Number')
+     A            LIPDAT         8S 0       TEXT('Payment Date')
+     A                                      EDTWRD('    /  /  ')
+     A            LIFCMT        11P 2       TEXT('Foreign Currency Amount')
+     A                                      COLHDG('Foreign|Currency|Amo' )
+     A                                      EDTCDE(3)
+     A            LIBSC2         3A         TEXT('Original Currency Code')
+     A            LITAXC         2A         TEXT('Tax Code')
+     A            LIFLAG         1A         TEXT('Special Charge Flag')
+     A            LICONT        10A         TEXT('Contract Number')
+     A            LIJOBN        10A         TEXT('Job Number')
+     A            LIPROC         1A         TEXT('Processed Record Flag')
+     A          K LICOYN
+     A          K LIINVN
+     A          K LIINVL
+     A*

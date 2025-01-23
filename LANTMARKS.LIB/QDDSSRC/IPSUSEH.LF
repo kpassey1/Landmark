@@ -1,0 +1,29 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IPSUSEH                                            *
+     A*  File Description:  IPS User Field Headings     UH                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*   User-----*  Description------------------------------------*
+     A*  21/11/2023 KEV         changed to use SQL Table IPSUSEHSQ             *
+     A**************************************************************************
+     A*
+     A          R IPSUSEHF                  PFILE(IPSUSEHSQ)
+     A            COYNO          3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            UHHEAD1       15A         TEXT('User field 1')
+     A                                      COLHDG('Scr head' )
+     A            UHCOL1         5A         TEXT('User Column 1')
+     A                                      COLHDG('Col Head' )
+     A            UHHEAD2       15A         TEXT('User field 2')
+     A                                      COLHDG('Scr head' )
+     A            UHCOL2         5A         TEXT('User Column 2')
+     A                                      COLHDG('Col Head' )
+     A            UHHEAD3       15A         TEXT('User field 3')
+     A                                      COLHDG('Scr head' )
+     A            UHCOL3         5A         TEXT('User Column 3')
+     A                                      COLHDG('Col Head' )
+     A          K COYNO
+     A*

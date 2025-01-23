@@ -1,0 +1,32 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IPSTXTD                                            *
+     A*  File Description:  IPS POD Text Detail                                *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R IPSTXTDF                  PFILE(IPSTXTDSQ)
+     A            TDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            TDPORD        10A         TEXT('Purchase Order Number')
+     A                                      COLHDG('P.O.Number' )
+     A            TDPOSEQ        5P 0       TEXT('Purchase order line')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            TDSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            TDTCDE         1A         TEXT('Print text code')
+     A                                      COLHDG('Text|code' )
+     A            TDTEXT        40A         TEXT('Text')
+     A                                      COLHDG('Text' )
+     A          K TDCOYNO
+     A          K TDPORD
+     A          K TDPOSEQ
+     A          K TDSEQ
+     A*

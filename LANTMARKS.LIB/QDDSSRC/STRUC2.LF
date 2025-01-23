@@ -1,0 +1,78 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STRUC2                                             *
+     A*  File Description:  SOP Price struc Cum Qty Brk S2                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STRUC2F                   PFILE(STRUC2SQ)
+     A            S2COYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            S2PRCG         3A         TEXT('Price Group')
+     A                                      COLHDG('Price|Group' )
+     A            S2QTY1         9P 0       TEXT('Qty Break 1')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            S2QTY2         9P 0       TEXT('Qty Break 2')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            S2QTY3         9P 0       TEXT('Qty Break 3')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            S2QTY4         9P 0       TEXT('Qty Break 4')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            S2QTY5         9P 0       TEXT('Qty Break 5')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            S2DIS1         5P 2       TEXT('Discount 1')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            S2DIS2         5P 2       TEXT('Discount 2')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            S2DIS3         5P 2       TEXT('Discount 3')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            S2DIS4         5P 2       TEXT('Discount 4')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            S2DIS5         5P 2       TEXT('Discount 5')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            S2DCRT         8S 0       TEXT('Date created')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S2DAMD         8S 0       TEXT('Date amended')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S2USER        10A         TEXT('Last user')
+     A                                      COLHDG('User' )
+     A            S2PRC1        12P 5       TEXT('Price 1')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            S2PRC2        12P 5       TEXT('Price 2')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            S2PRC3        12P 5       TEXT('Price 3')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            S2PRC4        12P 5       TEXT('Price 4')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            S2PRC5        12P 5       TEXT('Price 5')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A          K S2COYNO
+     A          K S2PRCG
+     A*

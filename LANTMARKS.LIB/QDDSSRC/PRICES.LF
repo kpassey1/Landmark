@@ -1,0 +1,56 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         PRICES                                             *
+     A*  File Description:  SOP Price file              PR                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R PRICESF                   PFILE(PRICESSQ)
+     A            PRCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            PRITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            PRPRI1        12P 5       TEXT('Price 1')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI2        12P 5       TEXT('Price 2')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI3        12P 5       TEXT('Price 3')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI4        12P 5       TEXT('Price 4')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI5        12P 5       TEXT('Price 5')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI6        12P 5       TEXT('Price 6')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI7        12P 5       TEXT('Price 7')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI8        12P 5       TEXT('Price 8')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PRPRI9        12P 5       TEXT('Price 9')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A          K PRCOYNO
+     A          K PRITEM
+     A*

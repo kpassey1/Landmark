@@ -1,0 +1,26 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         MNUHLP                                             *
+     A*  File Description:  Menu Help Text              MD                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R MNUHLPF                   PFILE(MNUHLPSQ)
+     A            MDMNUC         5A         TEXT('Menu')
+     A                                      COLHDG('Menu' )
+     A            MDOPTC         5A         TEXT('Option')
+     A                                      COLHDG('Option' )
+     A            MDSEQN         5P 0       TEXT('Sequence Number')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            MDTEXT        60A         TEXT('Text')
+     A                                      COLHDG('Text' )
+     A          K MDMNUC
+     A          K MDOPTC
+     A          K MDSEQN
+     A*

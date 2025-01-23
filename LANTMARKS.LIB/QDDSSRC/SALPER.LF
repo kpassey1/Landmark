@@ -1,0 +1,47 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SALPER                                             *
+     A*  File Description:  SOP Sales Person Codes      SP                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SALPERF                   PFILE(SALPERSQ)
+     A            SPCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SPSPER         3A         TEXT('Salesperson code')
+     A                                      COLHDG('Salesperson' )
+     A            SPDESC        40A         TEXT('Salesperson name')
+     A                                      COLHDG('Description' )
+     A            SPSPC1         4P 2       TEXT('Commission rate 1')
+     A                                      COLHDG('Commission' )
+     A                                      EDTCDE(3)
+     A            SPSPC2         4P 2       TEXT('Rate 2')
+     A                                      COLHDG('Commission' )
+     A                                      EDTCDE(3)
+     A            SPSPC3         4P 2       TEXT('Rate 3')
+     A                                      COLHDG('Commission' )
+     A                                      EDTCDE(3)
+     A            SPSPC4         4P 2       TEXT('Rate 4')
+     A                                      COLHDG('Commission' )
+     A                                      EDTCDE(3)
+     A            SPSPC5         4P 2       TEXT('Rate 5')
+     A                                      COLHDG('Commission' )
+     A                                      EDTCDE(3)
+     A            SPUSD1         5A         TEXT('User Defined 1')
+     A                                      COLHDG('USDF' )
+     A            SPUSD2         5A         TEXT('User Defined 2')
+     A                                      COLHDG('USDF' )
+     A            SPUSD3         5A         TEXT('User Defined 3')
+     A                                      COLHDG('USDF' )
+     A            SPUSD4         5A         TEXT('User Defined 4')
+     A                                      COLHDG('USDF' )
+     A            SPUSD5         5A         TEXT('User Defined 5')
+     A                                      COLHDG('USDF' )
+     A          K SPCOYNO
+     A          K SPSPER
+     A*

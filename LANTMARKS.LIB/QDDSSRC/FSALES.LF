@@ -1,0 +1,37 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         FSALES                                             *
+     A*  File Description:  Farmstores Sales Receipts                          *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R FSALESR                   PFILE(FSALESSQ)
+     A            RMDLOC         4S 0       TEXT('Location Code')
+     A                                      COLHDG('Location Code' )
+     A            RMDDAT         8S 0       TEXT('Date ccmmdd')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            RMDIT#        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            RMUOM          5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            RMDQTY         9P 0       TEXT('Quantity Invoiced')
+     A                                      COLHDG('Quantity|Invoiced' )
+     A                                      EDTCDE(Z)
+     A            RMDUNC        11P 4       TEXT('Unit Cost')
+     A                                      COLHDG('Price' )
+     A                                      EDTCDE(3)
+     A            RMDUCR        11P 4       TEXT('Unit Retail')
+     A                                      COLHDG('Price' )
+     A                                      EDTCDE(3)
+     A            RMDEXR        11P 4       TEXT('Extended Retail')
+     A                                      COLHDG('Price' )
+     A                                      EDTCDE(3)
+     A            RMAMEN         1A         TEXT('Processed Y/N')
+     A                                      COLHDG('Amd' )
+     A*

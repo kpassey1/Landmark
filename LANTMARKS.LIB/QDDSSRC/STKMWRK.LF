@@ -1,0 +1,31 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STKMWRK                                            *
+     A*  File Description:  IMS Stock movement work fileWK                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STKMWRKF                  PFILE(STKMWRKSQ)
+     A            WKSEQ          5P 0       TEXT('Sequence Number')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            WKWHSE         3A         TEXT('To Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            WKITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            WKTQTY         9P 0       TEXT('Transaction Quantity')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            WKTREF        15A         TEXT('Transaction Reference')
+     A                                      COLHDG('TR. Reference' )
+     A            WKUCST        12P 5       TEXT('Input Unit Cost')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A          K WKSEQ
+     A*

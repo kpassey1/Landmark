@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         DLVYRT                                             *
+     A*  File Description:  SOP Delivery route codes    DR                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R DLVYRTF                   PFILE(DLVYRTSQ)
+     A            DRCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            DRDLRC         3A         TEXT('Delivery Route Code')
+     A                                      COLHDG('Dlvry|Route' )
+     A            DRDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A          K DRCOYNO
+     A          K DRDLRC
+     A*

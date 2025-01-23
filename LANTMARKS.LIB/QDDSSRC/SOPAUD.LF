@@ -1,0 +1,31 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SOPAUD                                             *
+     A*  File Description:  SOP Docket Audit Number     DA                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SOPAUDF                   PFILE(SOPAUDSQ)
+     A            DACOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            DATYPE         3A         TEXT('Record Type')
+     A                                      COLHDG('Sts' )
+     A            DADESC        20A         TEXT('Type Description')
+     A                                      COLHDG('Parm. Desc.' )
+     A            DACURR         7P 0       TEXT('Current Audit No')
+     A                                      COLHDG('Docket|Number' )
+     A                                      EDTCDE(Z)
+     A            DAPREV         7P 0       TEXT('Previous Audit No.')
+     A                                      COLHDG('Docket|Number' )
+     A                                      EDTCDE(Z)
+     A            DADATE         8S 0       TEXT('Last updated date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A          K DACOYNO
+     A          K DATYPE
+     A*

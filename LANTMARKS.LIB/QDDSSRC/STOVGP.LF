@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STOVGP                                             *
+     A*  File Description:  IMS Stock turnover groups   TG                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STOVGPF                   PFILE(STOVGPSQ)
+     A            TGCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            TGSTOG         1A         TEXT('Stock Turnover Group')
+     A                                      COLHDG('Stock|Trnvr Grp' )
+     A            TGDESC        40A         TEXT('S.T.G. Description')
+     A                                      COLHDG('Description' )
+     A          K TGCOYNO
+     A          K TGSTOG
+     A*

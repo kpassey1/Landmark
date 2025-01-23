@@ -1,0 +1,36 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SOCUST1                                            *
+     A*  File Description:  Stan Ord Customer Seq                              *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SOCUSH                    PFILE(SOCUSTSQ  )
+     A            SCCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SCSEQ          5P 0       TEXT('Standing Order Number')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            SCCUST         6A         TEXT('Customer Number')
+     A                                      COLHDG('Cust No.' )
+     A            SCBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            SCSOCT         3A         TEXT('S.O.Category Code')
+     A                                      COLHDG('Category|Code' )
+     A            SCCUSORD      15A         TEXT('Customer order number')
+     A                                      COLHDG('Cus Order No.' )
+     A            SCSOQF         3P 0       TEXT('S.O. Qty Factor')
+     A                                      COLHDG('Qty|Factor' )
+     A                                      EDTCDE(Z)
+     A          K SCCOYNO
+     A          K SCCUST
+     A          K SCBRNBR
+     A          K SCSEQ
+     A*
+     A          O SCCUST                    COMP(EQ ' ')
+     A*

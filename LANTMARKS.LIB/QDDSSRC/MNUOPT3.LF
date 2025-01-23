@@ -1,0 +1,45 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         MNUOPT3                                            *
+     A*  File Description:  Program Name, Secondary Pgm                        *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R MNUOPTF                   PFILE(MNUOPTSQ  )
+     A            MCUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            MCMNUC         5A         TEXT('Menu')
+     A                                      COLHDG('Menu' )
+     A            MCOPTC         5A         TEXT('Option')
+     A                                      COLHDG('Option' )
+     A            MCOPTD        50A         TEXT('Option Description')
+     A                                      COLHDG('Option Description' )
+     A            MCPGMN        10A         TEXT('Program Name')
+     A                                      COLHDG('Program|Name' )
+     A            MCPRM1        50A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MCPRM2        50A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MCPRM3        50A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MCPRM4        50A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MCACTA         1A         TEXT('Add')
+     A                                      COLHDG('Add|Delete|Revise' )
+     A            MCACTR         1A         TEXT('Revise')
+     A                                      COLHDG('Add|Delete|Revise' )
+     A            MCACTD         1A         TEXT('Delete')
+     A                                      COLHDG('Add|Delete|Revise' )
+     A            MCPGMT         1A         TEXT('Program Type')
+     A                                      COLHDG('Pgm|Type' )
+     A            MCSPGM        10A         TEXT('Secondary Program Name')
+     A                                      COLHDG('Program|Name' )
+     A          K MCPGMN
+     A          K MCSPGM
+     A*
+     A*

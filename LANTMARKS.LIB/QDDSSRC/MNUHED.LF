@@ -1,0 +1,24 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         MNUHED                                             *
+     A*  File Description:  Menu Heading file           MB                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R MNUHEDF                   PFILE(MNUHEDSQ)
+     A            MBUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            MBMNUC         5A         TEXT('Menu')
+     A                                      COLHDG('Menu' )
+     A            MBMNUD        50A         TEXT('Menu Description')
+     A                                      COLHDG('Menu Description' )
+     A            MBSTRT         1A         TEXT('Start Menu')
+     A                                      COLHDG('Start Menu' )
+     A          K MBUSER
+     A          K MBMNUC
+     A*

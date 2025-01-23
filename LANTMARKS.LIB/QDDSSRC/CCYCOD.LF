@@ -1,0 +1,27 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         CCYCOD                                             *
+     A*  File Description:  IMS Currency Code           CC                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R CCYCODF                   PFILE(CCYCODSQ)
+     A            CCCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CCCURR         3A         TEXT('Currency code')
+     A                                      COLHDG('Ccy|Code' )
+     A            CCDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            CCEXCC         1A         TEXT('Exchange Calc')
+     A                                      COLHDG('Exc|calc' )
+     A            CCEXCR        11P 4       TEXT('Exchange Rate')
+     A                                      COLHDG('Exchange Rate' )
+     A                                      EDTCDE(M)
+     A          K CCCOYNO
+     A          K CCCURR
+     A*

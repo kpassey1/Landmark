@@ -1,0 +1,93 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ITMMAST                                            *
+     A*  File Description:  IMS Item master             IT                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ITMSTRF                   PFILE(ITMMASTSQ)
+     A            ITCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            ITITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            ITIDESC       40A         TEXT('Item Description')
+     A                                      COLHDG('Item Description' )
+     A            ITALPHA       10A         TEXT('Alpha Search')
+     A                                      COLHDG('Alpha search' )
+     A            ITSUPG        20A         TEXT('Superceding item ''To''')
+     A                                      COLHDG('Superceding' +
+     A                                             'Item ''To''' )
+     A            ITSUPD        20A         TEXT('Superceding Item ''From''')
+     A                                      COLHDG('Superceding' +
+     A                                             'Item ''From''' )
+     A            ITSUBS        20A         TEXT('Substitute item number')
+     A                                      COLHDG('Substitute' +
+     A                                             'Item number' )
+     A            ITMANF        20A         TEXT('Manufacturers Item No.')
+     A                                      COLHDG('Manufacturers' +
+     A                                             'Item Number' )
+     A            ITCLAS         3A         TEXT('Item Class')
+     A                                      COLHDG('Item|Class' )
+     A            ITIGRP         3A         TEXT('Stock Group')
+     A                                      COLHDG('Stock|Group' )
+     A            ITUOM          5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            ITVATC         2A         TEXT('VAT Code')
+     A                                      COLHDG('VAT' )
+     A            ITNLAC        15A         TEXT('N/L Cost of Sales Account')
+     A                                      COLHDG('Cost of Sales' )
+     A            ITNLAS        15A         TEXT('N/L Sales Account')
+     A                                      COLHDG('Sales Account' )
+     A            ITNLST        15A         TEXT('N/L Stock Account')
+     A                                      COLHDG('Stock Account' )
+     A            ITUDF1         5A         TEXT('User Defined 1')
+     A                                      COLHDG('User 1' )
+     A            ITUDF2         5A         TEXT('User Defined 2')
+     A                                      COLHDG('User 2' )
+     A            ITUDF3         5A         TEXT('User Defined 3')
+     A                                      COLHDG('User 3' )
+     A            ITPACK         5P 0       TEXT('Packing Multiplier')
+     A                                      COLHDG('Pack|Mult' )
+     A                                      EDTCDE(Z)
+     A            ITITYP         1A         TEXT('Item Type - business area')
+     A                                      COLHDG('Item|Type' )
+     A            ITSANL         1A         TEXT('Stock Analysis Code')
+     A                                      COLHDG('Stck|Anlys' )
+     A            ITSVG          1A         TEXT('Stock Value Group')
+     A                                      COLHDG('Stck|Val grp' )
+     A            ITSIG          2A         TEXT('Stock Inventory Group')
+     A                                      COLHDG('Stock|Inv Grp' )
+     A            ITLPRC        11P 4       TEXT('List Price')
+     A                                      COLHDG('List Price' )
+     A                                      EDTCDE(3)
+     A            ITSTUC        12P 5       TEXT('Standard unit cost')
+     A                                      COLHDG('Standard Unit Cost' )
+     A                                      EDTCDE(3)
+     A            ITPALL         1A         TEXT('Pallet label')
+     A                                      COLHDG('Plt|Lbl' )
+     A            ITUOMO         5A         TEXT('Outer Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            ITQTYO         9P 0       TEXT('Outer Quantity')
+     A                                      COLHDG('Qty/Outer' )
+     A                                      EDTCDE(Z)
+     A            ITWEIG        13P 2       TEXT('Item weight')
+     A                                      COLHDG('Weight' )
+     A                                      EDTCDE(3)
+     A            ITDTCR         8S 0       TEXT('Created date')
+     A                                      COLHDG('Created|date' )
+     A                                      EDTWRD('    /  /  ')
+     A            ITCRTU        10A         TEXT('Created By')
+     A                                      COLHDG('Created By' )
+     A            ITDTLM         8S 0       TEXT('Amended date')
+     A                                      COLHDG('Maintained|date' )
+     A                                      EDTWRD('    /  /  ')
+     A            ITLMBY        10A         TEXT('Amended By')
+     A                                      COLHDG('Last Maint' )
+     A          K ITCOYNO
+     A          K ITITEM
+     A*

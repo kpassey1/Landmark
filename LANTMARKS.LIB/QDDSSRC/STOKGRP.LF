@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STOKGRP                                            *
+     A*  File Description:  IMS Stock group codes       SG                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STOKGRPF                  PFILE(STOKGRPSQ)
+     A            SGCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SGSGRP         3A         TEXT('Stock Group')
+     A                                      COLHDG('Stock|Group' )
+     A            SGSDESC       40A         TEXT('Stock Group Description')
+     A                                      COLHDG('Description' )
+     A          K SGCOYNO
+     A          K SGSGRP
+     A*

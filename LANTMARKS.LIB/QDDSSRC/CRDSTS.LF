@@ -1,0 +1,24 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         CRDSTS                                             *
+     A*  File Description:  SOP Credit status codes     CS                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R CRDSTSF                   PFILE(CRDSTSSQ)
+     A            CSCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CSCSTC         3A         TEXT('Credit Status Code')
+     A                                      COLHDG('Credit|Status' )
+     A            CSDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            CSCSTP         1A         TEXT('Stopped Flag')
+     A                                      COLHDG('Yes/No' )
+     A          K CSCOYNO
+     A          K CSCSTC
+     A*

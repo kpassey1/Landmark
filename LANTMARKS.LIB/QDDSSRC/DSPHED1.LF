@@ -1,0 +1,39 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         DSPHED1                                            *
+     A*  File Description:  SOP Order no/Despatch No                           *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R DESHEDF                   PFILE(DSPHEDSQ  )
+     A            DHCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            DHDSPN         7P 0       TEXT('Despatch Note Number')
+     A                                      COLHDG('Despatch|Note' )
+     A                                      EDTCDE(Z)
+     A            DHSONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            DHCUST         6A         TEXT('Customer Number')
+     A                                      COLHDG('Cust No.' )
+     A            DHBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            DHENTS         1A         TEXT('Entry Status')
+     A                                      COLHDG('Entry|Status' )
+     A            DHPCKS         1A         TEXT('Picked Status')
+     A                                      COLHDG('Picked|Status' )
+     A            DHINVS         1A         TEXT('Invoice Status')
+     A                                      COLHDG('Invoice|Status' )
+     A            DHFDSD         8S 0       TEXT('Despatch Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A          K DHCOYNO
+     A          K DHSONO
+     A          K DHDSPN
+     A*
+     A          O DHINVS                    COMP(EQ 'Y')
+     A*

@@ -1,0 +1,29 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORDSIN                                             *
+     A*  File Description:  SOP Order Shipping Instr.   OI                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORDSIND                   PFILE(ORDSINSQ)
+     A            OICOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            OISONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            OIAUD          9P 0       TEXT('Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            OISHPC         3A         TEXT('Shipping Instructions code')
+     A                                      COLHDG('Shipping|Code' )
+     A            OISHPT1       60A         TEXT('Shipping intructions')
+     A                                      COLHDG('Shipping Inst.' )
+     A            OISHPT2       60A         TEXT('Shipping intructions')
+     A                                      COLHDG('Shipping Inst.' )
+     A          K OICOYNO
+     A          K OISONO
+     A*

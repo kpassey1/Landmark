@@ -1,0 +1,24 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SHIPIN                                             *
+     A*  File Description:  SOP Shipping Ins. Codes     SI                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SHIPINF                   PFILE(SHIPINSQ)
+     A            SICOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SISHPC         3A         TEXT('Shipping Instructions code')
+     A                                      COLHDG('Shipping|Code' )
+     A            SISHPT1       60A         TEXT('Shipping intructions Line 1')
+     A                                      COLHDG('Shipping Inst.' )
+     A            SISHPT2       60A         TEXT('Shipping intructions Line 2')
+     A                                      COLHDG('Shipping Inst.' )
+     A          K SICOYNO
+     A          K SISHPC
+     A*

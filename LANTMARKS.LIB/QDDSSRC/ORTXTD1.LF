@@ -1,0 +1,36 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORTXTD1                                            *
+     A*  File Description:  OPS Order Line Text by Coy/Aud                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORTXTDF                   PFILE(ORTXTDSQ  )
+     A            TDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            TDSONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            TDOSEQ         5P 0       TEXT('Order Line Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            TDCSEQ         5P 0       TEXT('Comment Line Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            TDAUD          9P 0       TEXT('Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            TDTEXT        40A         TEXT('Comment Narrative')
+     A                                      COLHDG('Text' )
+     A            TDPRTF         1A         TEXT('Print Flag')
+     A                                      COLHDG('Yes/No' )
+     A          K TDCOYNO
+     A          K TDAUD
+     A          K TDOSEQ
+     A          K TDCSEQ
+     A*
+     A*

@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SOCATG                                             *
+     A*  File Description:  SOP Standing Order Category ST                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SOCATGF                   PFILE(SOCATGSQ)
+     A            STCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            STSOCT         3A         TEXT('S.O.Category Code')
+     A                                      COLHDG('Category|Code' )
+     A            STDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A          K STCOYNO
+     A          K STSOCT
+     A*

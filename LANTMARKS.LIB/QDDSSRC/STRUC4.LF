@@ -1,0 +1,41 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STRUC4                                             *
+     A*  File Description:  SOP Price Struc Cust/Price  S4                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STRUC4F                   PFILE(STRUC4SQ)
+     A            S4COYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            S4CUST         6A         TEXT('Customer Number')
+     A                                      COLHDG('Cust No.' )
+     A            S4BRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            S4ITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            S4DISC         5P 2       TEXT('Discount')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            S4DCRT         8S 0       TEXT('Date created')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S4DAMD         8S 0       TEXT('Date amended')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S4USER        10A         TEXT('Last User')
+     A                                      COLHDG('User' )
+     A            S4PRIC        12P 5       TEXT('Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A          K S4COYNO
+     A          K S4CUST
+     A          K S4BRNBR
+     A          K S4ITEM
+     A*

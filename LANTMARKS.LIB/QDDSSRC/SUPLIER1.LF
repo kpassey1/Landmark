@@ -1,0 +1,51 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SUPLIER1                                           *
+     A*  File Description:  IMS Name seq                                       *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SUPLIERF                  PFILE(SUPLIERSQ )
+     A            SUCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SUSUPPN        6A         TEXT('Supplier Number')
+     A                                      COLHDG('Supplier' )
+     A            SUBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            SUNAME        40A         TEXT('Customer name')
+     A                                      COLHDG('Customer name' )
+     A            SULIN1        40A         TEXT('Address')
+     A                                      COLHDG('Address' )
+     A            SULIN2        40A         TEXT('Line 2')
+     A                                      COLHDG('Address 2' )
+     A            SULIN3        40A         TEXT('Line 3')
+     A                                      COLHDG('Address 3' )
+     A            SULIN4        40A         TEXT('Line 4')
+     A                                      COLHDG('Address 4' )
+     A            SULIN5        40A         TEXT('Line 5')
+     A                                      COLHDG('Address 5' )
+     A            SULIN6        40A         TEXT('Line 6')
+     A                                      COLHDG('Address 6' )
+     A            SUPSTCD        9A         TEXT('Post code')
+     A                                      COLHDG('Post cd' )
+     A            SUCONNAM      20A         TEXT('Contact name')
+     A                                      COLHDG('Contact' )
+     A            SUTELEPH      15A         TEXT('Telephone number')
+     A                                      COLHDG('Telephone' )
+     A            SUFAX         15A         TEXT('Fax number')
+     A                                      COLHDG('Fax' )
+     A            SUCURR         3A         TEXT('Currency code')
+     A                                      COLHDG('Ccy|Code' )
+     A            SUALPHA       10A         TEXT('Alpha Search')
+     A                                      COLHDG('Alpha search' )
+     A          K SUCOYNO
+     A          K SUALPHA
+     A          K SUSUPPN
+     A          K SUBRNBR
+     A*
+     A*

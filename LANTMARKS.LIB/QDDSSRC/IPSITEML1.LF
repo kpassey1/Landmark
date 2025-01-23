@@ -1,0 +1,86 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IPSITEML1                                          *
+     A*  File Description:  IPS Items By Item                                  *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R IPSITEMF                  PFILE(IPSITEM   )
+     A            PICOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            PISUPPN        6A         TEXT('Supplier Number')
+     A                                      COLHDG('Supplier' )
+     A            PIBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            PIITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            PIDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            PICNVCDE       1A         TEXT('Conversion Code')
+     A                                      COLHDG('Cnv|Code' )
+     A            PICNV          9P 0       TEXT('Conversion Qty')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PICOST        12P 5       TEXT('Unit Cost')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PIPBRK1       12P 5       TEXT('Price Break 1')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PIPBRK2       12P 5       TEXT('Price Break 2')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PIPBRK3       12P 5       TEXT('Price Break 3')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PIPBRK4       12P 5       TEXT('Price Break 4')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PIPRCOD        1A         TEXT('Pricing Code')
+     A                                      COLHDG('Pricing|Code' )
+     A            PIQBRK1        9P 0       TEXT('Qty Break 1')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PIQBRK2        9P 0       TEXT('Qty Break 2')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PIQBRK3        9P 0       TEXT('Qty Break 3')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PIQBRK4        9P 0       TEXT('Qty break 4')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PIQFIX         9P 0       TEXT('Fixed order Qty')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PIPYTD        13P 2       TEXT('Purchase Value YTD')
+     A                                      COLHDG('VALUE' )
+     A                                      EDTCDE(3)
+     A            PIUOM          5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            PIWGT         13P 2       TEXT('Weight')
+     A                                      COLHDG('VALUE' )
+     A                                      EDTCDE(3)
+     A            PISPITM       20A         TEXT('Superceding Item Number')
+     A                                      COLHDG('Item Number' )
+     A            PISDESC       40A         TEXT('Superceding Description')
+     A                                      COLHDG('Description' )
+     A            PILTIM         3P 0       TEXT('Lead Time')
+     A                                      COLHDG('Lead|Time' )
+     A                                      EDTCDE(3)
+     A          K PICOYNO
+     A          K PIITEM
+     A          K PISUPPN
+     A          K PIBRNBR
+     A*
+     A*

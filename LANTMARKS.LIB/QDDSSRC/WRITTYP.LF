@@ -1,0 +1,38 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         WRITTYP                                            *
+     A*  File Description:  IMS Warehouse Item Types    WT                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R WRITTYPF                  PFILE(WRITTYPSQ)
+     A            WTCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            WTWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            WTITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            WTTRNC         2A         TEXT('Transaction Type')
+     A                                      COLHDG('Trans|Type' )
+     A            WTTRPQ         9P 0       TEXT('Trans Period Quantity')
+     A                                      COLHDG('Period Qty' )
+     A                                      EDTCDE(Z)
+     A            WTTRPV        13P 2       TEXT('Trans Period Value')
+     A                                      COLHDG('Period Value' )
+     A                                      EDTCDE(M)
+     A            WTTRYQ         9P 0       TEXT('Trans YTD Quantity')
+     A                                      COLHDG('YTD Qty' )
+     A                                      EDTCDE(Z)
+     A            WTTRYV        13P 2       TEXT('Trans YTD Value')
+     A                                      COLHDG('YTD Value' )
+     A                                      EDTCDE(M)
+     A          K WTCOYNO
+     A          K WTWHSE
+     A          K WTITEM
+     A          K WTTRNC
+     A*

@@ -1,0 +1,40 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORDDLA1                                            *
+     A*  File Description:  Delivery address audit number                      *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORDDLAF                   PFILE(ORDDLASQ  )
+     A            DACOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            DASONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            DAAUDIT        9P 0       TEXT('Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            DANAME        40A         TEXT('Customer name')
+     A                                      COLHDG('Customer name' )
+     A            DALIN1        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DALIN2        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DALIN3        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DALIN4        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DALIN5        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DALIN6        40A         TEXT('Address Line')
+     A                                      COLHDG('Address Line' )
+     A            DAPSTCD        9A         TEXT('Post code')
+     A                                      COLHDG('Post cd' )
+     A          K DACOYNO
+     A          K DAAUDIT
+     A*
+     A*

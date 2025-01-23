@@ -1,0 +1,23 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         UOM                                                *
+     A*  File Description:  IMS Unit of measure         UM                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R UOMF                      PFILE(UOMSQ)
+     A            UMCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            UMUOM          5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            UMQTYO         9P 0       TEXT('Quantity per unit')
+     A                                      COLHDG('Qty/Outer' )
+     A                                      EDTCDE(Z)
+     A          K UMCOYNO
+     A          K UMUOM
+     A*

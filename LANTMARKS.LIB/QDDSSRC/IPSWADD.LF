@@ -1,0 +1,38 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IPSWADD                                            *
+     A*  File Description:  IPS Warehouse address      PD                      *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R IPSWADDF                  PFILE(IPSWADDSQ)
+     A            PDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            PDWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            PDLIN1        40A         TEXT('Address Line 1')
+     A                                      COLHDG('Address Line' )
+     A            PDLIN2        40A         TEXT('Address Line 2')
+     A                                      COLHDG('Address Line' )
+     A            PDLIN3        40A         TEXT('Address Line 3')
+     A                                      COLHDG('Address Line' )
+     A            PDLIN4        40A         TEXT('Address Line 4')
+     A                                      COLHDG('Address Line' )
+     A            PDLIN5        40A         TEXT('Address Line 5')
+     A                                      COLHDG('Address Line' )
+     A            PDLIN6        40A         TEXT('Address Line 6')
+     A                                      COLHDG('Address Line' )
+     A            PDPSTCD        9A         TEXT('Post code')
+     A                                      COLHDG('Post cd' )
+     A            PDCONNAM      20A         TEXT('Contact name')
+     A                                      COLHDG('Contact' )
+     A            PDTELEPH      15A         TEXT('Telephone number')
+     A                                      COLHDG('Telephone' )
+     A          K PDCOYNO
+     A          K PDWHSE
+     A*

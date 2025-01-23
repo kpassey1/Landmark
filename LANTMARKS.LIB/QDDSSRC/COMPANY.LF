@@ -1,0 +1,33 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         COMPANY                                            *
+     A*  File Description:  Company screen headings     CY                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R COMPANYF                  PFILE(COMPANYSQ)
+     A            CYCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CYDESC        40A         TEXT('Company description')
+     A                                      COLHDG('Description' )
+     A            CYSDESC       20A         TEXT('Short Description')
+     A                                      COLHDG('Short Description' )
+     A            CYEMPHEAD     15A         TEXT('Employee description')
+     A                                      COLHDG('Employee|Description' )
+     A            CYEMPCOL       5A         TEXT('Employee column heading')
+     A                                      COLHDG('Employee|Column' )
+     A            CYPRDHEAD     15A         TEXT('Product description')
+     A                                      COLHDG('Product|Description' )
+     A            CYREFHEAD     15A         TEXT('Reference description')
+     A                                      COLHDG('Reference|Descriptio' )
+     A            CYCGAS         1A         TEXT('CGAS is to be used')
+     A                                      COLHDG('Ext|Ldgrs' )
+     A            CYDFMT         1A         TEXT('Date Format 1=dmy 2=mdy')
+     A            CYDSEP         1A         TEXT('Date Seperator')
+     A          K CYCOYNO
+     A*

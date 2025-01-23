@@ -1,0 +1,56 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STRUC3L1                                           *
+     A*  File Description:  SOP Customer/Item                                  *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STRUC3F                   PFILE(STRUC3SQ  )
+     A            S3COYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            S3CONT        10A         TEXT('Contract number')
+     A                                      COLHDG('Cont No.' )
+     A            S3ITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            S3CUST         6A         TEXT('Customer Number')
+     A                                      COLHDG('Cust No.' )
+     A            S3BRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            S3PRICE       12P 5       TEXT('Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            S3MAXQ         9P 0       TEXT('Quantity')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            S3SDAT         8S 0       TEXT('Start date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S3EDAT         8S 0       TEXT('End Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S3SOLQ         9P 0       TEXT('Sold Quantity')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            S3LSAD         8S 0       TEXT('Last sale date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S3DCRT         8S 0       TEXT('Date created')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S3DAMD         8S 0       TEXT('Date amended')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S3USER        10A         TEXT('Last User')
+     A                                      COLHDG('User' )
+     A          K S3COYNO
+     A          K S3CUST
+     A          K S3BRNBR
+     A          K S3ITEM
+     A*
+     A*

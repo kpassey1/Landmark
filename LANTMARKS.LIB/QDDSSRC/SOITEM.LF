@@ -1,0 +1,35 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SOITEM                                             *
+     A*  File Description:  SOP Standing order items/locs                      *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SOITEMF                   PFILE(SOITEMSQ)
+     A            SICOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SISEQ          5P 0       TEXT('Standing Order Number')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            SIWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            SIITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            SILOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            SIQUANT        9P 0       TEXT('DEfault Quantity')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            SIPRICE       11P 4       TEXT('Price')
+     A                                      COLHDG('Price' )
+     A                                      EDTCDE(3)
+     A          K SICOYNO
+     A          K SISEQ
+     A          K SIWHSE
+     A          K SIITEM
+     A*

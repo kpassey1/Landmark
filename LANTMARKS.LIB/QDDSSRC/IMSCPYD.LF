@@ -1,0 +1,36 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IMSCPYD                                            *
+     A*  File Description:  IMS Company Details         CD                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R IMSCPYDF                  PFILE(IMSCPYDSQ)
+     A            CDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CDHEAD1       15A         TEXT('User Field 1 Heading')
+     A                                      COLHDG('User 1' )
+     A            CDCOL1         5A         TEXT('User Field 1 Column')
+     A                                      COLHDG('User 1|Column' )
+     A            CDHEAD2       15A         TEXT('User Field 2 Heading')
+     A                                      COLHDG('User 2|Heading' )
+     A            CDCOL2         5A         TEXT('User Field 2 Column')
+     A                                      COLHDG('User 2|Column' )
+     A            CDHEAD3       15A         TEXT('User Field 3 Heading')
+     A                                      COLHDG('User 3|Heading' )
+     A            CDCOL3         5A         TEXT('User Field 3 Column')
+     A                                      COLHDG('User 3|Column' )
+     A            CDCRED         1A         TEXT('Reduce stock for credits (Y/N-
+     A                                      ) ')
+     A                                      COLHDG('Rdce|Crd' )
+     A            CDTRNP         2A         TEXT('Purchasing Trans')
+     A                                      COLHDG('Trans|Type' )
+     A            CDTRNR         2A         TEXT('Receiving Trans')
+     A                                      COLHDG('Trans|Type' )
+     A          K CDCOYNO
+     A*

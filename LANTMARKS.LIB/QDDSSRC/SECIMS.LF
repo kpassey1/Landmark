@@ -1,0 +1,34 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SECIMS                                             *
+     A*  File Description:  IMS User Security           US                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SECIMSF                   PFILE(SECIMSSQ)
+     A            USCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            USUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            USADD          1A         TEXT('Add')
+     A                                      COLHDG('Add' )
+     A            USDEL          1A         TEXT('Delete')
+     A                                      COLHDG('Dlt' )
+     A            USMAIN         1A         TEXT('Amend')
+     A                                      COLHDG('Amd' )
+     A            USENQ          1A         TEXT('Enquiry')
+     A                                      COLHDG('Enq' )
+     A            USSTKU         1A         TEXT('Stock take Update')
+     A                                      COLHDG('Stock|Take' )
+     A            USWHSE         3A         TEXT('Allowed Warehouse')
+     A                                      COLHDG('Whse|No.' )
+     A            USUGRP        10A         TEXT('Group User')
+     A                                      COLHDG('User' )
+     A          K USCOYNO
+     A          K USUSER
+     A*

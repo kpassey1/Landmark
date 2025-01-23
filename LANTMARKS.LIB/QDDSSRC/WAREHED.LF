@@ -1,0 +1,51 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         WAREHED                                            *
+     A*  File Description:  IMS Warehouse Header        WH                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R WAREHEDF                  PFILE(WAREHEDSQ)
+     A            WHCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            WHWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            WHWDESC       40A         TEXT('Warehouse Description')
+     A                                      COLHDG('Whse Description' )
+     A            WHWTYP         2A         TEXT('Warehouse Type')
+     A                                      COLHDG('Whse|Type' )
+     A            WHCTYP         1P 0       TEXT('Costing Type')
+     A                                      COLHDG('Cost|Type' )
+     A                                      EDTCDE(Z)
+     A            WHDTLC         8S 0       TEXT('Date of last count')
+     A                                      COLHDG('Last|Count' )
+     A                                      EDTWRD('    /  /  ')
+     A            WHREPC         1A         TEXT('Replenishment Cycle flag')
+     A                                      COLHDG('Rpln|Cycle' )
+     A            WHVALU        13P 2       TEXT('W/H Value last count')
+     A                                      COLHDG('Value|Last Count' )
+     A                                      EDTCDE(3)
+     A            WHDTNR         8S 0       TEXT('Date next replenishment')
+     A                                      COLHDG('Next Replen' )
+     A                                      EDTWRD('    /  /  ')
+     A            WHDTLR         8S 0       TEXT('Date last replenishment')
+     A                                      COLHDG('Last Replen' )
+     A                                      EDTWRD('    /  /  ')
+     A            WHCRDT         8S 0       TEXT('Created Date')
+     A                                      COLHDG('Created|date' )
+     A                                      EDTWRD('    /  /  ')
+     A            WHCRBY        10A         TEXT('Created by')
+     A                                      COLHDG('Created By' )
+     A            WHDTLM         8S 0       TEXT('Amended date')
+     A                                      COLHDG('Maintained|date' )
+     A                                      EDTWRD('    /  /  ')
+     A            WHLMBY        10A         TEXT('Amended By')
+     A                                      COLHDG('Last Maint' )
+     A          K WHCOYNO
+     A          K WHWHSE
+     A*

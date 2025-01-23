@@ -1,0 +1,38 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SECIPS                                             *
+     A*  File Description:  IPS User Security           US                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SECIPSF                   PFILE(SECIPSSQ)
+     A            USCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            USUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            USADD          1A         TEXT('Add')
+     A                                      COLHDG('Yes/No' )
+     A            USDEL          1A         TEXT('Delete')
+     A                                      COLHDG('Yes/No' )
+     A            USMAIN         1A         TEXT('Amend')
+     A                                      COLHDG('Yes/No' )
+     A            USENQ          1A         TEXT('Enquiry')
+     A                                      COLHDG('Yes/No' )
+     A            USPORD         1A         TEXT('Access Purchasing')
+     A                                      COLHDG('Yes/No' )
+     A            USRECV         1A         TEXT('Access receiving')
+     A                                      COLHDG('Yes/No' )
+     A            USEOC          1A         TEXT('Access End of cycle')
+     A                                      COLHDG('Yes/No' )
+     A            USEOM          1A         TEXT('Access End of month')
+     A                                      COLHDG('Yes/No' )
+     A            USEOY          1A         TEXT('Access end of year')
+     A                                      COLHDG('Yes/No' )
+     A          K USCOYNO
+     A          K USUSER
+     A*

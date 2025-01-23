@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         TRANCD                                             *
+     A*  File Description:  SOP Transaction Codes       TR                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R TRANCDF                   PFILE(TRANCDSQ)
+     A            TRCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            TRTRNC         2A         TEXT('Transaction Code')
+     A                                      COLHDG('Trans|Type' )
+     A            TRDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A          K TRCOYNO
+     A          K TRTRNC
+     A*

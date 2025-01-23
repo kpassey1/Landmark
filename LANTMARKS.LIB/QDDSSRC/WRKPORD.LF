@@ -1,0 +1,41 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         WRKPORD                                            *
+     A*  File Description:  IPS Receiving Work File     WK                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R WRKPORDF                  PFILE(WRKPORDSQ)
+     A            WKCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            WKPORD        10A         TEXT('Purchase Order Number')
+     A                                      COLHDG('P.O.Number' )
+     A            WKLINE         5P 0       TEXT('Line Number')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            WKSEQ          5P 0       TEXT('Auto incr. Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            WKPRICE       12P 5       TEXT('Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            WKQRCVD        9P 0       TEXT('Quantity Received')
+     A                                      COLHDG('Quantity|Received' )
+     A                                      EDTCDE(Z)
+     A            WKWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            WKITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            WKLOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A          K WKCOYNO
+     A          K WKPORD
+     A          K WKLINE
+     A          K WKSEQ
+     A*

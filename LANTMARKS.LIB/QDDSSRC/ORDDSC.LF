@@ -1,0 +1,21 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORDDSC                                             *
+     A*  File Description:  SOP Order Descriptions      OS                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORDDSCF                   PFILE(ORDDSCSQ)
+     A            OSCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            OSORDS         3A         TEXT('Order Description Code')
+     A            OSDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A          K OSCOYNO
+     A          K OSORDS
+     A*

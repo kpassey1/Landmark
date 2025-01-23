@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         AREACD                                             *
+     A*  File Description:  SOP Area codes              AR                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R AREACDF                   PFILE(AREACDSQ)
+     A            ARCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            ARAREA         3A         TEXT('Area code')
+     A                                      COLHDG('Area|Code' )
+     A            ARDESC        20A         TEXT('Area Description')
+     A                                      COLHDG('Parm. Desc.' )
+     A          K ARCOYNO
+     A          K ARAREA
+     A*

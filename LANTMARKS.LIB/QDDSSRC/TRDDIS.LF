@@ -1,0 +1,29 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         TRDDIS                                             *
+     A*  File Description:  SOP Trade Discount Codes    TD                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R TRDDISF                   PFILE(TRDDISSQ)
+     A            TDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            TDDSCC         3A         TEXT('Trade Discount Code')
+     A                                      COLHDG('Trade|Disc' )
+     A            TDDIS1         5P 2       TEXT('Trade discount 1')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            TDDIS2         5P 2       TEXT('Trade Discount 2')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            TDDIS3         5P 2       TEXT('Trade Discount 3')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A          K TDCOYNO
+     A          K TDDSCC
+     A*

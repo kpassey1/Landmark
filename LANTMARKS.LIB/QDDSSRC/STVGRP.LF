@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STVGRP                                             *
+     A*  File Description:  IMS Stock value group       VG                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STVGRPF                   PFILE(STVGRPSQ)
+     A            VGCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            VGSVALG        1A         TEXT('Stock Value Group')
+     A                                      COLHDG('Stck|Val grp' )
+     A            VGDESC        40A         TEXT('Stock Value Description')
+     A                                      COLHDG('Description' )
+     A          K VGCOYNO
+     A          K VGSVALG
+     A*

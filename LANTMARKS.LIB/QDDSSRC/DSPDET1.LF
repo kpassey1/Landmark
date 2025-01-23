@@ -1,0 +1,50 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         DSPDET1                                            *
+     A*  File Description:  SOP Whse/Location/Item                             *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R DSPDETF                   PFILE(DSPDETSQ  )
+     A            DDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            DDDESN         7P 0       TEXT('Despatch Note Number')
+     A                                      COLHDG('Despatch|Note' )
+     A                                      EDTCDE(Z)
+     A            DDSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            DDSONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            DDITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            DDIDESC       40A         TEXT('Item Description')
+     A                                      COLHDG('Item Description' )
+     A            DDWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            DDLOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            DDQTSH         9P 0       TEXT('Qty To Ship')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            DDQSHP         9P 0       TEXT('Quantity Shipped')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            DDENTS         1A         TEXT('Entry Status')
+     A                                      COLHDG('Entry|Status' )
+     A            DDPCKS         1A         TEXT('Picked Status')
+     A                                      COLHDG('Picked|Status' )
+     A            DDINVS         1A         TEXT('Invoice Status')
+     A                                      COLHDG('Invoice|Status' )
+     A          K DDCOYNO
+     A          K DDWHSE
+     A          K DDLOCN
+     A          K DDITEM
+     A*
+     A          O DDQTSH                    COMP(EQ 0)
+     A*

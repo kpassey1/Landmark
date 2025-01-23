@@ -1,0 +1,30 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         PCKLST                                             *
+     A*  File Description:  IMS Picking List            PL                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R PCKLSTF                   PFILE(PCKLSTSQ)
+     A            PLCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            PLSEQ          5P 0       TEXT('Picking List No.')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            PLCRDT         8S 0       TEXT('Created Date')
+     A                                      COLHDG('Created|date' )
+     A                                      EDTWRD('    /  /  ')
+     A            PLCRBY        10A         TEXT('Created By')
+     A                                      COLHDG('Created By' )
+     A            PLFWH          3A         TEXT('From Warehouse')
+     A                                      COLHDG('Whse|No.' )
+     A            PLTWH          3A         TEXT('To Warehouse (if transfer)')
+     A                                      COLHDG('Whse|No.' )
+     A          K PLCOYNO
+     A          K PLSEQ
+     A*

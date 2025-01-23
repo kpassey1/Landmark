@@ -1,0 +1,55 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STOKREQ                                            *
+     A*  File Description:  IMS Stock take request      SR                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STOKREQF                  PFILE(STOKREQSQ)
+     A            SRCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SRSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            SRFWHSE        3A         TEXT('From Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            SRTWHSE        3A         TEXT('To Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            SRFSTIG        2A         TEXT('From Stock Inventory Group')
+     A                                      COLHDG('Stock|Inv Grp' )
+     A            SRTSTIG        2A         TEXT('To Stock Inventory Group')
+     A                                      COLHDG('Stock|Inv Grp' )
+     A            SRFSUPPN       6A         TEXT('From Supplier Number')
+     A                                      COLHDG('Supplier' )
+     A            SRFSBRN        3A         TEXT('From Branch Number')
+     A                                      COLHDG('Br' )
+     A            SRTSUPPN       6A         TEXT('To Supplier Number')
+     A                                      COLHDG('Supplier' )
+     A            SRTSBRN        3A         TEXT('To Branch Number')
+     A                                      COLHDG('Br' )
+     A            SRFCLAS        3A         TEXT('From Item Class')
+     A                                      COLHDG('Item|Class' )
+     A            SRTCLAS        3A         TEXT('To Item Class')
+     A                                      COLHDG('Item|Class' )
+     A            SRFSGRP        3A         TEXT('FromStock Group')
+     A                                      COLHDG('Stock|Group' )
+     A            SRTSGRP        3A         TEXT('To Stock Group')
+     A                                      COLHDG('Stock|Group' )
+     A            SRFLOCN       10A         TEXT('From Location')
+     A                                      COLHDG('Location' )
+     A            SRTLOCN       10A         TEXT('To Location')
+     A                                      COLHDG('Location' )
+     A            SRFITEM       20A         TEXT('From Item Number')
+     A                                      COLHDG('Item Number' )
+     A            SRTITEM       20A         TEXT('To Item Number')
+     A                                      COLHDG('Item Number' )
+     A            SRBFLAG        1A         TEXT('Batch Update flag')
+     A                                      COLHDG('Batch' )
+     A          K SRCOYNO
+     A          K SRSEQ
+     A*

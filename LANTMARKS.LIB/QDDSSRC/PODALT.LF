@@ -1,0 +1,60 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         PODAALT                                            *
+     A*  File Description:  IPS Purchase Order Altered                         *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R PODALTF                   PFILE(PODALTSQ)
+     A            PACOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            PAWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            PAPORD        10A         TEXT('Purchase Order Number')
+     A                                      COLHDG('P.O.Number' )
+     A            PASEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            PATYPE         1A         TEXT('a=add B=bef c=aft d=Del')
+     A                                      COLHDG('Yes/No' )
+     A            PADLVDT        8S 0       TEXT('Delivery Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            PAITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            PAIDESC       40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            PAPRICE       12P 5       TEXT('Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            PAQORD         9P 0       TEXT('Quantity ordered')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PAQRCVD        9P 0       TEXT('Quantity received')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PANLALL       15A         TEXT('N/L Stock Account')
+     A                                      COLHDG('Stock Account' )
+     A            PAUOM          5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            PACONV         5P 0       TEXT('Packing Multiplier')
+     A                                      COLHDG('Pack|Mult' )
+     A                                      EDTCDE(Z)
+     A            PACCDE         1A         TEXT('Conversion Code')
+     A                                      COLHDG('Cnv|Code' )
+     A            PAPCDE         1A         TEXT('Priceing Code')
+     A                                      COLHDG('Cnv|Code' )
+     A            PADATE         8S 0       TEXT('Amend Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A          K PACOYNO
+     A          K PAWHSE
+     A          K PAPORD
+     A          K PASEQ
+     A*

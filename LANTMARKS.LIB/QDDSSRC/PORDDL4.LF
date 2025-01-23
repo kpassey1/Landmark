@@ -1,0 +1,59 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         PORDDL4                                            *
+     A*  File Description:  Purch Ord by Item,P/Ord,Seq                        *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R PORDDF                    PFILE(PORDDSQ   )
+     A            POCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            POPORD        10A         TEXT('Purchase Order Number')
+     A                                      COLHDG('P.O.Number' )
+     A            POSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            PODLVDT        8S 0       TEXT('Delivery Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            POITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            POIDESC       40A         TEXT('Item Description')
+     A                                      COLHDG('Item Description' )
+     A            POPRICE       12P 5       TEXT('Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            POQORD         9P 0       TEXT('Quantity ordered')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            POQRCVD        9P 0       TEXT('Quantity received')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            POQRCYC        9P 0       TEXT('Received this cycle')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            PONLALL       15A         TEXT('Allocated account')
+     A                                      COLHDG('Stock Account' )
+     A            POWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            POUOM          5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            POCONV         5P 0       TEXT('Conversion Qty')
+     A                                      COLHDG('Pack|Mult' )
+     A                                      EDTCDE(Z)
+     A            POCCDE         1A         TEXT('Conversion Code')
+     A                                      COLHDG('Cnv|Code' )
+     A            POPCDE         1A         TEXT('Pricing code')
+     A                                      COLHDG('Cnv|Code' )
+     A          K POCOYNO
+     A          K POITEM
+     A          K POPORD
+     A          K POSEQ
+     A*
+     A*

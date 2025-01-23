@@ -1,0 +1,52 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         WARELOC                                            *
+     A*  File Description:  IMS Warehouse Locations     WL                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R WARELOCF                  PFILE(WARELOCSQ)
+     A            WLCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            WLWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            WLLOCN        10A         TEXT('Location')
+     A                                      COLHDG('Location' )
+     A            WLDESC        40A         TEXT('Location Description')
+     A                                      COLHDG('Description' )
+     A            WLPCKR         5A         TEXT('Picking Route')
+     A                                      COLHDG('Picking|Route' )
+     A            WLPCKA         1A         TEXT('Picking Allowed Y/N')
+     A                                      COLHDG('Pick|Alwd' )
+     A            WLPCKF         1A         TEXT('Pick Face Y/N')
+     A                                      COLHDG('Pick|Face' )
+     A            WLSIZE         5P 0       TEXT('Size')
+     A                                      COLHDG('Size' )
+     A                                      EDTCDE(Z)
+     A            WLHITE         5P 0       TEXT('Height')
+     A                                      COLHDG('Height' )
+     A                                      EDTCDE(Z)
+     A            WLWEIG        13P 2       TEXT('Maximum weight')
+     A                                      COLHDG('Weight' )
+     A                                      EDTCDE(3)
+     A            WLRSTN        15A         TEXT('Restrictions')
+     A                                      COLHDG('Restrictions' )
+     A            WLCRBY        10A         TEXT('Created By')
+     A                                      COLHDG('Created By' )
+     A            WLCRDT         8S 0       TEXT('Created Date')
+     A                                      COLHDG('Created|date' )
+     A                                      EDTWRD('    /  /  ')
+     A            WLLMBY        10A         TEXT('Last Maint User')
+     A                                      COLHDG('Last Maint' )
+     A            WLLMDT         8S 0       TEXT('Date last maintained')
+     A                                      COLHDG('Maintained|date' )
+     A                                      EDTWRD('    /  /  ')
+     A          K WLCOYNO
+     A          K WLWHSE
+     A          K WLLOCN
+     A*

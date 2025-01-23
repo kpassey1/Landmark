@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         USERDEF                                            *
+     A*  File Description:  IPS User Defaults           UD                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R USERDEFF                  PFILE(USERDEFSQ)
+     A            UDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            UDUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            UDWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A          K UDCOYNO
+     A          K UDUSER
+     A*

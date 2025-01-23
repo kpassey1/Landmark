@@ -1,0 +1,43 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORDSCL                                             *
+     A*  File Description:  SOP Order Line Charges      OL                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORDSCLF                   PFILE(ORDSCLSQ)
+     A            OLCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            OLSONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            OLSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            OLOSEQ         5P 0       TEXT('Sequence2')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            OLAUD          9P 0       TEXT('Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            OLSCHC         3A         TEXT('Special Charge Code')
+     A                                      COLHDG('Special|Charge' )
+     A            OLDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            OLCHGV        13P 2       TEXT('Charge Value')
+     A                                      COLHDG('VALUE' )
+     A                                      EDTCDE(3)
+     A            OLVATC         2A         TEXT('VAT Code')
+     A                                      COLHDG('VAT' )
+     A            OLVATV        13P 2       TEXT('VAT Value')
+     A                                      COLHDG('VALUE' )
+     A                                      EDTCDE(3)
+     A          K OLCOYNO
+     A          K OLSONO
+     A          K OLSEQ
+     A          K OLOSEQ
+     A*

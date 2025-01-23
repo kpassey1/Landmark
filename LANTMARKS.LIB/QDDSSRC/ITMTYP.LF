@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ITMTYP                                             *
+     A*  File Description:  IMS Item Type               TP                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ITMTYPF                   PFILE(ITMTYPSQ)
+     A            BACOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            BAITYP         1A         TEXT('Item Type - business area')
+     A                                      COLHDG('Item|Type' )
+     A            BADESC        40A         TEXT('Item Type Description')
+     A                                      COLHDG('Description' )
+     A          K BACOYNO
+     A          K BAITYP
+     A*

@@ -1,0 +1,23 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         CUSCAT                                             *
+     A*  File Description:  SOP Customer Category codes CA                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R CUSCATF                   PFILE(CUSCATSQ)
+     A            CACOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CACCAT         3S 0       TEXT('Customer category')
+     A                                      COLHDG('Category' )
+     A                                      EDTCDE(Z)
+     A            CADESC        20A         TEXT('Category Description')
+     A                                      COLHDG('Parm. Desc.' )
+     A          K CACOYNO
+     A          K CACCAT
+     A*

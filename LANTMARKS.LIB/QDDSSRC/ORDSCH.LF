@@ -1,0 +1,40 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         ORDSCH                                             *
+     A*  File Description:  SOP Order Special Charges   OC                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R ORDSCHF                   PFILE(ORDSCHSQ)
+     A            OCCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            OCSONO         7A         TEXT('S.O.Number')
+     A                                      COLHDG('Order|Number' )
+     A            OCSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            OCAUD          9P 0       TEXT('Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            OCSCHC         3A         TEXT('Special Charge Code')
+     A                                      COLHDG('Special|Charge' )
+     A            OCDESC        40A         TEXT('Description')
+     A                                      COLHDG('Description' )
+     A            OCCHGV        13P 2       TEXT('Default Value')
+     A                                      COLHDG('VALUE' )
+     A                                      EDTCDE(3)
+     A            OCONET         1A         TEXT('One time charge Y/N')
+     A            OCVATC         2A         TEXT('VAT Code')
+     A                                      COLHDG('VAT' )
+     A            OCVATV        13P 2       TEXT('VAT Value')
+     A                                      COLHDG('VALUE' )
+     A                                      EDTCDE(3)
+     A          K OCCOYNO
+     A          K OCSONO
+     A          K OCSEQ
+     A*

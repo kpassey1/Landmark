@@ -1,0 +1,44 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         IPSCPYD                                            *
+     A*  File Description:  IPS Company Details         CD                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R IPSCPYDF                  PFILE(IPSCPYDSQ)
+     A            CDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CDAUDAM        9P 0       TEXT('Amendments Report Audit numbe-
+     A                                      r ')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            CDAUDOR        9P 0       TEXT('Ordered Report Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            CDAUDPR        9P 0       TEXT('Payments Report Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            CDAUDGR        9P 0       TEXT('Goods Received Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            CDAUDRE        9P 0       TEXT('Reconciliation Audit number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            CDPORD         9P 0       TEXT('Last P.O. Number')
+     A                                      COLHDG('Audit number' )
+     A                                      EDTCDE(Z)
+     A            CDIMS          1A         TEXT('IMS to be used')
+     A                                      COLHDG('Yes/No' )
+     A            CDCGAS         1A         TEXT('CGAS to be used')
+     A                                      COLHDG('Yes/No' )
+     A            CDPURL         1A         TEXT('Purge fully received lines')
+     A                                      COLHDG('Yes/No' )
+     A            CDPURO         1A         TEXT('Purge fully received orders')
+     A                                      COLHDG('Yes/No' )
+     A          K CDCOYNO
+     A*

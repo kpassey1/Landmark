@@ -1,0 +1,22 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STANYS                                             *
+     A*  File Description:  IMS Stock analysis codes    SA                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STANYSF                   PFILE(STANYS)
+     A            SACOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            SASANL         1A         TEXT('Stock Analysis Code')
+     A                                      COLHDG('Stck|Anlys' )
+     A            SADESC        40A         TEXT('Stock Analysis Desc.')
+     A                                      COLHDG('Description' )
+     A          K SACOYNO
+     A          K SASANL
+     A*

@@ -1,0 +1,75 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         GRNHIS                                             *
+     A*  File Description:  IPS G.R.N. History          GR                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R GRNHISF                   PFILE(GRNHISSQ)
+     A            GRCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            GRRCAUD        9P 0       TEXT('Goods Received Note no.')
+     A                                      COLHDG('G.R.N' )
+     A                                      EDTCDE(Z)
+     A            GRPORD        10A         TEXT('Purchase Order Number')
+     A                                      COLHDG('P.O.Number' )
+     A            GRSEQ          5P 0       TEXT('Sequence')
+     A                                      COLHDG('Seq' )
+     A                                      EDTCDE(Z)
+     A            GRDLVDT        8S 0       TEXT('Delivery Date')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            GRITEM        20A         TEXT('Item Number')
+     A                                      COLHDG('Item Number' )
+     A            GRIDESC       40A         TEXT('Item Description')
+     A                                      COLHDG('Item Description' )
+     A            GRPRICE       12P 5       TEXT('Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A            GRQRCYC        9P 0       TEXT('Received this cycle')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            GRQORD         9P 0       TEXT('Quantity Ordered')
+     A                                      COLHDG('Counted Qty' )
+     A                                      EDTCDE(Z)
+     A            GRNLALL       15A         TEXT('Allocated account')
+     A                                      COLHDG('Stock Account' )
+     A            GRWHSE         3A         TEXT('Warehouse Number')
+     A                                      COLHDG('Whse|No.' )
+     A            GRUOM          5A         TEXT('Unit of Measure')
+     A                                      COLHDG('UOM' )
+     A            GRCONV         5P 0       TEXT('Conversion Qty')
+     A                                      COLHDG('Pack|Mult' )
+     A                                      EDTCDE(Z)
+     A            GRCCDE         1A         TEXT('Conversion Code')
+     A                                      COLHDG('Cnv|Code' )
+     A            GRPCDE         1A         TEXT('Pricing code')
+     A                                      COLHDG('Cnv|Code' )
+     A            GRSUPPN        6A         TEXT('Supplier Number')
+     A                                      COLHDG('Supplier' )
+     A            GRBRNBR        3A         TEXT('Branch Number')
+     A                                      COLHDG('Br' )
+     A            GRINVNUM      10A         TEXT('Invoice number')
+     A                                      COLHDG('Invoice No.' )
+     A            GRWNAME       40A         TEXT('Wharehouse name')
+     A                                      COLHDG('Customer name' )
+     A            GRRECBY        5A         TEXT('Received By')
+     A                                      COLHDG('Emp' )
+     A            GRGRNPR        1A         TEXT('Grn Printed Y/N')
+     A                                      COLHDG('Yes/No' )
+     A            GRRECPR        1A         TEXT('Yes no')
+     A                                      COLHDG('Yes/No' )
+     A            GRREQ          8S 0       TEXT('Date Requested yymmdd')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A          K GRCOYNO
+     A          K GRRCAUD
+     A          K GRPORD
+     A          K GRSEQ
+     A*

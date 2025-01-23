@@ -1,0 +1,25 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         CRCARD                                             *
+     A*  File Description:  SOP Credit Card Companies   CD                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R CRCARDF                   PFILE(CRCARDSQ)
+     A            CDCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            CDCCCD         3A         TEXT('Credit Card Code')
+     A                                      COLHDG('Credit|Card Code' )
+     A            CDNAME        40A         TEXT('Credit Card Company Name')
+     A                                      COLHDG('Customer name' )
+     A            CDCCDG         2P 0       TEXT('Digits in C.Card Number')
+     A                                      COLHDG('C.Card Digits' )
+     A                                      EDTCDE(Z)
+     A          K CDCOYNO
+     A          K CDCCCD
+     A*

@@ -1,0 +1,23 @@
+     A**************************************************************************
+     A* Copyright 2002    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         SECITP                                             *
+     A*  File Description:  IMS User allowed types      UT                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R SECITPF                   PFILE(SECITPSQ)
+     A            UTCOYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            UTUSER        10A         TEXT('User')
+     A                                      COLHDG('User' )
+     A            UTTRNC         2A         TEXT('Transaction Type')
+     A                                      COLHDG('Trans|Type' )
+     A          K UTCOYNO
+     A          K UTUSER
+     A          K UTTRNC
+     A*

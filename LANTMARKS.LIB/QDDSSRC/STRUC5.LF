@@ -1,0 +1,35 @@
+     A**************************************************************************
+     A* Copyright 2004    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         STRUC5                                             *
+     A*  File Description:  SOP Price Struc Item Class  S5                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R STRUC5F                   PFILE(STRUC5SQ)
+     A            S5COYNO        3A         TEXT('Company number')
+     A                                      COLHDG('Cpy.' )
+     A            S5CLAS         3A         TEXT('Item Class')
+     A                                      COLHDG('Item|Class' )
+     A            S5DISC         5P 2       TEXT('Discount')
+     A                                      COLHDG('Disc %' )
+     A                                      EDTCDE(3)
+     A            S5DCRT         8S 0       TEXT('Date created')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S5DAMD         8S 0       TEXT('Date amended')
+     A                                      COLHDG('Date' )
+     A                                      EDTWRD('    /  /  ')
+     A            S5USER        10A         TEXT('Last User')
+     A                                      COLHDG('User' )
+     A            S5PRIC        12P 5       TEXT('Price')
+     A                                      COLHDG('Purchase' +
+     A                                             'Price' )
+     A                                      EDTCDE(3)
+     A          K S5COYNO
+     A          K S5CLAS
+     A*
