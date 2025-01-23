@@ -1,0 +1,499 @@
+:PNLGRP.
+:HELP NAME='SC0001'.
+List Menu Users
+:P.
+This screen displays a list of all users entered. These
+users are defined to use some or all of the programs.
+:LINES.
+Action code 2 = change user details
+            4 = remove users from the list
+            3 = copy user menus/options
+            5 = display user details
+            6 = maintain menu details
+
+To ADD a new user to the list use F6
+:ELINES.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001MASURN'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0001MAUSER'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0001PS0101'.
+Position to field
+:P.
+:EHELP.
+:HELP NAME='SC0001ZZCOMP'.
+Company Heading
+:P.
+:EHELP.
+:HELP NAME='SC0002'.
+User Entry Screen
+:P.
+This screen is used to enter the users details and any
+group references if required.
+
+:P.The user profile name must be entered if adding details.
+
+:P.Enter the users forename for reference only.
+
+:P.Enter the users surname for reference only.
+
+:P.Enter a group name if required. This field can be prompted
+if required by using F4 - A list of valid users already
+entered onto the menu system will be displayed.                    ¹
+:EHELP.
+:HELP NAME='SC0002MACHG'.
+Allow F18 Selection
+:P.
+This specifies whether the user is allowed to use F18 to select
+values for the *LEV1, *LEV2, *LEV3 keywords. If the user is not
+permitted to use F18, then the defaults will be used.
+
+:P.Enter Y or N if the user is not part of a group. If the user is
+part of a group the flag must be blank and the value for the group
+will be used.
+:EHELP.
+:HELP NAME='SC0002MADFV1'.
+Default Value for Level 1
+:P.
+:EHELP.
+:HELP NAME='SC0002MADFV2'.
+Default Value for Level 2
+:P.
+:EHELP.
+:HELP NAME='SC0002MADFV3'.
+Default Value for Level 3
+:P.
+:EHELP.
+:HELP NAME='SC0002MAFORN'.
+Forename
+:P.
+:EHELP.
+:HELP NAME='SC0002MAGUSER'.
+Group User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0002MASURN'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0002MAUSER'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0002ZZCOMP'.
+Company Heading
+:P.
+:EHELP.
+:HELP NAME='SC0003'.
+Menu List Screen
+:P.
+This screen displays a list of menus associated to a
+particular user. Menus can be added or removed from the list
+:LINES.
+Action code 2 = change menu details
+            4 = remove a menu from the list
+            5 = display menu details
+            6 = maintain menu options
+            7 = maintain menu help details
+
+To ADD a menu to the list use F6.
+:ELINES.
+:EHELP.
+:HELP NAME='SC0003FL0002'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0003MASURN'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0003MAUSER'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0003MBMNUC'.
+Menu
+:P.
+This allocates the sequence of the menu for display on the screen.
+:EHELP.
+:HELP NAME='SC0003MBMNUD'.
+Menu Description
+:P.
+:EHELP.
+:HELP NAME='SC0003PS0301'.
+Position to field
+:P.
+:EHELP.
+:HELP NAME='SC0003ZZCOMP'.
+Company Heading
+:P.
+:EHELP.
+:HELP NAME='SC0004'.
+Menu Detail Screen
+:P.
+This screen is used to enter Menu details.
+
+:P.The menu name must be entered and cannot already exist in
+the list.
+
+:P.The menu description must be entered.
+
+:P.Press enter to continue.
+:EHELP.
+:HELP NAME='SC0004MASURN'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0004MAUSER'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0004MBMNUC'.
+Menu
+:P.
+This allocates the sequence of the menu for display on the screen.
+:EHELP.
+:HELP NAME='SC0004MBMNUD'.
+Menu Description
+:P.
+:EHELP.
+:HELP NAME='SC0004ZZCOMP'.
+Company Heading
+:P.
+:EHELP.
+:HELP NAME='SC0005'.
+Options List Screen
+:P.
+This screen displays a list of menu options for a specific
+menu.
+:LINES.
+Action code 2 = change an option on the list
+            4 = remove an option from the list
+            5 = view an option on the list
+            6 = maintain help text for an option
+
+To ADD an option to the list use F6.
+:ELINES.
+:EHELP.
+:HELP NAME='SC0005FL0003'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0005MASURN'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0005MAUSER'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0005MBMNUD'.
+Menu Description
+:P.
+:EHELP.
+:HELP NAME='SC0005MCOPTC'.
+Option
+:P.
+This allocates the position in the menu window for displaying
+options.
+:EHELP.
+:HELP NAME='SC0005MCOPTD'.
+Option Description
+:P.
+:EHELP.
+:HELP NAME='SC0005PS0501'.
+Position to field
+:P.
+:EHELP.
+:HELP NAME='SC0005ZZCOMP'.
+Company Heading
+:P.
+:EHELP.
+:HELP NAME='SC0006'.
+Options Detail Screen
+:P.
+This screen is used to enter option details.
+
+:P.The option number must be entered and must not exist in the
+list.
+
+:P.A description of the option must be entered.
+
+:P.The program to call must be entered, and must exist if
+program type is R (Program Call). F4 will display a list
+of valid programs.
+
+:P.The secondary program, if entered, becomes the first parameter to
+be passed to the primary program specified.
+
+:P.Up to four parameters can be entered if required.           ¹   ¹
+
+:P.Create allowed, update allowed and delete must be entered
+and must be either Y or N
+
+:P.Program type can be entered
+
+:P.Press enter to continue
+:EHELP.
+:HELP NAME='SC0006MASURN'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0006MAUSER'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0006MBMNUD'.
+Menu Description
+:P.
+:EHELP.
+:HELP NAME='SC0006MCACTA'.
+Add
+:P.
+The action the user is allowed to perform.
+:EHELP.
+:HELP NAME='SC0006MCACTD'.
+Delete
+:P.
+The action the user is allowed to perform.
+:EHELP.
+:HELP NAME='SC0006MCACTR'.
+Revise
+:P.
+The action the user is allowed to perform.
+:EHELP.
+:HELP NAME='SC0006MCOPTC'.
+Option
+:P.
+This allocates the position in the menu window for displaying an
+option.
+:EHELP.
+:HELP NAME='SC0006MCOPTD'.
+Option Description
+:P.
+:EHELP.
+:HELP NAME='SC0006MCPGMN'.
+Program Name
+:P.
+The program name called by the option.
+:EHELP.
+:HELP NAME='SC0006MCPGMT'.
+Program Type
+:P.
+This specifies whether the program is a CL command or an RPG program
+:LINES.
+Valid Values are: C  CL Command
+                  R  RPG Program
+                  M  Menu
+:ELINES.
+:EHELP.
+:HELP NAME='SC0006MCPRM1'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0006MCPRM2'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0006MCPRM3'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0006MCPRM4'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0006MCSPGM'.
+Secondary Program Name
+:P.
+The program name called by the option.
+:EHELP.
+:HELP NAME='SC0006ZZCOMP'.
+Company Heading
+:P.
+:EHELP.
+:HELP NAME='SC0007'.
+Help Details
+:P.
+This screen is used to enter help text for each menu/option
+
+:P.Lines can be amended, added or deleted.
+
+:P.Function keys are used to switch between modes of input.
+Initially, ADD mode is displayed. F18 will change to INSERT
+mode and allow lines to be moved.
+
+:P.F14 will change to delete mode.
+:EHELP.
+:HELP NAME='SC0007FL0004'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0007F18'.
+F18 constant
+:P.
+:EHELP.
+:HELP NAME='SC0007MASURN'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0007MAUSER'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0007MBMNUD'.
+Menu Description
+:P.
+:EHELP.
+:HELP NAME='SC0007MCOPTD'.
+Option Description
+:P.
+:EHELP.
+:HELP NAME='SC0007MDSEQN'.
+Sequence Number
+:P.
+Auto Increment field used to sequence text only
+:EHELP.
+:HELP NAME='SC0007MDTEXT'.
+Text
+:P.
+Free Format text
+:EHELP.
+:HELP NAME='SC0007PS0701'.
+Position to field
+:P.
+:EHELP.
+:HELP NAME='SC0007ZZCOMP'.
+Company Heading
+:P.
+:EHELP.
+:HELP NAME='SC0008'.
+List of Users
+:P.
+This screen displays a list of all valid users of the menu
+software.
+
+:P.Use action code '1' to select the required record.
+:EHELP.
+:HELP NAME='SC0008T01'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0008T02'.
+User
+:P.
+The user id for signing on to the system may also belong to a group
+:EHELP.
+:HELP NAME='SC0008T03'.
+Surname
+:P.
+:EHELP.
+:HELP NAME='SC0009'.
+Copy Users
+:P.
+This screen is used to enter which user the menus and/or
+options are to be copied to.
+
+:P.The Copy Options flag must be entered.
+
+:P.The To User must be entered, and may or may not exist. F4
+will display a list of valid users already entered onto the
+Menu system.
+:EHELP.
+:HELP NAME='SC0009CPYMNU'.
+Copy Menus Y/N
+:P.
+:EHELP.
+:HELP NAME='SC0009CPYOPT'.
+Copy Options Y/N
+:P.
+:EHELP.
+:HELP NAME='SC0009FL0005'.
+From User Id
+:P.
+:EHELP.
+:HELP NAME='SC0009TOUSER'.
+To User Id
+:P.
+:EHELP.
+:HELP NAME='SC0010'.
+List of Programs
+:P.
+This screen displays a list of all valid program names
+
+:P.Use action code '1' to select the required record.
+:EHELP.
+:HELP NAME='SC0010FL0006'.
+Position to field-Program
+:P.
+:EHELP.
+:HELP NAME='SC0010FL0007'.
+Position to field-Second Pgm
+:P.
+:EHELP.
+:HELP NAME='SC0010T04'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0010T05'.
+Program
+:P.
+:EHELP.
+:HELP NAME='SC0010T06'.
+Program Description
+:P.
+:EHELP.
+:HELP NAME='SC0010T07'.
+Secondary Pgm
+:P.
+:EHELP.
+:EPNLGRP.

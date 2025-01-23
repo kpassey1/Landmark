@@ -1,0 +1,55 @@
+:PNLGRP.
+:HELP NAME='SC0001'.
+Detail Screen for System Parms
+:P.
+This screen allows the maintenance of System Parameters:
+:LINES.
+Company Heading
+Location Level Descriptions
+F18 Selection Program
+
+Press enter to continue
+:ELINES.
+:EHELP.
+:HELP NAME='SC0001LOC1'.
+Location Level 1
+:P.
+Location Level 1 is the highest level within the menus. The text
+entered will be displayed throughout the menus.
+
+:P.Examples: Region, Company
+:EHELP.
+:HELP NAME='SC0001LOC2'.
+Location Level 2
+:P.
+Location Level 2 is the intermediate level. The text entered will be
+displayed throughout the menus.
+
+:P.Examples: Branch, Division
+:EHELP.
+:HELP NAME='SC0001LOC3'.
+Location Level 3
+:P.
+Location Level 3 is the lowest level. Text entered will be displayed
+throughout the menus.
+
+:P.Examples: Site, Department
+:EHELP.
+:HELP NAME='SC0001WKCOMP'.
+Company Heading
+:P.
+Company heading is displayed along the top of every menu screen.
+:EHELP.
+:HELP NAME='SC0001WKPGM1'.
+Selection Program
+:P.
+The program specified here will be called when F18 is pressed from
+the menus. The program should have three 10 alpha parameters to pass
+back the selected Level 1, Level 2 and Level 3 codes.
+:EHELP.
+:HELP NAME='SC0001WKSOFT'.
+Software Application
+:P.
+The text which will appear at the top of the menu screen.
+:EHELP.
+:EPNLGRP.

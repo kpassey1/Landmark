@@ -1,0 +1,467 @@
+     F/TITLE MNU040 Check user security
+     F*****************************************************************
+     F* Copyright   ** KDP Software Limited **    1996
+     F*****************************************************************
+     F*
+     F*  Program ID          -    MNU040
+     F*  Application ID      -    MNU040
+     F*  Application Name    -    Check user security
+     F*  Date Generated      -    Feb 1, 1996
+     F*
+     F*****************************************************************
+     F*  Files Usage
+     F*
+     F*  MNUUSR      - (I/DISK   ) Menu Users                  MA
+     F*  MNUOPT1     - (I/DISK   ) Program Name, User Seq
+     F*  MNUOPT2     - (I/DISK   ) Secondary Pgm,User Seq
+     F*
+     F*****************************************************************
+     F*  Function Of Subroutines
+     F*
+     F* SMAIN - Main flow of the program.
+     F* SEND - END of program.
+     F* SMSG - Error messages to job log.
+     F* S001   - GETREC D.MENU,F.MNUUSR,*EQ,USPARM
+     F* S002   - GETREC D.MNUOPT1,F.MNUOPT1,*EQ,PGPARM,WKUSER
+     F* S003   - GETREC D.mnuopt2,F.mnuopt2,*EQ,PGPARM,WKUSER
+     F* SFERR - File Exception Handler
+     F* SMVTOW - Move Fields From File(s) To Work Area
+     F*
+     F*****************************************************************
+     F*            F i l e     S p e c i f i c a t i o n
+     F*****************************************************************
+     FMNUUSR  IF  E           K        DISK
+     F                                              KINFDS FIDS01
+     F                                              KINFSR SFERR
+     FMNUOPT1 IF  E           K        DISK
+     F                                              KINFDS FIDS02
+     F                                              KINFSR SFERR
+     FMNUOPT2 IF  E           K        DISK
+     F            MNUOPTF                           KRENAMEFMT001
+     F                                              KINFDS FIDS03
+     F                                              KINFSR SFERR
+     F*
+     I*****************************************************************
+     I*            I n p u t    S p e c i f i c a t i o n
+     I*****************************************************************
+     IMNUUSRF
+     I              MAGUSER                         RN0002
+     IFIDS02      DS
+     I                                     *STATUS  STS02
+     I                                    B 397 4000REC02
+     IFIDS03      DS
+     I                                     *STATUS  STS03
+     I                                    B 397 4000REC03
+     IFIDS01      DS
+     I                                     *STATUS  STS01
+     I                                    B 397 4000REC01
+     I*
+     I* Date Manipulation Data Struct.
+     I*
+     I            DS
+     I                                        1   80X1CDAT
+     I                                        1   60X1DATE
+     I                                        1   20X12
+     I                                        3   40X34
+     I                                        5   60X56
+     I                                        7   80X78
+     I*
+     C*****************************************************************
+     C*            P a r a m e t e r     L i s t
+     C*****************************************************************
+     C*
+     C           *ENTRY    PLIST
+     C                     PARM           RTPARM  1
+     C                     PARM           USPARM 10
+     C                     PARM           PGPARM 10
+     C                     PARM           OPPARM  1
+     C                     PARM           PRM001  1
+     C*
+     C           PMSGCL    PLIST
+     C                     PARM           MSGACT  1
+     C                     PARM           MSGID   7
+     C                     PARM           MSGF   10
+     C                     PARM           MSGFL  10
+     C                     PARM           MSGDTA132
+     C*****************************************************************
+     C*                   K e y      L i s t
+     C*****************************************************************
+     C*
+     C           K0001     KLIST
+     C                     KFLD           KAUS01
+     C*
+     C           K0002     KLIST
+     C                     KFLD           KCPG01
+     C                     KFLD           KCUS02
+     C*
+     C           K0003     KLIST
+     C                     KFLD           KCSP01
+     C                     KFLD           KCUS02
+     C*
+     C*****************************************************************
+     C*        V a r i a b l e s     D e c l a r a t i o n
+     C*****************************************************************
+     C           LRFLAG    IFNE 'N'
+     C           *LIKE     DEFN MCACTA    WCACTA           Add
+     C           *LIKE     DEFN MCACTD    WCACTD           Delete
+     C           *LIKE     DEFN MCACTR    WCACTR           Revise
+     C           *LIKE     DEFN MCACTA    WK0001           Add
+     C           *LIKE     DEFN MCACTD    WK0002           Delete
+     C           *LIKE     DEFN MCACTR    WK0003           Revise
+     C           *LIKE     DEFN RN0002    WK0004           Group User
+     C           *LIKE     DEFN REC01     HRC01
+     C           *LIKE     DEFN MAUSER    HAUSER
+     C           *LIKE     DEFN REC02     HRC02
+     C           *LIKE     DEFN MCPGMN    HCPGMN
+     C           *LIKE     DEFN MCUSER    HCUSER
+     C           *LIKE     DEFN REC03     HRC03
+     C           *LIKE     DEFN MCSPGM    HCSPGM
+     C           *LIKE     DEFN MCUSER    HD0001
+     C                     MOVE *ZEROS    NARG1  309       Numer argument1
+     C                     MOVE *ZEROS    NRSLT  309       Numeric result
+     C                     MOVE *BLANKS   DATFMT  3        Date format
+     C                     MOVE *ZEROS    SVDAT   60       Save date
+     C                     MOVE *ZEROS    SVYY    20       Save year
+     C                     MOVE *ZEROS    SVMM    20       Save month
+     C                     MOVE *ZEROS    SVDD    20       Save days
+     C                     MOVE *ZEROS    SVDAYS  30       Save days
+     C                     MOVE *ZEROS    SVLEAP  10       If leap year
+     C                     MOVE *ZEROS    FEB     20       NOD in feb/Leap
+     C                     MOVE *ZEROS    C1      30       Numeric wrk fld
+     C                     MOVE *ZEROS    SVCY    40       Save days
+     C                     MOVE *ZEROS    SVCC    20       Save century
+     C                     MOVE 1         CHKVAR  10       Perform Valid.
+     C                     MOVE *BLANKS   RN0001 20        @GETREC
+     C                     MOVE *BLANKS   WKCRTA  1
+     C                     MOVE *BLANKS   WKDELA  1
+     C                     MOVE *BLANKS   WKUPDA  1
+     C                     MOVE *BLANKS   WKUSER 10
+     C                     MOVE *ZEROS    LCK02   10       File lock flag
+     C                     MOVE *ZEROS    LCK03   10       File lock flag
+     C                     MOVE *ZEROS    LCK01   10       File lock flag
+     C                     MOVE 'N'       IOFLAG  1
+     C                     MOVE *BLANKS   SWRD01  1        RD STS
+     C                     MOVE *BLANKS   KAUS01 10        MAUSER
+     C                     MOVE *BLANKS   SWRD02  1        RD STS          010
+     C                     MOVE *BLANKS   KCPG01 10        MCPGMN
+     C                     MOVE *BLANKS   KCUS02 10        MCUSER
+     C                     MOVE *BLANKS   SWRD03  1        RD STS          01001
+     C                     MOVE *BLANKS   KCSP01 10        MCSPGM
+     C                     MOVE *ZEROS    X1CDAT           Init DS/*DTA flds
+     C                     MOVE 'N'       MSGFLG  1        Display Msg Flg
+     C                     MOVE *ZEROS    UERCNT  10
+     C                     MOVE *BLANKS   URSUME  6
+     C                     Z-ADD*ZEROS    WCNTR   30       COUNTER
+     C                     Z-ADD*ZEROS    WGETR   30       COUNTER
+     C                     Z-ADD*ZEROS    NRSLT0 309
+     C                     Z-ADD*ZEROS    XNO     10       *NO keyword
+     C                     Z-ADD*ZEROS    WFILE#  20       FILE#
+     C                     END
+     C                     MOVE *BLANK    LRFLAG  1
+     C*
+     C/EJECT
+     C*****************************************************************
+     C*        M a i n l i n e      R o u t i n e
+     C*****************************************************************
+     C                     EXSR SMAIN
+     C*
+     C/EJECT
+     C*****************************************************************
+     C* SMAIN - Main flow of the program.
+     C*****************************************************************
+     C           SMAIN     BEGSR
+     C*
+     C*                                                               *
+     C* *** Initialise Error Return Code to 'Error'.
+     C* RNPARM = 'N'
+     C                     MOVE 'N'       PRM001
+     C* WKUSER = usparm
+     C                     MOVE USPARM    WKUSER
+     C*                                                               *
+     C* *** Get user security record.
+     C* GETREC D.MENU,F.MNUUSR,*EQ,USPARM
+     C*
+     C                     EXSR S001
+     C*                                                               *
+     C* *** If record does not exists error.
+     C* IF %STS(D.MENU,F.MNUUSR)=*NO
+     C*  Status of last file I/O
+     C           STS01     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XNO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ 1
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     EXSR SEND
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* *** If User is under Group profile get the
+     C* *** Group Program allowed options.
+     C* IF maguser <> ' '
+     C           WK0004    IFNE *BLANKS
+     C* WKUSER = maguser
+     C                     MOVE WK0004    WKUSER
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* *** Get the User Program allowed options.
+     C* GETREC D.MNUOPT1,F.MNUOPT1,*EQ,PGPARM,WKUSER
+     C*
+     C                     EXSR S002
+     C* WKUPDA = mnuopt1.mnuopt1.mcactr
+     C                     MOVE WCACTR    WKUPDA
+     C* WKDELA = mnuopt1.mnuopt1.mcactd
+     C                     MOVE WCACTD    WKDELA
+     C* WKCRTA = mnuopt1.mnuopt1.mcACTA
+     C                     MOVE WCACTA    WKCRTA
+     C*                                                               *
+     C* *** If no record found try program names in parm 1
+     C* IF %STS(D.mnuopt1,F.mnuopt1)=*NO
+     C*  Status of last file I/O
+     C           STS02     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XNO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ 1
+     C* GETREC D.mnuopt2,F.mnuopt2,*EQ,PGPARM,WKUSER
+     C*
+     C                     EXSR S003
+     C* WKUPDA = mnuopt2.mnuopt2.mcactr
+     C                     MOVE WK0003    WKUPDA
+     C* WKDELA = mnuopt2.mnuopt2.mcactd
+     C                     MOVE WK0002    WKDELA
+     C* WKCRTA = mnuopt2.mnuopt2.mcACTA
+     C                     MOVE WK0001    WKCRTA
+     C* IF %STS(D.mnuopt2,F.mnuopt2)=*NO
+     C*  Status of last file I/O
+     C           STS03     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XNO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ 1
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     EXSR SEND
+     C* END                                                           *
+     C                     END
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* *** If edit requested check allowed.
+     C* IF OPPARM = '2' & wkUPDA <> 'Y'
+     C           OPPARM    IFEQ '2'
+     C           WKUPDA    ANDNE'Y'
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     EXSR SEND
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* *** If delete requested check allowed.
+     C* IF OPPARM = '4' & wkDELA <> 'Y'
+     C           OPPARM    IFEQ '4'
+     C           WKDELA    ANDNE'Y'
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     EXSR SEND
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* *** If add requested check allowed.
+     C* IF OPPARM = '6' & wkCRTA <> 'Y'
+     C           OPPARM    IFEQ '6'
+     C           WKCRTA    ANDNE'Y'
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     EXSR SEND
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* RNPARM = 'Y'
+     C                     MOVE 'Y'       PRM001
+     C                     EXSR SEND
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SEND - END of program.
+     C*****************************************************************
+     C           SEND      BEGSR
+     C*
+     C           LRFLAG    IFEQ 'Y'
+     C           LRFLAG    OREQ *BLANK
+     C                     MOVE '1'       *INLR
+     C                     END                             LRFLAG EQ 'Y'
+     C                     RETRN
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SMSG - Error messages to job log.
+     C*        calls message handling program to add error
+     C*        messages to job log or extract message from message file
+     C*****************************************************************
+     C           SMSG      BEGSR
+     C*
+     C                     CALL 'CLMSG'   PMSGCL
+     C                     ENDSR
+     C/EJECT
+     C**************************************************************************
+     C* S001   - GETREC D.MENU,F.MNUUSR,*EQ,USPARM
+     C**************************************************************************
+     C           S001      BEGSR
+     C                     Z-ADD1         WFILE#           SET FILE#
+     C                     MOVEL*BLANK    KAUS01
+     C                     MOVELUSPARM    KAUS01
+     C           K0001     CHAINMNUUSR               9091
+     C           *IN90     IFEQ '1'
+     C           *IN91     OREQ '1'
+     C                     MOVE 'N'       SWRD01           RD.SW.MNUUSR    MNUUS
+     C                     Z-ADD*ZERO     HRC01            ZERO RRN
+     C                     ELSE
+     C                     MOVE 'Y'       SWRD01           RD.SW.MNUUSR    MNUUS
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     END
+     C*
+     C*
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S002   - GETREC D.MNUOPT1,F.MNUOPT1,*EQ,PGPARM,WKUSER
+     C**************************************************************************
+     C           S002      BEGSR
+     C                     Z-ADD2         WFILE#           SET FILE#
+     C                     MOVEL*BLANK    KCPG01
+     C                     MOVELPGPARM    KCPG01
+     C                     MOVEL*BLANK    KCUS02
+     C                     MOVELWKUSER    KCUS02
+     C           K0002     CHAINMNUOPT1              9091
+     C           *IN90     IFEQ '1'
+     C           *IN91     OREQ '1'
+     C                     MOVE 'N'       SWRD02           RD.SW.MNUOPT1
+     C                     Z-ADD*ZERO     HRC02            ZERO RRN
+     C                     ELSE
+     C                     MOVE 'Y'       SWRD02           RD.SW.MNUOPT1
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     END
+     C*
+     C*
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S003   - GETREC D.mnuopt2,F.mnuopt2,*EQ,PGPARM,WKUSER
+     C**************************************************************************
+     C           S003      BEGSR
+     C                     Z-ADD3         WFILE#           SET FILE#
+     C                     MOVEL*BLANK    KCSP01
+     C                     MOVELPGPARM    KCSP01
+     C                     MOVEL*BLANK    KCUS02
+     C                     MOVELWKUSER    KCUS02
+     C           K0003     CHAINMNUOPT2              9091
+     C           *IN90     IFEQ '1'
+     C           *IN91     OREQ '1'
+     C                     MOVE 'N'       SWRD03           RD.SW.MNUOPT2
+     C                     Z-ADD*ZERO     HRC03            ZERO RRN
+     C                     ELSE
+     C                     MOVE 'Y'       SWRD03           RD.SW.MNUOPT2
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     END
+     C*
+     C*
+     C                     ENDSR
+     C*
+     C/EJECT
+     C*****************************************************************
+     C* SFERR - File Exception Handler
+     C*****************************************************************
+     C           SFERR     BEGSR
+     C                     MOVE 'Y'       MSGFLG           MSG FLAG ON
+     C           WFILE#    IFEQ 1                          MNUUSR
+     C           STS01     IFEQ 1218                       LOCK(SYS)
+     C                     Z-ADD1122      STS01            ASSET LOCK STATUS
+     C                     ELSE
+     C           STS01     IFEQ 1211                       CLOSED FILE
+     C                     ELSE
+     C                     Z-ADD1121      STS01            TRIGGER TO EXEC NEXT
+     C                     END
+     C                     END
+     C                     END
+     C           WFILE#    IFEQ 2                          MNUOPT1
+     C           STS02     IFEQ 1218                       LOCK(SYS)
+     C                     Z-ADD1122      STS02            ASSET LOCK STATUS
+     C                     ELSE
+     C           STS02     IFEQ 1211                       CLOSED FILE
+     C                     ELSE
+     C                     Z-ADD1121      STS02            TRIGGER TO EXEC NEXT
+     C                     END
+     C                     END
+     C                     END
+     C           WFILE#    IFEQ 3                          MNUOPT2
+     C           STS03     IFEQ 1218                       LOCK(SYS)
+     C                     Z-ADD1122      STS03            ASSET LOCK STATUS
+     C                     ELSE
+     C           STS03     IFEQ 1211                       CLOSED FILE
+     C                     ELSE
+     C                     Z-ADD1121      STS03            TRIGGER TO EXEC NEXT
+     C                     END
+     C                     END
+     C                     END
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SMVTOW - Move Fields From File(s) To Work Area
+     C*****************************************************************
+     C           SMVTOW    BEGSR
+     C*          ------------------------------------------------------
+     C*          | Move Fields From File To Work Area - MNUUSR
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 01
+     C                     MOVELRN0002    WK0004           Group User
+     C                     Z-ADDREC01     HRC01
+     C                     MOVELMAUSER    HAUSER           User
+     C                     ELSE
+     C*          ------------------------------------------------------
+     C*          | Move Fields From File To Work Area - MNUOPT1
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 02
+     C                     MOVELMCACTA    WCACTA           Add
+     C                     MOVELMCACTD    WCACTD           Delete
+     C                     MOVELMCACTR    WCACTR           Revise
+     C                     Z-ADDREC02     HRC02
+     C                     MOVELMCPGMN    HCPGMN           Program Name
+     C                     MOVELMCUSER    HCUSER           User
+     C                     ELSE
+     C*          ------------------------------------------------------
+     C*          | Move Fields From File To Work Area - MNUOPT2
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 03
+     C                     MOVELMCACTA    WK0001           Add
+     C                     MOVELMCACTD    WK0002           Delete
+     C                     MOVELMCACTR    WK0003           Revise
+     C                     Z-ADDREC03     HRC03
+     C                     MOVELMCSPGM    HCSPGM           Secondary Program Nam
+     C                     MOVELMCUSER    HD0001           User
+     C                     END
+     C                     END
+     C                     END
+     C                     ENDSR

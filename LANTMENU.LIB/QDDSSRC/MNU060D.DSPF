@@ -1,0 +1,687 @@
+     A********************************************************************           A* Copyrigh
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved            A**********
+     A********************************************************************           A*
+     A*                                                                              A*  DISPLAY
+     A*  DISPLAY FILE ID     -    MNU060
+     A*  DISPLAY FILE NAME   -          Display User Menus
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*                                                                              A**********
+     A******************************************************************             A**********
+     A                                      PRINT                                    A**********
+     A                                      ALTHELP(CA01)                            A**********
+     A                                      CHGINPDFT                                A**********
+     A                                      INDARA                                   A**********
+     A          R SCR001                    CSRLOC(LIN POS)                          A**********
+     A N79                                  PUTOVR                                   A**********
+     A                                      SETOFF(79)                               A**********
+     A  99                                  OVERLAY                                  A**********
+     A                                      CF03 INDTXT(03 'Exit')                   A**********
+     A                                      CF07 INDTXT(07 'Bkw')                    A**********
+     A                                      CF08 INDTXT(08 'Fwd')                    A**********
+     A                                      CF12 INDTXT(12 'Previous')               A**********
+     A                                      CF18 INDTXT(18 'Select')                 A**********
+     A                                      HELP(60 'Help')                          A**********
+     A                                      ROLLDOWN(62 'Page Up')                   A**********
+     A                                      ROLLUP(61 'Page dwn')                    A**********
+     A            USER          10   O  1  2                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            ZZCOMP        30   O  1 26                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                  1 73DATE EDTCDE(Y)                           A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            WSID          10   O  2  2                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            ZZSOFT        30   O  2 26                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                  2 73TIME                                     A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                  4  2'Select one of the following:'           A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A            MND001        30   O  6  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  01                                  DSPATR(RI)                               A**********
+     A            MND002        30   O  7  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  02                                  DSPATR(RI)                               A**********
+     A            MND003        30   O  8  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  03                                  DSPATR(RI)                               A**********
+     A            MND004        30   O  9  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  04                                  DSPATR(RI)                               A**********
+     A            MND005        30   O 10  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  05                                  DSPATR(RI)                               A**********
+     A            MND006        30   O 11  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  06                                  DSPATR(RI)                               A**********
+     A            MND007        30   O 12  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  07                                  DSPATR(RI)                               A**********
+     A            MND008        30   O 13  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  08                                  DSPATR(RI)                               A**********
+     A            MND009        30   O 14  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  09                                  DSPATR(RI)                               A**********
+     A                                 14 47'By: K.D.P. Software Limited,'           A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A            MND010        30   O 15  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  10                                  DSPATR(RI)                               A**********
+     A                                 15 51'Unit 2C MJ House'                       A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A            MND011        30   O 16  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  11                                  DSPATR(RI)                               A**********
+     A                                 16 51'Old Mill Drive'                         A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A            MND012        30   O 17  4                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  12                                  DSPATR(RI)                               A**********
+     A                                 17 51'Storrington RH20 4RH'                   A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A            FL0002         4   O 18 30                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                 19 51'Telephone: 01903 742327'                A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                 20 51'Fax      : 08700 510103'                A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                 23  1'Roll Up/Down'                           A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                 23 15'F12=Cancel'                             A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A            FL0003        26   O 23 27                                         A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A            LIN            3  0H                                               A**********
+     A            POS            3  0H                                               A**********
+     A          R SCR002                    CSRLOC(LIN POS)                          A**********
+     A N79                                  PUTOVR                                   A**********
+     A                                      SETOFF(79)                               A**********
+     A                                      PROTECT                                  A**********
+     A                                      OVERLAY                                  A**********
+     A                                      CLRL(*NO)                                A**********
+     A                                      CF07 INDTXT(07 'Bkw')                    A**********
+     A                                      CF08 INDTXT(08 'Fwd')                    A**********
+     A                                      CF12 INDTXT(12 'Cancel')                 A**********
+     A                                      CF18 INDTXT(18 'Select')                 A**********
+     A                                      HELP(60 'Help')                          A**********
+     A                                      ROLLDOWN(62 'Bkwd')                      A**********
+     A                                      ROLLUP(61 'Fwd')                         A**********
+     A                                  6 38'                                  -     A**********
+     A                                              '                                A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  7 38' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A            SOPT           2  0B  7 40                                         A**********
+     A  12                                  DSPATR(UL)                               A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTCDE(Z)                                A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  11                                  DSPATR(PC)                               A**********
+     A  11                                  DSPATR(RI)                               A**********
+     A            SEL001         2  0B  7 44                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  01                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03001        30   O  7 48                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  13                                  DSPATR(RI)                               A**********
+     A                                  7 79' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  8 38' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  8 40'   '                                    A**********
+     A            SEL002         2  0B  8 44                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  02                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03002        30   O  8 48                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  14                                  DSPATR(RI)                               A**********
+     A                                  8 79' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  9 38' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  9 40'   '                                    A**********
+     A            SEL003         2  0B  9 44                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  03                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03003        30   O  9 48                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  15                                  DSPATR(RI)                               A**********
+     A                                  9 79' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                 10 38' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                 10 40'   '                                    A**********
+     A            SEL004         2  0B 10 44                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  04                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03004        30   O 10 48                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  16                                  DSPATR(RI)                               A**********
+     A                                 10 79' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                 11 38' '                                      A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                 11 40'   '                                    A**********
+     A            SEL005         2  0B 11 44                                         A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  05                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03005        30   O 11 48                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  17                                  DSPATR(RI)                               A**********
+     A                                 11 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 12 38' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 12 40'   '                                    A**********
+     A            SEL006         2  0B 12 44                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A  06                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03006        30   O 12 48                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  18                                  DSPATR(RI)                               A**********
+     A                                 12 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 13 38' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 13 40'   '                                    A**********
+     A            SEL007         2  0B 13 44                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A  07                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03007        30   O 13 48                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  19                                  DSPATR(RI)                               A**********
+     A                                 13 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 14 38' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 14 40'   '                                    A**********
+     A            SEL008         2  0B 14 44                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A  08                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03008        30   O 14 48                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  20                                  DSPATR(RI)                               A**********
+     A                                 14 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 15 38' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 15 40'   '                                    A**********
+     A            SEL009         2  0B 15 44                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A  09                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03009        30   O 15 48                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  21                                  DSPATR(RI)                               A**********
+     A                                 15 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 16 38' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 16 40'   '                                    A**********
+     A            SEL010         2  0B 16 44                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTWRD('  .')                            A**********
+     A  10                                  DSPATR(ND)                               A**********
+     A                                      DSPATR(PR)                               A**********
+     A            T03010        30   O 16 48                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  22                                  DSPATR(RI)                               A**********
+     A                                 16 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 17 38' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 17 40'                                  -     A**********
+     A                                          '                                    A**********
+     A                                 17 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 18 38' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 18 40'       '                                A**********
+     A                                 18 48'Roll Up/Down'                           A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                 18 62'F12 Cancel'                             A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(BLU)                               A**********
+     A            FL0001         4   O 18 74                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                 18 79' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 19 38'                                  -     A**********
+     A                                              '                                A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            LIN            3  0H                                               A**********
+     A            POS            3  0H                                               A**********
+     A          R SCR003                                                             A**********
+     A N79                                  PUTOVR                                   A**********
+     A                                      SETOFF(79)                               A**********
+     A                                      OVERLAY                                  A**********
+     A                                      CLRL(*NO)                                A**********
+     A                                      CF12 INDTXT(12 'Cancel')                 A**********
+     A                                      ROLLDOWN(62 'Bkwd')                      A**********
+     A                                      ROLLUP(61 'Fwd')                         A**********
+     A                                  7  7'                                  -     A**********
+     A                                                                    '          A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                  8  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                  8  9'                        '               A**********
+     A                                  8 34'Help Text'                              A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                  8 44'                         '              A**********
+     A                                  8 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                  9  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                  9  9'                                  -     A**********
+     A                                                                '              A**********
+     A                                  9 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 10  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05001        60   O 10  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 10 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 11  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05002        60   O 11  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 11 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 12  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05003        60   O 12  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 12 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 13  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05004        60   O 13  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 13 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 14  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05005        60   O 14  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 14 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 15  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05006        60   O 15  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 15 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 16  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05007        60   O 16  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 16 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 17  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05008        60   O 17  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 17 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 18  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05009        60   O 18  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 18 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 19  7' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A            T05010        60   O 19  9                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                 19 70' '                                      A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A                                 20  7'                                  -     A**********
+     A                                                                    '          A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(RI)                               A**********
+     A                                      COLOR(TRQ)                               A**********
+     A*********************************************************************          A
+     A          R PSSR0001                  CLRL(*NO) OVERLAY                        A
+     A                                  1 13'                                  -     A
+     A                                                             '                 A
+     A                                      DSPATR(RI) COLOR(TRQ)                    A
+     A                                  2 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  2 15'PSSR0001'                               A
+     A                                  2 24'       Execution Error Handler    -     A
+     A                                                ' DSPATR(HI)                   A
+     A                                  2 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  3 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  3 15'                                  -     A
+     A                                                         '                     A
+     A                                  3 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  4 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  4 15'Job . . . . :'                          A
+     A            WSID          10A  O  4 29COLOR(WHT)                               A
+     A                                  4 40'  Program  . . :'                       A
+     A            PGM           10A  O  4 57COLOR(WHT)                               A
+     A                                  4 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  5 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  5 15'User  . . . :'                          A
+     A            USER          10A  O  5 29COLOR(WHT)                               A
+     A                                  5 40'  Library  . . :'                       A
+     A            ULIB          10A  O  5 57COLOR(WHT)                               A
+     A                                  5 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  6 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  6 15'Number  . . :'                          A
+     A            UJOBN          6S 0O  6 29COLOR(WHT)                               A
+     A                                  6 36'      Compiled . . :'                   A
+     A            UCDAT          6Y 0O  6 57EDTCDE(Y)  COLOR(WHT)                    A
+     A                                  6 66'  '                                     A
+     A                                  6 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  7 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  7 15'Routine . . :'                          A
+     A            UROUTN         8A  O  7 29COLOR(WHT)                               A
+     A                                  7 38'                  '                     A
+     A            UCTIM          6Y 0O  7 57EDTWRD('  :  :  ')  COLOR(WHT)           A
+     A                                  7 66'  '                                     A
+     A                                  7 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  8 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  8 15'Status Code :'                          A
+     A            USTAT4         4A  O  8 29COLOR(WHT)                               A
+     A                                  8 34'        Source Line. :'                 A
+     A            USRCLN         8A  O  8 57COLOR(WHT)                               A
+     A                                  8 66'  '                                     A
+     A                                  8 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  9 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  9 15'Message ID  :'                          A
+     A            MSGID          7A  O  9 29COLOR(WHT)                               A
+     A                                  9 37'     File Name  . :'                    A
+     A            UFILE          8A  O  9 57COLOR(WHT)                               A
+     A                                  9 66'  '                                     A
+     A                                  9 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 10 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 10 16'                                  -     A
+     A                                                       '                       A
+     A                                 10 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 11 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UMESG1        51A  O 11 15DSPATR(HI) COLOR(RED)                    A
+     A                                 11 67' '                                      A
+     A                                 11 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 12 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UMESG2        51A  O 12 15DSPATR(HI) COLOR(RED)                    A
+     A                                 12 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 13 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UMESG3        30A  O 13 15DSPATR(HI) COLOR(RED)                    A
+     A                                 13 46'                      '                 A
+     A                                 13 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 14 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 14 15'                                  -     A
+     A                                                         '                     A
+     A                                 14 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 15 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 15 15'Select one of the following option-     A
+     A                                      s. Then Enter.     '                     A
+     A                                 15 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 16 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 16 15'                                  -     A
+     A                                                         '                     A
+     A                                 16 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 17 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UEROPT         1A  B 17 15DSPATR(UL) DSPATR(HI)                    A
+     A                                      VALUES('1' '2' '3')                      A
+     A                                 17 17' 1. Continue at the beginning of p-     A
+     A                                      rogram           '                       A
+     A                                 17 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 18 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 18 15'   2. Cancel the processing of the-     A
+     A                                       program           '                     A
+     A                                 18 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 19 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 19 15'   3. Return control to the system-     A
+     A                                       error handler     '                     A
+     A                                 19 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 20 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 20 15'                                  -     A
+     A                                                         '                     A
+     A                                 20 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 21 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 21 15'Enter                             -     A
+     A                                                         '  DSPATR(HI)         A
+     A                                 21 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 22 13'                                  -     A
+     A                                                             '                 A
+     A                                      DSPATR(RI) COLOR(TRQ)                    A
+     A*********************************************************************          A
+     A          R MSGRCD                    TEXT('MSG SFL RECORD')                   A
+     A                                      SFL                                      A
+     A                                      SFLMSGRCD(24)                            A
+     A            MSGKEY                    SFLMSGKEY                                A
+     A            PGM                       SFLPGMQ                                  A**********
+     A*********************************************************************          A
+     A          R MSGCTL                    TEXT('MSG SFL CONTROL')                  A
+     A                                      OVERLAY SFLCTL(MSGRCD) SFLSIZ(10)        A
+     A                                      SFLPAG(1) SFLDSPCTL SFLDSP SFLINZ        A N98
+     A N98                                  SFLEND                                   A
+     A            PGM                       SFLPGMQ                                  A*
+     A*                                                                              A*

@@ -1,0 +1,851 @@
+     F/TITLE MNU030 Copy User Details
+     F*****************************************************************
+     F* Copyright   ** KDP Software Limited **    1996
+     F*****************************************************************
+     F*
+     F*  Program ID          -    MNU030
+     F*  Application ID      -    MNU030
+     F*  Application Name    -    Copy User Details
+     F*  Date Generated      -    Feb 1, 1996
+     F*
+     F*****************************************************************
+     F*  Files Usage
+     F*
+     F*  MNUUSR      - (U/DISK   ) Menu Users                  MA
+     F*  MNUHED      - (I/DISK   ) Menu Heading file           MB
+     F*  MNUOPT      - (U/DISK   ) Menu Options                MC
+     F*  MNUHEDX     - (U/DISK   ) Menu Heading file           MB
+     F*
+     F*****************************************************************
+     F*  Function Of Subroutines
+     F*
+     F* SMAIN - Main flow of the program.
+     F* SEND - END of program.
+     F* SMSG - Error messages to job log.
+     F* S001   - SETLL D.MENU,F.MNUUSR,PRTUSR
+     F* S002   - WRITE D.MENU,F.MNUUSR
+     F* S003   - SETLL D.MENU,F.MNUHED,prfusr
+     F* S004   - GETREC D.MENU,F.MNUHED,*NE,prfusr
+     F* S005   - Process To Reset File Pointer(EOF) - MNUHED
+     F* S006   - WRITE d.menu,f.mnuhed
+     F* S007   - GETREC D.MENU,F.MNUHED,*eq,prfusr,wkmnuc
+     F* S008   - SETLL D.MENU,F.MNUopt,prfusr
+     F* S009   - GETREC D.MENU,F.MNUOPT,*NE,PRFUSR
+     F* S010   - Process To Reset File Pointer(EOF) - MNUOPT
+     F* S011   - WRITE d.menu,f.mnuopt
+     F* S012   - GETREC D.MENU,F.MNUOPt,*eq,prfusr,wkmnuc,wkoptc
+     F* SEXCP - Dummy EXCPT(s) and Read(s)
+     F* SFERR - File Exception Handler
+     F* SMVTOF - Move Fields From Work Area To File(s)
+     F* SMVTOW - Move Fields From File(s) To Work Area
+     F*
+     F*****************************************************************
+     F*            F i l e     S p e c i f i c a t i o n
+     F*****************************************************************
+     FMNUHED  IF  E           K        DISK
+     F                                              KINFDS FIDS02
+     F                                              KINFSR SFERR
+     FMNUUSR  UF  E           K        DISK                      A
+     F                                              KINFDS FIDS01
+     F                                              KINFSR SFERR
+     FMNUOPT  UF  E           K        DISK                      A
+     F                                              KINFDS FIDS03
+     F                                              KINFSR SFERR
+     FMNUHEDX UF  E                    DISK                      A
+     F                                              KINFDS FIDS04
+     F            MNUHEDF                           KRENAMEMNUHEDFX
+     F                                              KINFSR SFERR
+     F*
+     E*****************************************************************
+     E*      A r r a y  /  T a b l e   S p e c i f i c a t i o n
+     E*****************************************************************
+     E                    A1      1   7 80               Alpha constants i
+     E*
+     I*****************************************************************
+     I*            I n p u t    S p e c i f i c a t i o n
+     I*****************************************************************
+     IMNUUSRF
+     I              MAGUSER                         RN0001
+     IFIDS02      DS
+     I                                     *STATUS  STS02
+     I                                    B 397 4000REC02
+     IFIDS03      DS
+     I                                     *STATUS  STS03
+     I                                    B 397 4000REC03
+     IFIDS01      DS
+     I                                     *STATUS  STS01
+     I                                    B 397 4000REC01
+     IFIDS04      DS
+     I                                     *STATUS  STS04
+     I                                    B 397 4000REC04
+     I*
+     I* Date Manipulation Data Struct.
+     I*
+     I            DS
+     I                                        1   80X1CDAT
+     I                                        1   60X1DATE
+     I                                        1   20X12
+     I                                        3   40X34
+     I                                        5   60X56
+     I                                        7   80X78
+     I*
+     C*****************************************************************
+     C*            P a r a m e t e r     L i s t
+     C*****************************************************************
+     C*
+     C           *ENTRY    PLIST
+     C                     PARM           RTPARM  1
+     C                     PARM           PRFUSR  5
+     C                     PARM           PRCMNU  1
+     C                     PARM           PRCOPT  1
+     C                     PARM           PRTUSR 10
+     C                     PARM           PRREC   1
+     C*
+     C           PMSGCL    PLIST
+     C                     PARM           MSGACT  1
+     C                     PARM           MSGID   7
+     C                     PARM           MSGF   10
+     C                     PARM           MSGFL  10
+     C                     PARM           MSGDTA132
+     C*****************************************************************
+     C*                   K e y      L i s t
+     C*****************************************************************
+     C*
+     C           K0001     KLIST
+     C                     KFLD           KAUS01
+     C*
+     C           K0002     KLIST
+     C                     KFLD           KAGU01
+     C*
+     C           K0003     KLIST
+     C                     KFLD           KAGU01
+     C                     KFLD           KBMN02
+     C*
+     C           K0004     KLIST
+     C                     KFLD           KAGU01
+     C                     KFLD           KBMN02
+     C                     KFLD           KCOP03
+     C*
+     C*****************************************************************
+     C*        V a r i a b l e s     D e c l a r a t i o n
+     C*****************************************************************
+     C           LRFLAG    IFNE 'N'
+     C           *LIKE     DEFN MBMNUC    WBMNUC           Menu
+     C           *LIKE     DEFN MBMNUD    WBMNUD           Menu Description
+     C           *LIKE     DEFN MBUSER    WBUSER           User
+     C           *LIKE     DEFN MCACTA    WCACTA           Add
+     C           *LIKE     DEFN MCACTD    WCACTD           Delete
+     C           *LIKE     DEFN MCACTR    WCACTR           Revise
+     C           *LIKE     DEFN MCMNUC    WCMNUC           Menu
+     C           *LIKE     DEFN MCOPTC    WCOPTC           Option
+     C           *LIKE     DEFN MCOPTD    WCOPTD           Option Description
+     C           *LIKE     DEFN MCPGMN    WCPGMN           Program Name
+     C           *LIKE     DEFN MCPGMT    WCPGMT           Program Type
+     C           *LIKE     DEFN MCPRM1    WCPRM1           Parameter
+     C           *LIKE     DEFN MCPRM2    WCPRM2           Parameter
+     C           *LIKE     DEFN MCPRM3    WCPRM3           Parameter
+     C           *LIKE     DEFN MCPRM4    WCPRM4           Parameter
+     C           *LIKE     DEFN MCSPGM    WCSPGM           Secondary Program Nam
+     C           *LIKE     DEFN MCUSER    WCUSER           User
+     C           *LIKE     DEFN MAACTA    WAACTA           Add
+     C           *LIKE     DEFN MAACTD    WAACTD           Delete
+     C           *LIKE     DEFN MAACTR    WAACTR           Revise
+     C           *LIKE     DEFN MAFORN    WAFORN           Forename
+     C           *LIKE     DEFN RN0001    WK0001           Group User
+     C           *LIKE     DEFN MASURN    WASURN           Surname
+     C           *LIKE     DEFN MAUSER    WAUSER           User
+     C           *LIKE     DEFN REC02     HRC02
+     C           *LIKE     DEFN MBUSER    HBUSER
+     C           *LIKE     DEFN MBMNUC    HBMNUC
+     C           *LIKE     DEFN REC03     HRC03
+     C           *LIKE     DEFN MCUSER    HCUSER
+     C           *LIKE     DEFN MCMNUC    HCMNUC
+     C           *LIKE     DEFN MCOPTC    HCOPTC
+     C           *LIKE     DEFN REC01     HRC01
+     C           *LIKE     DEFN MAUSER    HAUSER
+     C                     MOVE *ZEROS    NARG1  309       Numer argument1
+     C                     MOVE *ZEROS    NRSLT  309       Numeric result
+     C                     MOVE *BLANKS   DATFMT  3        Date format
+     C                     MOVE *ZEROS    SVDAT   60       Save date
+     C                     MOVE *ZEROS    SVYY    20       Save year
+     C                     MOVE *ZEROS    SVMM    20       Save month
+     C                     MOVE *ZEROS    SVDD    20       Save days
+     C                     MOVE *ZEROS    SVDAYS  30       Save days
+     C                     MOVE *ZEROS    SVLEAP  10       If leap year
+     C                     MOVE *ZEROS    FEB     20       NOD in feb/Leap
+     C                     MOVE *ZEROS    C1      30       Numeric wrk fld
+     C                     MOVE *ZEROS    SVCY    40       Save days
+     C                     MOVE *ZEROS    SVCC    20       Save century
+     C                     MOVE 1         CHKVAR  10       Perform Valid.
+     C                     MOVE *BLANKS   WKMNUC  5
+     C                     MOVE *BLANKS   WKOPTC  5
+     C                     MOVE *ZEROS    LCK02   10       File lock flag
+     C                     MOVE *ZEROS    LCK03   10       File lock flag
+     C                     MOVE *ZEROS    LCK01   10       File lock flag
+     C                     MOVE *ZEROS    LCK04   10       File lock flag
+     C                     MOVE 'N'       IOFLAG  1
+     C                     MOVE *BLANKS   SWRD01  1        RD STS
+     C                     MOVE *BLANKS   SWRD02  1        RD STS
+     C                     MOVE *BLANKS   SWRD03  1        RD STS
+     C                     MOVE *BLANKS   KAUS01 10        MAUSER
+     C                     MOVE *BLANKS   KAGU01 10        MAGUSER
+     C                     MOVE *BLANKS   KBMN02  5        MBMNUC
+     C                     MOVE *BLANKS   KCOP03  5        MCOPTC
+     C                     MOVE *ZEROS    RSLT01  10
+     C                     MOVE *ZEROS    X1CDAT           Init DS/*DTA flds
+     C                     MOVE 'N'       MSGFLG  1        Display Msg Flg
+     C                     MOVE *ZEROS    UERCNT  10
+     C                     MOVE *BLANKS   URSUME  6
+     C                     Z-ADD*ZEROS    WCNTR   30       COUNTER
+     C                     Z-ADD*ZEROS    WGETR   30       COUNTER
+     C                     Z-ADD*ZEROS    NRSLT0 309
+     C                     Z-ADD*ZEROS    SVS02   50       SV STS
+     C                     Z-ADD*ZEROS    SVS03   50       SV STS
+     C                     Z-ADD1         XYES    10       *YES keyword
+     C                     Z-ADD*ZEROS    XNO     10       *NO keyword
+     C                     Z-ADD*ZEROS    WFILE#  20       FILE#
+     C                     END
+     C                     MOVE *BLANK    LRFLAG  1
+     C*
+     C/EJECT
+     C*****************************************************************
+     C*        M a i n l i n e      R o u t i n e
+     C*****************************************************************
+     C                     EXSR SMAIN
+     C*
+     C/EJECT
+     C*****************************************************************
+     C* SMAIN - Main flow of the program.
+     C*****************************************************************
+     C           SMAIN     BEGSR
+     C*
+     C*                                                               *
+     C* *** Add User to User file If a new user
+     C* SETLL D.MENU,F.MNUUSR,PRTUSR
+     C*
+     C                     EXSR S001
+     C* IF %sts(d.menu,f.mnuusr) = *NO
+     C*  Status of last file I/O
+     C           STS01     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XNO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ 1
+     C* MAUSER = PRTUSR
+     C                     MOVE PRTUSR    WAUSER
+     C* MAACTA = ' '
+     C                     MOVE *BLANKS   WAACTA
+     C* MAACTD = ' '
+     C                     MOVE *BLANKS   WAACTD
+     C* MAACTR = ' '
+     C                     MOVE *BLANKS   WAACTR
+     C* MAGUSER = ' '
+     C                     MOVEL*BLANKS   WK0001
+     C* MAFORN = ' '
+     C                     MOVEL*BLANKS   WAFORN
+     C* MASURN = ' '
+     C                     MOVEL*BLANKS   WASURN
+     C* WRITE D.MENU,F.MNUUSR
+     C*
+     C                     EXSR S002
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* *** Copy Menu Details
+     C* IF prcmnu = 'Y'
+     C           PRCMNU    IFEQ 'Y'
+     C* SETLL D.MENU,F.MNUHED,prfusr
+     C*
+     C                     EXSR S003
+     C* GETREC D.MENU,F.MNUHED,*NE,prfusr
+     C*
+     C                     EXSR S004
+     C* PRREC = 'N' ; Records to copy = No
+     C                     MOVE 'N'       PRREC
+     C*                                                               *
+     C* DOW %sts(d.menu,f.mnuhed) = *yes
+     C*  Status of last file I/O
+     C           STS02     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XYES
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C                     Z-ADDNRSLT0    RSLT01
+     C           RSLT01    DOWEQ1
+     C* PRREC = 'Y'
+     C                     MOVE 'Y'       PRREC
+     C*                                                               *
+     C* Save Key fields to re-position file after write
+     C* WKMNUC = mbmnuc
+     C                     MOVE WBMNUC    WKMNUC
+     C*                                                               *
+     C* MBUSER = prtusr
+     C                     MOVE PRTUSR    WBUSER
+     C* WRITE d.menu,f.mnuhed
+     C*
+     C                     EXSR S006
+     C*                                                               *
+     C* Re-Position File
+     C* GETREC D.MENU,F.MNUHED,*eq,prfusr,wkmnuc
+     C*
+     C                     EXSR S007
+     C*                                                               *
+     C* GETREC D.MENU,F.MNUHED,*NE,prfusr
+     C*
+     C                     EXSR S004
+     C* END                                                           *
+     C*  Status of last file I/O
+     C           STS02     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XYES
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C                     Z-ADDNRSLT0    RSLT01
+     C                     END
+     C*                                                               *
+     C* *** Copy Option Details
+     C* IF (prcopt = 'Y') & (prrec = 'Y')
+     C           PRCOPT    IFEQ 'Y'
+     C           PRREC     ANDEQ'Y'
+     C* SETLL D.MENU,F.MNUopt,prfusr
+     C*
+     C                     EXSR S008
+     C* GETREC D.MENU,F.MNUOPT,*NE,PRFUSR
+     C*
+     C                     EXSR S009
+     C*                                                               *
+     C* DOW %sts(d.menu,f.mnuopt) = *yes
+     C*  Status of last file I/O
+     C           STS03     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XYES
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C                     Z-ADDNRSLT0    RSLT01
+     C           RSLT01    DOWEQ1
+     C*                                                               *
+     C* Save Key fields to re-position file after write
+     C* WKMNUC = mcmnuc
+     C                     MOVE WCMNUC    WKMNUC
+     C* WKOPTC = mcoptc
+     C                     MOVE WCOPTC    WKOPTC
+     C*                                                               *
+     C* MCUSER = prtusr
+     C                     MOVE PRTUSR    WCUSER
+     C* WRITE d.menu,f.mnuopt
+     C*
+     C                     EXSR S011
+     C*                                                               *
+     C* Re-Position File
+     C* GETREC D.MENU,F.MNUOPt,*eq,prfusr,wkmnuc,wkoptc
+     C*
+     C                     EXSR S012
+     C*                                                               *
+     C* GETREC D.MENU,F.MNUOPT,*NE,prfusr
+     C*
+     C                     EXSR S009
+     C* END                                                           *
+     C*  Status of last file I/O
+     C           STS03     IFEQ *ZERO
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C           NRSLT0    IFEQ XYES
+     C                     Z-ADD1         NRSLT0
+     C                     ELSE
+     C                     Z-ADD0         NRSLT0
+     C                     END
+     C                     Z-ADDNRSLT0    RSLT01
+     C                     END
+     C* END                                                           *
+     C                     END
+     C* END                                                           *
+     C                     END
+     C                     EXSR SEND
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SEND - END of program.
+     C*****************************************************************
+     C           SEND      BEGSR
+     C*
+     C           LRFLAG    IFEQ 'Y'
+     C           LRFLAG    OREQ *BLANK
+     C                     MOVE '1'       *INLR
+     C                     END                             LRFLAG EQ 'Y'
+     C                     RETRN
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SMSG - Error messages to job log.
+     C*        calls message handling program to add error
+     C*        messages to job log or extract message from message file
+     C*****************************************************************
+     C           SMSG      BEGSR
+     C*
+     C                     CALL 'CLMSG'   PMSGCL
+     C                     ENDSR
+     C/EJECT
+     C**************************************************************************
+     C* S001   - SETLL D.MENU,F.MNUUSR,PRTUSR
+     C**************************************************************************
+     C           S001      BEGSR
+     C                     Z-ADD1         WFILE#           SET FILE#
+     C                     MOVE 'Y'       SWRD01           RD.SW.MNUUSR    MNUUS
+     C                     MOVE 'N'       SWRD02           RD.SW.MNUHED    MNUOP
+     C                     MOVE 'N'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C*
+     C                     MOVELPRTUSR    KAUS01
+     C                     MOVELPRTUSR    HAUSER           User
+     C                     MOVELPRTUSR    MAUSER           User
+     C*
+     C           K0001     SETLLMNUUSR                   90
+     C           *IN90     IFEQ '0'                        REC NOT MATCH
+     C                     Z-ADD12        STS01            SYMUL NOT FND
+     C                     END                             *IN90=0
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S002   - WRITE D.MENU,F.MNUUSR
+     C**************************************************************************
+     C           S002      BEGSR
+     C                     Z-ADD1         WFILE#           SET FILE#
+     C                     MOVEL*BLANKS   MACHG            Allow Change of Locat
+     C                     MOVEL*BLANKS   MADFV1           Default Value for Lev
+     C                     MOVEL*BLANKS   MADFV2           Default Value for Lev
+     C                     MOVEL*BLANKS   MADFV3           Default Value for Lev
+     C                     EXSR SMVTOF                     MOVE FLD TO FILE
+     C                     WRITEMNUUSRF                90  ADD REC TO MNUUSR
+     C*
+     C           *IN90     IFEQ *ZERO                      RECORD ADDED
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     MOVELA1,1      MSGDTA           Record added to file
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     ELSE
+     C                     MOVELA1,2      MSGDTA           Unable to add record
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     END                             END-STATUS
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S003   - SETLL D.MENU,F.MNUHED,prfusr
+     C**************************************************************************
+     C           S003      BEGSR
+     C                     Z-ADD3         WFILE#           SET FILE#
+     C                     MOVE 'Y'       SWRD02           RD.SW.MNUHED    MNUOP
+     C                     MOVE 'N'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C                     MOVEL*LOVAL    HBMNUC           Menu
+     C*
+     C                     MOVELPRFUSR    KAGU01
+     C                     MOVELPRFUSR    HBUSER           User
+     C                     MOVELPRFUSR    MBUSER           User
+     C*
+     C           K0002     SETLLMNUHED                   90
+     C           *IN90     IFEQ '0'                        REC NOT MATCH
+     C                     Z-ADD12        STS02            SYMUL NOT FND
+     C                     END                             *IN90=0
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S004   - GETREC D.MENU,F.MNUHED,*NE,prfusr
+     C**************************************************************************
+     C           S004      BEGSR
+     C                     Z-ADD2         WFILE#           SET FILE#
+     C                     MOVEL*BLANK    KAGU01
+     C                     MOVELPRFUSR    KAGU01
+     C           K0002     READEMNUHED                 9190
+     C           *IN90     IFEQ '1'
+     C           *IN91     OREQ '1'
+     C                     MOVE 'N'       SWRD02           RD.SW.MNUHED    MNUOP
+     C                     Z-ADD*ZERO     HRC02            ZERO RRN
+     C                     ELSE
+     C                     MOVE 'Y'       SWRD02           RD.SW.MNUHED    MNUOP
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     END
+     C*
+     C                     EXSR S005                       CHK EOF
+     C*
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S005   - Process To Reset File Pointer(EOF) - MNUHED
+     C**************************************************************************
+     C           S005      BEGSR
+     C*
+     C           SWRD02    IFNE 'Y'                        RD.SW.MNUHED    MNUOP
+     C           STS02     ANDNE1122                       RCD LOCK
+     C           STS02     ANDNE1218                       RCD LOCK
+     C*
+     C                     MOVE 'Y'       SWRD02           RD.SW.MNUHED    MNUOP
+     C                     Z-ADDSTS02     SVS02            SAVE FILE STS
+     C                     MOVEL*BLANK    KAGU01           User
+     C                     MOVELMBUSER    KAGU01
+     C           K0002     SETGTMNUHED
+     C                     Z-ADDSVS02     STS02            RESTORE FILE STS
+     C*
+     C                     MOVELA1,3      MSGDTA           The end of the file w
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     END
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S006   - WRITE d.menu,f.mnuhed
+     C**************************************************************************
+     C           S006      BEGSR
+     C                     Z-ADD2         WFILE#           SET FILE#
+     C                     EXSR SMVTOF                     MOVE FLD TO FILE
+     C                     Z-ADD4         WFILE#           SET FILE#
+     C                     WRITEMNUHEDFX               90  ADD REC TO MNUHED
+     C                     Z-ADDSTS04     STS02            SYNC STATUS
+     C*
+     C           *IN90     IFEQ *ZERO                      RECORD ADDED
+     C                     Z-ADDREC04     REC02
+     C                     Z-ADD2         WFILE#           SET FILE#
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     MOVELA1,4      MSGDTA           Record added to file
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     ELSE
+     C                     MOVELA1,5      MSGDTA           Unable to add record
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     END                             END-STATUS
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S007   - GETREC D.MENU,F.MNUHED,*eq,prfusr,wkmnuc
+     C**************************************************************************
+     C           S007      BEGSR
+     C                     Z-ADD2         WFILE#           SET FILE#
+     C                     MOVEL*BLANK    KAGU01
+     C                     MOVELPRFUSR    KAGU01
+     C                     MOVEL*BLANK    KBMN02
+     C                     MOVELWKMNUC    KBMN02
+     C           K0003     CHAINMNUHED               9091
+     C           *IN90     IFEQ '1'
+     C           *IN91     OREQ '1'
+     C                     MOVE 'N'       SWRD02           RD.SW.MNUHED    MNUOP
+     C                     Z-ADD*ZERO     HRC02            ZERO RRN
+     C                     ELSE
+     C                     MOVE 'Y'       SWRD02           RD.SW.MNUHED    MNUOP
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     END
+     C*
+     C*
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S008   - SETLL D.MENU,F.MNUopt,prfusr
+     C**************************************************************************
+     C           S008      BEGSR
+     C                     Z-ADD4         WFILE#           SET FILE#
+     C                     MOVE 'Y'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C                     MOVEL*LOVAL    HCOPTC           Option
+     C*
+     C                     MOVELPRFUSR    KAGU01
+     C                     MOVELPRFUSR    HCUSER           User
+     C                     MOVELPRFUSR    MCUSER           User
+     C*
+     C           K0002     SETLLMNUOPT                   90
+     C           *IN90     IFEQ '0'                        REC NOT MATCH
+     C                     Z-ADD12        STS03            SYMUL NOT FND
+     C                     END                             *IN90=0
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S009   - GETREC D.MENU,F.MNUOPT,*NE,PRFUSR
+     C**************************************************************************
+     C           S009      BEGSR
+     C                     Z-ADD3         WFILE#           SET FILE#
+     C                     MOVEL*BLANK    KAGU01
+     C                     MOVELPRFUSR    KAGU01
+     C           K0002     READEMNUOPT              N  9190
+     C           *IN90     IFEQ '1'
+     C           *IN91     OREQ '1'
+     C                     MOVE 'N'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C                     Z-ADD*ZERO     HRC03            ZERO RRN
+     C                     ELSE
+     C                     MOVE 'Y'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     END
+     C*
+     C                     EXSR S010                       CHK EOF
+     C*
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S010   - Process To Reset File Pointer(EOF) - MNUOPT
+     C**************************************************************************
+     C           S010      BEGSR
+     C*
+     C           SWRD03    IFNE 'Y'                        RD.SW.MNUOPT    MNUPG
+     C           STS03     ANDNE1122                       RCD LOCK
+     C           STS03     ANDNE1218                       RCD LOCK
+     C*
+     C                     MOVE 'Y'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C                     Z-ADDSTS03     SVS03            SAVE FILE STS
+     C                     MOVEL*BLANK    KAGU01           User
+     C                     MOVELMCUSER    KAGU01
+     C           K0002     SETGTMNUOPT
+     C                     Z-ADDSVS03     STS03            RESTORE FILE STS
+     C*
+     C                     MOVELA1,3      MSGDTA           The end of the file w
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     END
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S011   - WRITE d.menu,f.mnuopt
+     C**************************************************************************
+     C           S011      BEGSR
+     C                     Z-ADD3         WFILE#           SET FILE#
+     C                     EXSR SMVTOF                     MOVE FLD TO FILE
+     C                     WRITEMNUOPTF                90  ADD REC TO MNUOPT
+     C*
+     C           *IN90     IFEQ *ZERO                      RECORD ADDED
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     MOVELA1,6      MSGDTA           Record added to file
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     ELSE
+     C                     MOVELA1,7      MSGDTA           Unable to add record
+     C                     MOVE 'A'       MSGACT           SET ON ADD FLAG
+     C                     EXSR SMSG                       GET THE MESSAGE
+     C                     END                             END-STATUS
+     C                     ENDSR
+     C*
+     C/EJECT
+     C**************************************************************************
+     C* S012   - GETREC D.MENU,F.MNUOPt,*eq,prfusr,wkmnuc,wkoptc
+     C**************************************************************************
+     C           S012      BEGSR
+     C                     Z-ADD3         WFILE#           SET FILE#
+     C                     MOVEL*BLANK    KAGU01
+     C                     MOVELPRFUSR    KAGU01
+     C                     MOVEL*BLANK    KBMN02
+     C                     MOVELWKMNUC    KBMN02
+     C                     MOVEL*BLANK    KCOP03
+     C                     MOVELWKOPTC    KCOP03
+     C           K0004     CHAINMNUOPT              N9091
+     C           *IN90     IFEQ '1'
+     C           *IN91     OREQ '1'
+     C                     MOVE 'N'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C                     Z-ADD*ZERO     HRC03            ZERO RRN
+     C                     ELSE
+     C                     MOVE 'Y'       SWRD03           RD.SW.MNUOPT    MNUPG
+     C                     EXSR SMVTOW                     MOVE FLD TO WORK
+     C                     END
+     C*
+     C*
+     C                     ENDSR
+     C*
+     C/EJECT
+     C*****************************************************************
+     C* SEXCP - Dummy EXCPT(s) and Read(s)
+     C*****************************************************************
+     C           SEXCP     BEGSR
+     C                     UNLCKMNUUSR                 91  MNUUSR    MNUHED    M
+     C                     UNLCKMNUOPT                 91  MNUOPT    MNUHEDX
+     C                     UNLCKMNUHEDX                91  MNUHEDX
+     C                     READ MNUUSR                   90
+     C                     READ MNUHEDX                  90
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SFERR - File Exception Handler
+     C*****************************************************************
+     C           SFERR     BEGSR
+     C                     MOVE 'Y'       MSGFLG           MSG FLAG ON
+     C           WFILE#    IFEQ 1                          MNUUSR
+     C           STS01     IFEQ 1218                       LOCK(SYS)
+     C                     Z-ADD1122      STS01            ASSET LOCK STATUS
+     C                     ELSE
+     C           STS01     IFEQ 1211                       CLOSED FILE
+     C                     ELSE
+     C                     Z-ADD1121      STS01            TRIGGER TO EXEC NEXT
+     C                     END
+     C                     END
+     C                     END
+     C           WFILE#    IFEQ 2                          MNUHED
+     C           STS02     IFEQ 1218                       LOCK(SYS)
+     C                     Z-ADD1122      STS02            ASSET LOCK STATUS
+     C                     ELSE
+     C           STS02     IFEQ 1211                       CLOSED FILE
+     C                     ELSE
+     C                     Z-ADD1121      STS02            TRIGGER TO EXEC NEXT
+     C                     END
+     C                     END
+     C                     END
+     C           WFILE#    IFEQ 3                          MNUOPT
+     C           STS03     IFEQ 1218                       LOCK(SYS)
+     C                     Z-ADD1122      STS03            ASSET LOCK STATUS
+     C                     ELSE
+     C           STS03     IFEQ 1211                       CLOSED FILE
+     C                     ELSE
+     C                     Z-ADD1121      STS03            TRIGGER TO EXEC NEXT
+     C                     END
+     C                     END
+     C                     END
+     C           WFILE#    IFEQ 4                          MNUHEDX
+     C           STS04     IFEQ 1218                       LOCK(SYS)
+     C                     Z-ADD1122      STS04            ASSET LOCK STATUS
+     C                     ELSE
+     C           STS04     IFEQ 1211                       CLOSED FILE
+     C                     ELSE
+     C                     Z-ADD1121      STS04            TRIGGER TO EXEC NEXT
+     C                     END
+     C                     END
+     C                     END
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SMVTOF - Move Fields From Work Area To File(s)
+     C*****************************************************************
+     C           SMVTOF    BEGSR
+     C*          ------------------------------------------------------
+     C*          | Move Fields From Work Area To File - MNUUSR
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 01
+     C                     MOVELWAACTA    MAACTA           Add
+     C                     MOVELWAACTD    MAACTD           Delete
+     C                     MOVELWAACTR    MAACTR           Revise
+     C                     MOVELWAFORN    MAFORN           Forename
+     C                     MOVELWK0001    RN0001           Group User
+     C                     MOVELWASURN    MASURN           Surname
+     C                     MOVELWAUSER    MAUSER           User
+     C                     ELSE
+     C*          ------------------------------------------------------
+     C*          | Move Fields From Work Area To File - MNUHED
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 02
+     C                     MOVELWBMNUC    MBMNUC           Menu
+     C                     MOVELWBMNUD    MBMNUD           Menu Description
+     C                     MOVELWBUSER    MBUSER           User
+     C                     ELSE
+     C*          ------------------------------------------------------
+     C*          | Move Fields From Work Area To File - MNUOPT
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 03
+     C                     MOVELWCACTA    MCACTA           Add
+     C                     MOVELWCACTD    MCACTD           Delete
+     C                     MOVELWCACTR    MCACTR           Revise
+     C                     MOVELWCMNUC    MCMNUC           Menu
+     C                     MOVELWCOPTC    MCOPTC           Option
+     C                     MOVELWCOPTD    MCOPTD           Option Description
+     C                     MOVELWCPGMN    MCPGMN           Program Name
+     C                     MOVELWCPGMT    MCPGMT           Program Type
+     C                     MOVELWCPRM1    MCPRM1           Parameter
+     C                     MOVELWCPRM2    MCPRM2           Parameter
+     C                     MOVELWCPRM3    MCPRM3           Parameter
+     C                     MOVELWCPRM4    MCPRM4           Parameter
+     C                     MOVELWCSPGM    MCSPGM           Secondary Program Nam
+     C                     MOVELWCUSER    MCUSER           User
+     C                     END
+     C                     END
+     C                     END
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SMVTOW - Move Fields From File(s) To Work Area
+     C*****************************************************************
+     C           SMVTOW    BEGSR
+     C*          ------------------------------------------------------
+     C*          | Move Fields From File To Work Area - MNUUSR
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 01
+     C                     MOVELMAACTA    WAACTA           Add
+     C                     MOVELMAACTD    WAACTD           Delete
+     C                     MOVELMAACTR    WAACTR           Revise
+     C                     MOVELMAFORN    WAFORN           Forename
+     C                     MOVELRN0001    WK0001           Group User
+     C                     MOVELMASURN    WASURN           Surname
+     C                     MOVELMAUSER    WAUSER           User
+     C                     Z-ADDREC01     HRC01
+     C                     MOVELMAUSER    HAUSER           User
+     C                     ELSE
+     C*          ------------------------------------------------------
+     C*          | Move Fields From File To Work Area - MNUHED
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 02
+     C                     MOVELMBMNUC    WBMNUC           Menu
+     C                     MOVELMBMNUD    WBMNUD           Menu Description
+     C                     MOVELMBUSER    WBUSER           User
+     C                     Z-ADDREC02     HRC02
+     C                     MOVELMBUSER    HBUSER           User
+     C                     MOVELMBMNUC    HBMNUC           Menu
+     C                     ELSE
+     C*          ------------------------------------------------------
+     C*          | Move Fields From File To Work Area - MNUOPT
+     C*          ------------------------------------------------------
+     C           WFILE#    IFEQ 03
+     C                     MOVELMCACTA    WCACTA           Add
+     C                     MOVELMCACTD    WCACTD           Delete
+     C                     MOVELMCACTR    WCACTR           Revise
+     C                     MOVELMCMNUC    WCMNUC           Menu
+     C                     MOVELMCOPTC    WCOPTC           Option
+     C                     MOVELMCOPTD    WCOPTD           Option Description
+     C                     MOVELMCPGMN    WCPGMN           Program Name
+     C                     MOVELMCPGMT    WCPGMT           Program Type
+     C                     MOVELMCPRM1    WCPRM1           Parameter
+     C                     MOVELMCPRM2    WCPRM2           Parameter
+     C                     MOVELMCPRM3    WCPRM3           Parameter
+     C                     MOVELMCPRM4    WCPRM4           Parameter
+     C                     MOVELMCSPGM    WCSPGM           Secondary Program Nam
+     C                     MOVELMCUSER    WCUSER           User
+     C                     Z-ADDREC03     HRC03
+     C                     MOVELMCUSER    HCUSER           User
+     C                     MOVELMCMNUC    HCMNUC           Menu
+     C                     MOVELMCOPTC    HCOPTC           Option
+     C                     END
+     C                     END
+     C                     END
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C*            C o m p i l e   T i m e   A r r a y
+     C*               I n i t i a l i z a t i o n
+     C*****************************************************************
+**   Alpha Constant Array - A1
+Record added to file Menu Users                  MA
+Unable to add record to file Menu Users                  MA
+The end of the file was reached
+Record added to file Menu Heading file           MB
+Unable to add record to file Menu Heading file           MB
+Record added to file Menu Options                MC
+Unable to add record to file Menu Options                MC

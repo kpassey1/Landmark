@@ -1,0 +1,840 @@
+     F/TITLE MNU070   Maintain System Parameters
+     F*****************************************************************
+     F* Copyright   ** KDP Software Limited **    1996
+     F*****************************************************************
+     F*
+     F*  Program ID          -    MNU070
+     F*  Application ID      -    MNU070
+     F*  Application Name    -      Maintain System Parameters
+     F*  Date Generated      -    Feb 1, 1996
+     F*
+     F*****************************************************************
+     F*  Program Narrative
+     F*
+     F*  This program allows the maintenance of all system-wide parameters,
+     F*  such as Company Heading and Location Descriptions.
+     F*
+     F*****************************************************************
+     F*  Files Usage
+     F*
+     F*  MNU070D     - (C/WORKSTN) Generated display file
+     F*
+     F*****************************************************************
+     F*  Function Of Indicators
+     F*
+     F*  SC0001     - Detail Screen for System Parms
+     F*
+     F*  01     - SCR001 / LOC1 : DSPATR(PC)
+     F*  01     - SCR001 / LOC1 : DSPATR(RI)
+     F*  02     - SCR001 / LOC1 : DSPATR(UL)
+     F*  03     - SCR001 / LOC2 : DSPATR(PC)
+     F*  03     - SCR001 / LOC2 : DSPATR(RI)
+     F*  04     - SCR001 / LOC2 : DSPATR(UL)
+     F*  05     - SCR001 / LOC3 : DSPATR(PC)
+     F*  05     - SCR001 / LOC3 : DSPATR(RI)
+     F*  06     - SCR001 / LOC3 : DSPATR(UL)
+     F*  07     - SCR001 / WKCOMP : DSPATR(PC)
+     F*  07     - SCR001 / WKCOMP : DSPATR(RI)
+     F*  08     - SCR001 / WKCOMP : DSPATR(UL)
+     F*  99     - SCR001 OVERLAY
+     F* N79     - SCR001 PUTOVR
+     F*
+     F*****************************************************************
+     F*  Function Of Subroutines
+     F*
+     F* SMAIN - Main flow of the program.
+     F* SEND - END of program.
+     F* S001 - Detail Screen for System Parms
+     F* SMSG - calls message handling program to either clear, add, or
+     F* S001V - Detail Screen for System Parms
+     F* *PSSR - Program Execution Errors Handler
+     F* SATRIB - Display Attribute Handler
+     F*
+     F*****************************************************************
+     F*            F i l e     S p e c i f i c a t i o n
+     F*****************************************************************
+     FMNU070D CF  E                    WORKSTN
+     F                                              KINFDS DSPFDS
+     F*
+     E*****************************************************************
+     E*      A r r a y  /  T a b l e   S p e c i f i c a t i o n
+     E*****************************************************************
+     E                    A1      1   1 80               Alpha constants i
+     E                    DA6        15  1               Fld Attr. Wrk Ary
+     E                    DA3        17  2               Fld Attr. Wrk Ary
+     E                    DA1     1   7 24   DA2    34   Fld Attr. Indic t
+     E*
+     I*****************************************************************
+     I*            I n p u t    S p e c i f i c a t i o n
+     I*****************************************************************
+     I*
+     I* Software Application
+     I*
+     I@DS001      DS                             30
+     I                                        1  30 WKSOFT
+     I*
+     I* Company Heading
+     I*
+     I@DS002      DS                             30
+     I                                        1  30 WKCOMP
+     I*
+     I* Level 1 Description
+     I*
+     I@DS003      DS                             15
+     I                                        1  15 LOC1
+     I*
+     I* Level 2 Description
+     I*
+     I@DS004      DS                             15
+     I                                        1  15 LOC2
+     I*
+     I* Level 3 Description
+     I*
+     I@DS005      DS                             15
+     I                                        1  15 LOC3
+     I*
+     I* Selection Program
+     I*
+     I@DS006      DS                             10
+     I                                        1  10 WKPGM1
+     I*
+     I* INFDS for cursor location
+     I*
+     IDSPFDS      DS
+     I                                      370 370 ROW
+     I                                      371 371 COL
+     I                                    B 378 3790SFLRRN
+     I*
+     I* Work Data Structure for cursor
+     I*
+     I@DS007      DS
+     I                                    B   1   20HALFWD
+     I                                        2   2 BYTE2
+     I*
+     I* Display Attribute Structure
+     I*
+     I@DS008      DS
+     I                                        1  10 FLDSCR
+     I                                       11  20 FLDNAM
+     I                                       21  240FLDINX
+     I                                       25  25 DSPERR
+     I                                       26  26 #DS
+     I                                       27  27 #HI
+     I                                       28  28 #RI
+     I                                       29  29 #UL
+     I                                       30  30 #BL
+     I                                       31  31 #CS
+     I                                       32  32 #PC
+     I                                       33  33 #ND
+     I                                       34  34 #PR
+     I                                       35  35 #GN
+     I                                       36  36 #RD
+     I                                       37  37 #PK
+     I                                       38  38 #WT
+     I                                       39  39 #TQ
+     I                                       40  40 #YW
+     I                                       41  41 #BU
+     I                                       27  41 DA6
+     I                                       11  41 #ATRIB
+     I                                       25  280#FROM
+     I                                       29  320#TO
+     I                                       25  320#CLF
+     I                                        1  24 #MAP
+     I*
+     I* Date Manipulation Data Struct.
+     I*
+     I            DS
+     I                                        1   80X1CDAT
+     I                                        1   60X1DATE
+     I                                        1   20X12
+     I                                        3   40X34
+     I                                        5   60X56
+     I                                        7   80X78
+     I*
+     I* Message data structure
+     I*
+     I@DS009      DS
+     I                                        1 132 MSGDTA
+     I                                        1  51 UMESG1
+     I                                       52 102 UMESG2
+     I                                      103 132 UMESG3
+     I*
+     I* Program status data structure
+     I*
+     ISDS        SDS
+     I                                      244 253 WSID
+     I                                      254 263 USER
+     I                                     *PROGRAM PGM
+     I                                       11  150USTAT
+     I                                       21  28 USRCLN
+     I                                       29  36 UROUTN
+     I                                       40  46 MSGID
+     I                                       81  90 ULIB
+     I                                       91 170 UMSGTX
+     I                                      201 208 UFILE
+     I                                      209 213 UFSTAT
+     I                                      228 235 UFSRCL
+     I                                      264 2690UJOBN
+     I                                      288 2930UCDAT
+     I                                      294 2990UCTIM
+     I*
+     C*****************************************************************
+     C*            P a r a m e t e r     L i s t
+     C*****************************************************************
+     C*
+     C           P0001     PLIST
+     C                     PARM           BAT
+     C                     PARM           RN0002
+     C                     PARM           RN0001
+     C                     PARM           ACT
+     C                     PARM           OK
+     C*
+     C           PMSGCL    PLIST
+     C                     PARM           MSGACT  1
+     C                     PARM           MSGID
+     C                     PARM           MSGF   10
+     C                     PARM           MSGFL  10
+     C                     PARM           MSGDTA
+     C*
+     C           PHELP     PLIST
+     C                     PARM           APPSET
+     C                     PARM           APPTYP
+     C                     PARM           APPPGM
+     C                     PARM           APPSCR
+     C                     PARM           APPROW
+     C                     PARM           APPCOL
+     C*****************************************************************
+     C*        V a r i a b l e s     D e c l a r a t i o n
+     C*****************************************************************
+     C           LRFLAG    IFNE 'N'
+     C                     MOVE *ZEROS    NARG1  309       Numer argument1
+     C                     MOVE *ZEROS    NRSLT  309       Numeric result
+     C                     MOVE *BLANKS   DATFMT  3        Date format
+     C                     MOVE *ZEROS    SVDAT   60       Save date
+     C                     MOVE *ZEROS    SVYY    20       Save year
+     C                     MOVE *ZEROS    SVMM    20       Save month
+     C                     MOVE *ZEROS    SVDD    20       Save days
+     C                     MOVE *ZEROS    SVDAYS  30       Save days
+     C                     MOVE *ZEROS    SVLEAP  10       If leap year
+     C                     MOVE *ZEROS    FEB     20       NOD in feb/Leap
+     C                     MOVE *ZEROS    C1      30       Numeric wrk fld
+     C                     MOVE *ZEROS    SVCY    40       Save days
+     C                     MOVE *ZEROS    SVCC    20       Save century
+     C                     MOVE 1         CHKVAR  10       Perform Valid.
+     C                     MOVE *BLANKS   ACT     1
+     C                     MOVE *BLANKS   BAT     1
+     C                     MOVE *ZEROS    EXTSCR  10
+     C                     MOVE *BLANKS   OK      1
+     C                     MOVE *BLANKS   RN0001 10        Program Name
+     C                     MOVE *ZEROS    UPDFLG  10
+     C                     MOVE *BLANKS   RN0002 10        User Id
+     C                     MOVE 'N'       IOFLAG  1
+     C                     MOVE *BLANKS   SCRNID  8        Scrn ID
+     C                     MOVE *BLANKS   DSPLY   1        Display screen flag
+     C                     MOVE 'N'       CMDKEY  1         Cmd key pressed flag
+     C                     MOVE *ZEROS    VALIDF  10       Flag for validation S
+     C                     MOVE *ZEROS    LISTF   10       List of value flag
+     C                     MOVE *ZEROS    X1CDAT           Init DS/*DTA flds
+     C                     MOVE 'N'       MSGFLG  1        Display Msg Flg
+     C                     MOVE *BLANKS   APPSET 10
+     C                     MOVE 'D'       APPTYP  1
+     C                     MOVE *BLANKS   APPSCR 10
+     C                     MOVE *ZEROS    APPROW  30
+     C                     MOVE *ZEROS    APPCOL  30
+     C                     MOVE *ZEROS    UERCNT  10
+     C                     MOVE *BLANKS   URSUME  6
+     C                     MOVEL'MENUDEV' APPSET
+     C                     MOVELPGM       APPPGM 10
+     C                     Z-ADD*ZEROS    X0      40       INDEX 0
+     C                     Z-ADD*ZEROS    X1      30       INDEX 1
+     C                     Z-ADD*ZEROS    DAS002  50
+     C                     Z-ADD*ZEROS    DAS003  50
+     C                     Z-ADD*ZEROS    DAS004  50
+     C                     Z-ADD*ZEROS    DAS005  50
+     C                     Z-ADD*ZEROS    DAS006  50
+     C                     Z-ADD*ZEROS    DAS001  50
+     C                     Z-ADD1         CALLST  10       CALL STS pressed flag
+     C                     END
+     C                     MOVE *BLANK    LRFLAG  1
+     C                     MOVE '0'       *IN60
+     C*
+     C           *NAMVAR   DEFN MNUAPP    @DS001
+     C           *NAMVAR   DEFN MNUCOMP   @DS002
+     C           *NAMVAR   DEFN MNULEV1   @DS003
+     C           *NAMVAR   DEFN MNULEV2   @DS004
+     C           *NAMVAR   DEFN MNULEV3   @DS005
+     C           *NAMVAR   DEFN MNUPGM1   @DS006
+     C/EJECT
+     C*****************************************************************
+     C*        M a i n l i n e      R o u t i n e
+     C*****************************************************************
+     C                     EXSR SMAIN
+     C*
+     C/EJECT
+     C*****************************************************************
+     C* SMAIN - Main flow of the program.
+     C*****************************************************************
+     C           SMAIN     BEGSR
+     C*
+     C*
+     C* Clear Message Subfile.
+     C                     MOVE 'C'       MSGACT
+     C                     EXSR SMSG
+     C                     WRITEMSGCTL
+     C*      *------------------------------------------*
+     C*      *  Process all screens.                    *
+     C*      *------------------------------------------*
+     C                     MOVEL'SC0001'  SCRNID
+     C           *INLR     DOWEQ'0'
+     C           SCRNID    CASEQ'SC0001'  S001
+     C           SCRNID    CASEQ'SEND'    SEND
+     C                     END
+     C                     END
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SEND - END of program.
+     C*****************************************************************
+     C           SEND      BEGSR
+     C*
+     C           LRFLAG    IFEQ 'Y'
+     C           LRFLAG    OREQ *BLANK
+     C                     MOVE '1'       *INLR
+     C                     END                             LRFLAG EQ 'Y'
+     C                     MOVE *BLANK    SCRNID
+     C                     RETRN
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* S001 - Detail Screen for System Parms
+     C*****************************************************************
+     C           S001      BEGSR
+     C*
+     C                     MOVE 'Y'       DSPLY
+     C                     MOVEA'01010101'*IN,1
+     C                     MOVEA'1'       *IN,80
+     C*                                                               *
+     C* *** Check option is allowed
+     C* BAT = 'I'
+     C                     MOVE 'I'       BAT
+     C* USER = *userid
+     C                     MOVE *BLANKS   RN0002
+     C                     MOVELUSER      RN0002
+     C* PGM = 'MNU070C'
+     C                     MOVE *BLANKS   RN0001
+     C                     MOVEL'MNU070C' RN0001
+     C* ACT = '2'
+     C                     MOVE '2'       ACT
+     C* OK = ' '
+     C                     MOVE *BLANKS   OK
+     C* CALL 'MNU040C',bat,user,pgm,act,ok
+     C                     Z-ADD1         CALLST
+     C                     CALL 'MNU040C' P0001        93
+     C                     MOVE '1'       *IN79
+     C           *IN93     IFEQ '1'
+     C                     MOVE 'Y'       MSGFLG
+     C                     Z-ADD*ZERO     CALLST
+     C                     END
+     C* IF ok = 'N'
+     C           OK        IFEQ 'N'
+     C* DSPERR *NONE,'MNU0006','MENUERR'
+     C                     MOVEL'MNU0006' MSGID
+     C                     MOVEL'MENUERR' MSGF
+     C                     MOVE 'A'       MSGACT
+     C                     EXSR SMSG
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     MOVE *BLANK    SCRNID
+     C                     MOVEL'SEND'    SCRNID
+     C                     GOTO $00199
+     C* END                                                           *
+     C                     END
+     C*                                                               *
+     C* *** Clear detail screens, setup field attributes,
+     C* *** and retrieve field values from files.
+     C* POSCUR 0,0
+     C                     Z-ADD*ZERO     LIN
+     C                     Z-ADD*ZERO     POS
+     C                     MOVE '1'       *IN79
+     C*                                                               *
+     C* Refresh exit flag at start of detail
+     C* EXTSCR = 0
+     C                     Z-ADD*ZERO     EXTSCR
+     C*                                                               *
+     C* Process Edit, Delete, and Display action choices
+     C* WKCOMP = ' '
+     C                     MOVEL*BLANKS   WKCOMP
+     C* LOC1 = ' '
+     C                     MOVEL*BLANKS   LOC1
+     C* LOC2 = ' '
+     C                     MOVEL*BLANKS   LOC2
+     C* LOC3 = ' '
+     C                     MOVEL*BLANKS   LOC3
+     C* WKSOFT = ' '
+     C                     MOVEL*BLANKS   WKSOFT
+     C* WKPGM1 = ' '
+     C                     MOVEL*BLANKS   WKPGM1
+     C* GETDTAA MNUCOMP,*LOCK
+     C           *LOCK     IN   @DS002                 93
+     C                     Z-ADD0         DAS002
+     C           *IN93     IFEQ '1'
+     C                     Z-ADDUSTAT     DAS002
+     C                     END
+     C* GETDTAA MNULEV1,*LOCK
+     C           *LOCK     IN   @DS003                 93
+     C                     Z-ADD0         DAS003
+     C           *IN93     IFEQ '1'
+     C                     Z-ADDUSTAT     DAS003
+     C                     END
+     C* GETDTAA MNULEV2,*LOCK
+     C           *LOCK     IN   @DS004                 93
+     C                     Z-ADD0         DAS004
+     C           *IN93     IFEQ '1'
+     C                     Z-ADDUSTAT     DAS004
+     C                     END
+     C* GETDTAA MNULEV3,*LOCK
+     C           *LOCK     IN   @DS005                 93
+     C                     Z-ADD0         DAS005
+     C           *IN93     IFEQ '1'
+     C                     Z-ADDUSTAT     DAS005
+     C                     END
+     C* GETDTAA MNUPGM1,*LOCK
+     C           *LOCK     IN   @DS006                 93
+     C                     Z-ADD0         DAS006
+     C           *IN93     IFEQ '1'
+     C                     Z-ADDUSTAT     DAS006
+     C                     END
+     C* GETDTAA MNUAPP,*LOCK
+     C           *LOCK     IN   @DS001                 93
+     C                     Z-ADD0         DAS001
+     C           *IN93     IFEQ '1'
+     C                     Z-ADDUSTAT     DAS001
+     C                     END
+     C*
+     C           DSPLY     DOWEQ'Y'
+     C*
+     C                     MOVE '1'       *IN79
+     C                     MOVE '0'       *IN99
+     C* Write sub-file messages
+     C           MSGFLG    IFEQ 'Y'
+     C                     MOVE '1'       *IN99
+     C                     WRITEMSGCTL
+     C                     END
+     C                     EXFMTSCR001
+     C                     MOVEA'01010101'*IN,1
+     C                     MOVEA'1'       *IN,80
+     C                     MOVE 'N'       CMDKEY
+     C*
+     C* Clear Message Subfile.
+     C           MSGFLG    IFEQ 'Y'
+     C                     MOVE 'C'       MSGACT
+     C                     EXSR SMSG
+     C                     WRITEMSGCTL
+     C                     END
+     C*
+     C* Cancel
+     C*
+     C           *INKL     IFEQ '1'
+     C           CMDKEY    ANDEQ'N'
+     C* *** Return to list panel on function key 12
+     C* Set exit flag to signal previous screen
+     C* EXTSCR = 1
+     C                     Z-ADD1         EXTSCR
+     C*                                                               *
+     C* Release record if edit or delete functions
+     C* RLSDTAA MNUCOMP
+     C                     UNLCK@DS002                 93
+     C* RLSDTAA MNULEV1
+     C                     UNLCK@DS003                 93
+     C* RLSDTAA MNULEV2
+     C                     UNLCK@DS004                 93
+     C* RLSDTAA MNULEV3
+     C                     UNLCK@DS005                 93
+     C* RLSDTAA MNUPGM1
+     C                     UNLCK@DS006                 93
+     C* RLSDTAA MNUAPP
+     C                     UNLCK@DS001                 93
+     C*                                                               *
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     MOVE *BLANK    SCRNID
+     C                     MOVEL'SEND'    SCRNID
+     C                     GOTO $00199
+     C                     MOVE 'Y'       CMDKEY
+     C                     END
+     C           CMDKEY    IFEQ 'N'
+     C* Process Screen Validation.
+     C           CHKVAR    IFEQ 1
+     C                     EXSR S001V
+     C                     END
+     C           VALIDF    IFEQ 1
+     C           CHKVAR    OREQ 0
+     C* *** Perform updates to file
+     C* POSCUR 0,0
+     C                     Z-ADD*ZERO     LIN
+     C                     Z-ADD*ZERO     POS
+     C                     MOVE '1'       *IN79
+     C*                                                               *
+     C* UPDDTAA mnuCOMP
+     C                     OUT  @DS002                 93
+     C* UPDDTAA mnuLev1
+     C                     OUT  @DS003                 93
+     C* UPDDTAA mnulev2
+     C                     OUT  @DS004                 93
+     C* UPDDTAA mnulev3
+     C                     OUT  @DS005                 93
+     C* UPDDTAA mnupgm1
+     C                     OUT  @DS006                 93
+     C* UPDDTAA mnuapp
+     C                     OUT  @DS001                 93
+     C*                                                               *
+     C* EXTPGM                                                        *
+     C                     MOVE 'Y'       LRFLAG
+     C                     MOVE *BLANK    SCRNID
+     C                     MOVEL'SEND'    SCRNID
+     C                     GOTO $00199
+     C                     END
+     C                     END
+     C                     END
+     C           $00199    ENDSR
+     C/EJECT
+     C*****************************************************************
+     C* SMSG - calls message handling program to either clear, add, or
+     C*        remove messages from message subfile or extracts
+     C*        messages from message files.
+     C*****************************************************************
+     C           SMSG      BEGSR
+     C*
+     C* Add message to message subfile
+     C*
+     C           MSGACT    IFEQ 'A'
+     C           MSGACT    OREQ 'R'
+     C                     MOVE 'Y'       MSGFLG
+     C                     ELSE
+     C* Clear message subfile or extract message from message file.
+     C*
+     C           MSGACT    IFEQ 'C'
+     C           MSGACT    OREQ 'E'
+     C                     MOVE 'N'       MSGFLG
+     C                     END
+     C                     END
+     C*
+     C           MSGACT    IFEQ 'C'
+     C           MSGACT    OREQ 'A'
+     C           MSGACT    OREQ 'E'
+     C                     CALL 'CLMSG'   PMSGCL
+     C                     MOVE *BLANK    MSGID
+     C                     MOVE *BLANK    MSGF
+     C                     MOVE *BLANK    MSGFL
+     C* Do not clear the message data field if message is extracted
+     C* from message file
+     C           MSGACT    IFNE 'E'
+     C                     MOVE *BLANK    MSGDTA
+     C                     END
+     C                     END
+     C*
+     C                     ENDSR
+     C/EJECT
+     C**************************************************************************
+     C* S001V - Detail Screen for System Parms
+     C* Validation subroutine for -- SC0001
+     C**************************************************************************
+     C           S001V     BEGSR
+     C*
+     C                     Z-ADD1         VALIDF
+     C*
+     C           WKCOMP    IFEQ A1,1                       Lst Valid/Invalid val
+     C                     Z-ADD0         LISTF            Invalid value found
+     C                     ELSE
+     C                     Z-ADD1         LISTF            Valid value found
+     C                     END
+     C*
+     C                     Z-ADD0         FLDINX
+     C                     MOVEL'WKCOMP'  FLDNAM
+     C                     MOVEL'SC0001'  FLDSCR
+     C           LISTF     IFEQ 1                          Lst Valid/Invalid val
+     C                     MOVE 'R'       DSPERR
+     C                     EXSR SATRIB
+     C                     ELSE
+     C                     Z-ADD0         VALIDF           Validation failed
+     C                     MOVE *BLANKS   MSGID            Message id.
+     C                     MOVE *BLANKS   MSGF             Message file
+     C                     MOVE *BLANKS   MSGFL            Message library
+     C                     MOVE *BLANKS   MSGDTA           Message text
+     C                     MOVE 'A'       MSGACT           Message action
+     C                     MOVEL'AAA0001' MSGID            Message id.
+     C                     MOVEL'COSHERR' MSGF             Message file
+     C                     EXSR SMSG                       Exsr error handler
+     C                     MOVE 'X'       DSPERR
+     C                     EXSR SATRIB
+     C                     END
+     C*
+     C           LOC1      IFEQ A1,1                       Lst Valid/Invalid val
+     C                     Z-ADD0         LISTF            Invalid value found
+     C                     ELSE
+     C                     Z-ADD1         LISTF            Valid value found
+     C                     END
+     C*
+     C                     Z-ADD0         FLDINX
+     C                     MOVEL'LOC1'    FLDNAM
+     C                     MOVEL'SC0001'  FLDSCR
+     C           LISTF     IFEQ 1                          Lst Valid/Invalid val
+     C                     MOVE 'R'       DSPERR
+     C                     EXSR SATRIB
+     C                     ELSE
+     C                     Z-ADD0         VALIDF           Validation failed
+     C                     MOVE *BLANKS   MSGID            Message id.
+     C                     MOVE *BLANKS   MSGF             Message file
+     C                     MOVE *BLANKS   MSGFL            Message library
+     C                     MOVE *BLANKS   MSGDTA           Message text
+     C                     MOVE 'A'       MSGACT           Message action
+     C                     MOVEL'AAA0001' MSGID            Message id.
+     C                     MOVEL'COSHERR' MSGF             Message file
+     C                     EXSR SMSG                       Exsr error handler
+     C                     MOVE 'X'       DSPERR
+     C                     EXSR SATRIB
+     C                     END
+     C*
+     C           LOC2      IFEQ A1,1                       Lst Valid/Invalid val
+     C                     Z-ADD0         LISTF            Invalid value found
+     C                     ELSE
+     C                     Z-ADD1         LISTF            Valid value found
+     C                     END
+     C*
+     C                     Z-ADD0         FLDINX
+     C                     MOVEL'LOC2'    FLDNAM
+     C                     MOVEL'SC0001'  FLDSCR
+     C           LISTF     IFEQ 1                          Lst Valid/Invalid val
+     C                     MOVE 'R'       DSPERR
+     C                     EXSR SATRIB
+     C                     ELSE
+     C                     Z-ADD0         VALIDF           Validation failed
+     C                     MOVE *BLANKS   MSGID            Message id.
+     C                     MOVE *BLANKS   MSGF             Message file
+     C                     MOVE *BLANKS   MSGFL            Message library
+     C                     MOVE *BLANKS   MSGDTA           Message text
+     C                     MOVE 'A'       MSGACT           Message action
+     C                     MOVEL'AAA0001' MSGID            Message id.
+     C                     MOVEL'COSHERR' MSGF             Message file
+     C                     EXSR SMSG                       Exsr error handler
+     C                     MOVE 'X'       DSPERR
+     C                     EXSR SATRIB
+     C                     END
+     C*
+     C           LOC3      IFEQ A1,1                       Lst Valid/Invalid val
+     C                     Z-ADD0         LISTF            Invalid value found
+     C                     ELSE
+     C                     Z-ADD1         LISTF            Valid value found
+     C                     END
+     C*
+     C                     Z-ADD0         FLDINX
+     C                     MOVEL'LOC3'    FLDNAM
+     C                     MOVEL'SC0001'  FLDSCR
+     C           LISTF     IFEQ 1                          Lst Valid/Invalid val
+     C                     MOVE 'R'       DSPERR
+     C                     EXSR SATRIB
+     C                     ELSE
+     C                     Z-ADD0         VALIDF           Validation failed
+     C                     MOVE *BLANKS   MSGID            Message id.
+     C                     MOVE *BLANKS   MSGF             Message file
+     C                     MOVE *BLANKS   MSGFL            Message library
+     C                     MOVE *BLANKS   MSGDTA           Message text
+     C                     MOVE 'A'       MSGACT           Message action
+     C                     MOVEL'AAA0001' MSGID            Message id.
+     C                     MOVEL'COSHERR' MSGF             Message file
+     C                     EXSR SMSG                       Exsr error handler
+     C                     MOVE 'X'       DSPERR
+     C                     EXSR SATRIB
+     C                     END
+     C*
+     C           VALIDF    IFNE 1
+     C                     MOVE *ZEROS    LIN
+     C                     MOVE *ZEROS    POS
+     C                     END
+     C*
+     C                     ENDSR
+     C**************************************************************************
+     C/EJECT
+     C*****************************************************************
+     C* *PSSR - Program Execution Errors Handler
+     C*****************************************************************
+     C           *PSSR     BEGSR
+     C           UERCNT    IFNE *ZERO
+     C                     MOVEL'*CANCL'  URSUME
+     C                     ELSE
+     C                     Z-ADD1         UERCNT
+     C                     MOVE 'R'       MSGACT
+     C                     MOVE *BLANKS   MSGF
+     C                     MOVEL'QCPFMSG' MSGF
+     C                     MOVE *BLANKS   MSGFL
+     C                     MOVEL'QSYS'    MSGFL
+     C                     MOVE *BLANKS   MSGDTA
+     C           UMSGTX    IFNE *BLANKS
+     C                     MOVELUMSGTX    MSGDTA
+     C                     ELSE
+     C                     MOVELUROUTN    MSGDTA
+     C                     END
+     C*
+     C           USTAT     IFEQ *ZEROS
+     C                     MOVE UFSTAT    USTAT
+     C                     MOVE UFSRCL    USRCLN
+     C                     END
+     C                     MOVE USTAT     USTAT4
+     C*
+     C           MSGID     IFEQ *BLANKS
+     C                     MOVE USTAT4    MSGID
+     C                     MOVEL'RPG'     MSGID
+     C                     MOVEL'QRPGMSGE'MSGF
+     C                     END
+     C*
+     C                     CALL 'CLMSG'   PMSGCL         93
+     C*
+     C                     MOVEL'1'       UEROPT
+     C                     EXFMTPSSR0001
+     C*
+     C           UEROPT    IFEQ '1'
+     C                     MOVEL'*GETIN  'URSUME
+     C                     ELSE
+     C           UEROPT    IFEQ '2'
+     C                     MOVEL'*CANCL  'URSUME
+     C                     ELSE
+     C           UEROPT    IFEQ '3'
+     C                     MOVE '        'URSUME
+     C                     END
+     C                     END
+     C                     END
+     C                     END
+     C*
+     C                     MOVEL*BLANK    MSGID
+     C                     MOVE *ZERO     UERCNT
+     C*
+     C                     ENDSRURSUME
+     C*/EJECT
+     C*****************************************************************
+     C* SATRIB - Display Attribute Handler
+     C*****************************************************************
+     C           SATRIB    BEGSR
+     C*
+     C* FIND TABLE OFFSET BY SCREEN ID AND FIELD NAME AND FIELD INDEX
+     C*
+     C                     Z-ADD1         X0
+     C           #MAP      LOKUPDA1,X0                   90
+     C           *IN90     IFEQ '1'                        IF FIND
+     C                     MOVEADA2,X0    DA3
+     C*
+     C*          ------------------------------------------------------
+     C*          | @DSPERR/VALIDATION FIELD DISPLAY ATTRIBUTES
+     C*          ------------------------------------------------------
+     C           DSPERR    IFNE *BLANK
+     C           DA3,6     IFNE *BLANK                     TURN ON *PC
+     C                     MOVE DA3,6     X1
+     C           DSPERR    IFEQ 'X'
+     C                     MOVE '0'       *IN80
+     C                     MOVEA'1'       *IN,X1
+     C                     ELSE                            x-DSPERR EQ 'X'
+     C                     MOVEA'0'       *IN,X1
+     C                     END                             DSPERR EQ 'X'
+     C                     END                             DA3,6 NE *BLANK
+     C*
+     C           DA3,2     IFNE *BLANK                     TURN ON *RI
+     C                     MOVE DA3,2     X1
+     C           DSPERR    IFEQ 'X'
+     C                     MOVEA'1'       *IN,X1
+     C                     ELSE                            x-DSPERR EQ 'X'
+     C                     MOVEA'0'       *IN,X1
+     C                     END                             DSPERR EQ 'X'
+     C                     END                             DA3,2 NE *BLANK
+     C*
+     C           DA3,3     IFNE *BLANK                     TURN OFF *UL
+     C           DA3,16    ANDEQ' Y'                       KEEP UL
+     C                     MOVE DA3,3     X1
+     C           DSPERR    IFEQ 'X'
+     C                     MOVEA'0'       *IN,X1
+     C                     ELSE                            x-DSPERR EQ 'X'
+     C                     MOVEA'1'       *IN,X1
+     C                     END                             DSPERR EQ 'X'
+     C                     END                             DA3,3 NE *BLANK
+     C                     ELSE                            x-DSPERR NE *BL
+     C*
+     C*          ------------------------------------------------------
+     C*          | *DS - RESET FIELD DISPLAY ATTRIBUTES
+     C*          ------------------------------------------------------
+     C           #DS       IFNE *BLANK
+     C           1         DO   15        X0
+     C           DA3,X0    IFNE *BLANK
+     C           X0        IFEQ 3
+     C           DA3,16    ANDEQ' Y'
+     C                     ELSE                            x-X0 EQ 3
+     C                     MOVE DA3,X0    X1
+     C                     MOVEA'0'       *IN,X1
+     C                     END                             X0 EQ 3
+     C                     END                             DA3,X0 NE *BLAN
+     C                     END                             1 DO 15
+     C*          ------------------------------------------------------
+     C*          | *DS - TURN ON ORIGINAL COLOR ATTRIBUTES
+     C*          |       IF THERE IS NO COLOR SPECIFIED
+     C*          ------------------------------------------------------
+     C           DA3,17    IFNE *BLANK
+     C           #GN       ANDEQ*BLANK
+     C           #RD       ANDEQ*BLANK
+     C           #WT       ANDEQ*BLANK
+     C           #PK       ANDEQ*BLANK
+     C           #TQ       ANDEQ*BLANK
+     C           #YW       ANDEQ*BLANK
+     C           #BU       ANDEQ*BLANK
+     C                     MOVE DA3,17    X1
+     C                     MOVEA'1'       *IN,X1
+     C                     END                             DA3,17 NE *BLAN
+     C                     END                             #DS NE *BLANK
+     C*
+     C*          ------------------------------------------------------
+     C*          | LOOP TO TURN ON/OFF ATTRIBUTE INDICATORS
+     C*          ------------------------------------------------------
+     C           1         DO   15        X0
+     C           DA3,X0    IFNE *BLANK
+     C                     MOVE DA3,X0    X1
+     C*          ------------------------------------------------------
+     C*          | TURN ON ATTRIBUTE INDICATORS
+     C*          ------------------------------------------------------
+     C           DA6,X0    IFNE *BLANK
+     C                     MOVEA'1'       *IN,X1
+     C                     ELSE                            x-DA6,X0 NE *BL
+     C*          ------------------------------------------------------
+     C*          | FOR COLOR ATTRIBUTE, RESET OTHER COLOR THAT ARE
+     C*          | NOT SPECIFIED.
+     C*          ------------------------------------------------------
+     C           X0        IFGE 9
+     C           X0        ANDLE15
+     C           #GN       IFNE *BLANK
+     C           #RD       ORNE *BLANK
+     C           #WT       ORNE *BLANK
+     C           #PK       ORNE *BLANK
+     C           #TQ       ORNE *BLANK
+     C           #YW       ORNE *BLANK
+     C           #BU       ORNE *BLANK
+     C                     MOVEA'0'       *IN,X1
+     C                     END                             #GN NE *BLANK
+     C                     END                             X0 GE 9
+     C                     END                             DA6,X0 NE *BLAN
+     C                     END                             DA3,X0 NE *BLAN
+     C                     END                             1 DO 15
+     C                     END                             DSPERR NE *BLAN
+     C                     END                             *IN90 EQ '1'
+     C*
+     C                     MOVE *BLANK    #ATRIB
+     C                     ENDSR
+     C/EJECT
+     C*****************************************************************
+     C*            C o m p i l e   T i m e   A r r a y
+     C*               I n i t i a l i z a t i o n
+     C*****************************************************************
+**   Alpha Constant Array - A1
+
+**   Display Attribute Map Array - DA1
+                         H R U B C P N P G R P W T Y B K O
+Screen    Field/Grp Idx  I I L L S C D R N D K T Q W U U C
+=========+=========+===+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=============
+SC0001    LOC1      0000  0102    01                   Y
+SC0001    LOC2      0000  0304    03                   Y
+SC0001    LOC3      0000  0506    05                   Y
+SC0001    WKCOMP    0000  0708    07                   Y

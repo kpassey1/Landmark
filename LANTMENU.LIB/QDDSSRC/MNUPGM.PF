@@ -1,0 +1,33 @@
+     A**************************************************************************
+     A*  Copyright   ** KDP Software Limited **  , 1995                        *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         MNUPGM                                             *
+     A*  File Description:  Program Names               MP                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A                                      UNIQUE
+     A          R MNUPGMF
+     A            MPPGMN        10A         TEXT('Program Name')
+     A                                      COLHDG('Program|Name' )
+     A            MPPGMD        30A         TEXT('Program Description')
+     A                                      COLHDG('Description' )
+     A            MPPGMT         1A         TEXT('Program Type')
+     A                                      COLHDG('Pgm|Type' )
+     A            MPPRM1        20A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MPPRM2        20A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MPPRM3        20A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MPPRM4        20A         TEXT('Parameter')
+     A                                      COLHDG('Parameter' )
+     A            MPSPGM        10A         TEXT('Secondary Program Name')
+     A                                      COLHDG('Program|Name' )
+     A          K MPPGMN
+     A          K MPSPGM
+     A*

@@ -1,0 +1,466 @@
+     A******************************************************************             A* Copyrigh
+     A* Copyright   ** KDP Software Limited **    1996                               A**********
+     A******************************************************************             A*
+     A*                                                                              A*  DISPLAY
+     A*  DISPLAY FILE ID     -    MNU050
+     A*  DISPLAY FILE NAME   -        Maintain Program Names
+     A*  DATE CREATED        -    Feb 2, 1996
+     A*                                                                              A**********
+     A******************************************************************             A**********
+     A                                      PRINT                                    A**********
+     A                                      ALTHELP(CA01)                            A**********
+     A                                      CHGINPDFT                                A**********
+     A                                      INDARA                                   A**********
+     A                                      HLPTITLE(' ')                            A**********
+     A                                      HELP                                     A**********
+     A          R SCR001                                                             A**********
+     A N79                                  PUTOVR                                   A**********
+     A                                      SETOFF(79)                               A**********
+     A  99                                  OVERLAY                                  A**********
+     A            USER          10   O  1  2                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            WKCOMP        30   O  1 26                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                  1 73DATE EDTCDE(Y)                           A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            WSID          10   O  2  2                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                  2 73TIME                                     A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            PGM           10   O  3  2                                         A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                  3 26'    Maintain Program Names    '         A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                  5  2'Type one or more action codes. The-     A**********
+     A                                      n Enter.                           -     A**********
+     A                                               '                               A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                  6  4'2=Revise'                               A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                  6 14'4=Delete'                               A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                  6 24'5=Display'                              A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  7  7'Program'                                A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  7 19'Secondary'                              A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  8  2'Act'                                    A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  8  7'Name'                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  8 19'Program'                                A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A                                  8 31'Description'                            A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(WHT)                               A**********
+     A                                      OVRATR                                   A**********
+     A          R SCR001S1                                                           A**********
+     A                                      SFL                                      A**********
+     A  65                                  SFLNXTCHG                                A**********
+     A            FL0001         1  0B  9  2                                         A**********
+     A  03                                  DSPATR(UL)                               A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      EDTCDE(Z)                                A**********
+     A  01                                  DSPATR(PC)                               A**********
+     A  01                                  DSPATR(RI)                               A**********
+     A  04                                  DSPATR(ND)                               A**********
+     A  02                                  DSPATR(PR)                               A**********
+     A            XPPGMN    R        O  9  7REFFLD(MPPGMN MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A            XPSPGM    R        O  9 19REFFLD(MPSPGM MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  07                                  DSPATR(PC)                               A**********
+     A  07                                  DSPATR(RI)                               A**********
+     A            XPPGMD    R        O  9 31REFFLD(MPPGMD MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A            HRC01          9  0H                                               A**********
+     A            HPPGMN    R        H      REFFLD(MPPGMN MNUPGM)                    A**********
+     A                                      ALIAS(ALIAS00001)                        A**********
+     A            HPSPGM    R        H      REFFLD(MPSPGM MNUPGM)                    A**********
+     A                                      ALIAS(ALIAS00002)                        A**********
+     A            INSAV1        99   H                                               A**********
+     A          R SCR001C1                                                           A**********
+     A N79                                  PUTOVR                                   A**********
+     A                                      SETOFF(79)                               A**********
+     A                                      SFLCTL(SCR001S1)                         A**********
+     A  64                                  SFLDSP                                   A**********
+     A  63                                  SFLDSPCTL                                A**********
+     A N63                                  SFLCLR                                   A**********
+     A  66                                  SFLINZ                                   A**********
+     A N67                                  SFLEND                                   A**********
+     A                                      OVERLAY                                  A**********
+     A                                      SFLPAG(11)                               A**********
+     A                                      SFLSIZ(11)                               A**********
+     A                                      CF03 INDTXT(03 'Exit')                   A**********
+     A                                      CF06 INDTXT(06 'Create')                 A**********
+     A                                      CF07 INDTXT(07 'Bkwd')                   A**********
+     A                                      CF08 INDTXT(08 'Fwd')                    A**********
+     A                                      CF12 INDTXT(12 'Cancel')                 A**********
+     A                                      ROLLDOWN(62 'Bkwd')                      A**********
+     A                                      ROLLUP(61 'Fwd')                         A**********
+     A                                      HLPCLR                                   A**********
+     A          H                           HLPARA(*NONE)                            A**********
+     A                                      HLPPNLGRP(SC0001 -                       A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(1 26 1 55)                        A**********
+     A                                      HLPPNLGRP(SC0001WKCOMP -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(9 2 19 2)                         A**********
+     A                                      HLPPNLGRP(SC0001FL0001 -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(9 7 19 16)                        A**********
+     A                                      HLPPNLGRP(SC0001MPPGMN -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(9 19 19 28)                       A**********
+     A                                      HLPPNLGRP(SC0001MPSPGM -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(9 31 19 60)                       A**********
+     A                                      HLPPNLGRP(SC0001MPPGMD -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(21 18 21 27)                      A**********
+     A                                      HLPPNLGRP(SC0001PS0101 -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(21 30 21 39)                      A**********
+     A                                      HLPPNLGRP(SC0001PS0102 -                 A**********
+     A                                      MNU050H)                                 A**********
+     A                                      HLPBDY                                   A**********
+     A          H                           HLPARA(1 1 24 80)                        A**********
+     A                                      HLPPNLGRP(SC0001 -                       A**********
+     A                                      MNU050H)                                 A**********
+     A                                 21  2'Position to . .'                        A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A            PS0101        10   B 21 18                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(UL)                               A**********
+     A                                      COLOR(GRN)                               A**********
+     A  05                                  DSPATR(PR)                               A**********
+     A            PS0102        10   B 21 30                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(UL)                               A**********
+     A                                      COLOR(GRN)                               A**********
+     A  06                                  DSPATR(PR)                               A**********
+     A                                 23  2'Enter  F1=Help  F3=Exit  F6=Create-     A**********
+     A                                        F7=Bkwd  F8=Fwd  F12=Cancel  '         A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(BLU)                               A**********
+     A            RRN01          4S 0H      SFLRCDNBR                                A**********
+     A            XRN01          4S 0H                                               A**********
+     A          R SCR002                                                             A**********
+     A N79                                  PUTOVR                                   A**********
+     A                                      SETOFF(79)                               A**********
+     A                                      OVERLAY                                  A**********
+     A                                      CF12 INDTXT(12 'Cancel')                 A**********
+     A                                      CF14 INDTXT(14 'Delete')                 A**********
+     A                                      HLPCLR                                   A**********
+     A          H                           HLPARA(*NONE)                            A**********
+     A                                      HLPPNLGRP(SC0002 -                       A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(1 26 1 55)                        A**********
+     A                                      HLPPNLGRP(SC0002WKCOMP -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(5 29 5 38)                        A**********
+     A                                      HLPPNLGRP(SC0002MPPGMN -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(6 29 6 38)                        A**********
+     A                                      HLPPNLGRP(SC0002MPSPGM -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(7 29 7 58)                        A**********
+     A                                      HLPPNLGRP(SC0002MPPGMD -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(9 29 9 48)                        A**********
+     A                                      HLPPNLGRP(SC0002MPPRM1 -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(10 29 10 48)                      A**********
+     A                                      HLPPNLGRP(SC0002MPPRM2 -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(11 29 11 48)                      A**********
+     A                                      HLPPNLGRP(SC0002MPPRM3 -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(12 29 12 48)                      A**********
+     A                                      HLPPNLGRP(SC0002MPPRM4 -                 A**********
+     A                                      MNU050H)                                 A**********
+     A          H                           HLPARA(14 29 14 29)                      A**********
+     A                                      HLPPNLGRP(SC0002MPPGMT -                 A**********
+     A                                      MNU050H)                                 A**********
+     A                                      HLPBDY                                   A**********
+     A          H                           HLPARA(1 1 24 80)                        A**********
+     A                                      HLPPNLGRP(SC0002 -                       A**********
+     A                                      MNU050H)                                 A**********
+     A            USER          10   O  1  2                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            WKCOMP        30   O  1 26                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                  1 73DATE EDTCDE(Y)                           A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            WSID          10   O  2  2                                         A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                  2 73TIME                                     A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A            PGM           10   O  3  2                                         A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                  3 26'    Maintain Program Names    '         A**********
+     A                                      OVRATR                                   A**********
+     A                                      DSPATR(HI)                               A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                  5  2'Program Name  . . . . . .'              A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A            XPPGMN    R        B  5 29REFFLD(MPPGMN MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  06                                  DSPATR(PC)                               A**********
+     A  06                                  DSPATR(RI)                               A**********
+     A  04                                  DSPATR(UL)                               A**********
+     A  03                                  DSPATR(PR)                               A**********
+     A                                  6  2'Secondary Program . . . .'              A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A            XPSPGM    R        B  6 29REFFLD(MPSPGM MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A  04                                  DSPATR(UL)                               A**********
+     A  03                                  DSPATR(PR)                               A**********
+     A                                  7  2'Program Description . . .'              A**********
+     A                                      OVRATR                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A            XPPGMD    R        B  7 29REFFLD(MPPGMD MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A                                      CHECK(LC)                                A**********
+     A  05                                  DSPATR(PC)                               A**********
+     A  05                                  DSPATR(RI)                               A**********
+     A  02                                  DSPATR(UL)                               A**********
+     A  01                                  DSPATR(PR)                               A**********
+     A                                  9  2'Parameter 1 . . . . . . .'              A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRATR                                   A**********
+     A            XPPRM1    R        B  9 29REFFLD(MPPRM1 MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      CHECK(LC)                                A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  02                                  DSPATR(UL)                               A**********
+     A  01                                  DSPATR(PR)                               A**********
+     A                                 10  2'Parameter 2 . . . . . . .'              A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRATR                                   A**********
+     A            XPPRM2    R        B 10 29REFFLD(MPPRM2 MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      CHECK(LC)                                A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  02                                  DSPATR(UL)                               A**********
+     A  01                                  DSPATR(PR)                               A**********
+     A                                 11  2'Parameter 3 . . . . . . .'              A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRATR                                   A**********
+     A            XPPRM3    R        B 11 29REFFLD(MPPRM3 MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      CHECK(LC)                                A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  02                                  DSPATR(UL)                               A**********
+     A  01                                  DSPATR(PR)                               A**********
+     A                                 12  2'Parameter 4 . . . . . . .'              A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRATR                                   A**********
+     A            XPPRM4    R        B 12 29REFFLD(MPPRM4 MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      CHECK(LC)                                A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  02                                  DSPATR(UL)                               A**********
+     A  01                                  DSPATR(PR)                               A**********
+     A                                 14  2'Program Type  . . . . . .'              A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRATR                                   A**********
+     A            XPPGMT    R        B 14 29REFFLD(MPPGMT MNUPGM)                    A**********
+     A                                      DLTEDT                                   A**********
+     A                                      COLOR(GRN)                               A**********
+     A                                      OVRDTA                                   A**********
+     A                                      OVRATR                                   A**********
+     A  07                                  DSPATR(PC)                               A**********
+     A  07                                  DSPATR(RI)                               A**********
+     A  02                                  DSPATR(UL)                               A**********
+     A  01                                  DSPATR(PR)                               A**********
+     A                                 23  2'F1=Help  F12=Cancel  F14=Delete'        A**********
+     A                                      COLOR(BLU)                               A**********
+     A                                      OVRATR                                   A**********
+     A*********************************************************************          A
+     A          R PSSR0001                  CLRL(*NO) OVERLAY                        A
+     A                                  1 13'                                  -     A
+     A                                                             '                 A
+     A                                      DSPATR(RI) COLOR(TRQ)                    A
+     A                                  2 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  2 15'PSSR0001'                               A
+     A                                  2 24'       Execution Error Handler    -     A
+     A                                                ' DSPATR(HI)                   A
+     A                                  2 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  3 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  3 15'                                  -     A
+     A                                                         '                     A
+     A                                  3 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  4 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  4 15'Job . . . . :'                          A
+     A            WSID          10A  O  4 29COLOR(WHT)                               A
+     A                                  4 40'  Program  . . :'                       A
+     A            PGM           10A  O  4 57COLOR(WHT)                               A
+     A                                  4 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  5 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  5 15'User  . . . :'                          A
+     A            USER          10A  O  5 29COLOR(WHT)                               A
+     A                                  5 40'  Library  . . :'                       A
+     A            ULIB          10A  O  5 57COLOR(WHT)                               A
+     A                                  5 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  6 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  6 15'Number  . . :'                          A
+     A            UJOBN          6S 0O  6 29COLOR(WHT)                               A
+     A                                  6 36'      Compiled . . :'                   A
+     A            UCDAT          6Y 0O  6 57EDTCDE(Y)  COLOR(WHT)                    A
+     A                                  6 66'  '                                     A
+     A                                  6 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  7 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  7 15'Routine . . :'                          A
+     A            UROUTN         8A  O  7 29COLOR(WHT)                               A
+     A                                  7 38'                  '                     A
+     A            UCTIM          6Y 0O  7 57EDTWRD('  :  :  ')  COLOR(WHT)           A
+     A                                  7 66'  '                                     A
+     A                                  7 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  8 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  8 15'Status Code :'                          A
+     A            USTAT4         4A  O  8 29COLOR(WHT)                               A
+     A                                  8 34'        Source Line. :'                 A
+     A            USRCLN         8A  O  8 57COLOR(WHT)                               A
+     A                                  8 66'  '                                     A
+     A                                  8 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  9 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                  9 15'Message ID  :'                          A
+     A            MSGID          7A  O  9 29COLOR(WHT)                               A
+     A                                  9 37'     File Name  . :'                    A
+     A            UFILE          8A  O  9 57COLOR(WHT)                               A
+     A                                  9 66'  '                                     A
+     A                                  9 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 10 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 10 16'                                  -     A
+     A                                                       '                       A
+     A                                 10 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 11 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UMESG1        51A  O 11 15DSPATR(HI) COLOR(RED)                    A
+     A                                 11 67' '                                      A
+     A                                 11 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 12 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UMESG2        51A  O 12 15DSPATR(HI) COLOR(RED)                    A
+     A                                 12 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 13 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UMESG3        30A  O 13 15DSPATR(HI) COLOR(RED)                    A
+     A                                 13 46'                      '                 A
+     A                                 13 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 14 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 14 15'                                  -     A
+     A                                                         '                     A
+     A                                 14 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 15 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 15 15'Select one of the following option-     A
+     A                                      s. Then Enter.     '                     A
+     A                                 15 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 16 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 16 15'                                  -     A
+     A                                                         '                     A
+     A                                 16 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 17 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A            UEROPT         1A  B 17 15DSPATR(UL) DSPATR(HI)                    A
+     A                                      VALUES('1' '2' '3')                      A
+     A                                 17 17' 1. Continue at the beginning of p-     A
+     A                                      rogram           '                       A
+     A                                 17 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 18 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 18 15'   2. Cancel the processing of the-     A
+     A                                       program           '                     A
+     A                                 18 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 19 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 19 15'   3. Return control to the system-     A
+     A                                       error handler     '                     A
+     A                                 19 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 20 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 20 15'                                  -     A
+     A                                                         '                     A
+     A                                 20 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 21 13' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 21 15'Enter                             -     A
+     A                                                         '  DSPATR(HI)         A
+     A                                 21 69' ' DSPATR(RI) COLOR(TRQ)                A
+     A                                 22 13'                                  -     A
+     A                                                             '                 A
+     A                                      DSPATR(RI) COLOR(TRQ)                    A
+     A*********************************************************************          A
+     A          R MSGRCD                    TEXT('MSG SFL RECORD')                   A
+     A                                      SFL                                      A
+     A                                      SFLMSGRCD(24)                            A
+     A            MSGKEY                    SFLMSGKEY                                A
+     A            PGM                       SFLPGMQ                                  A**********
+     A*********************************************************************          A
+     A          R MSGCTL                    TEXT('MSG SFL CONTROL')                  A
+     A                                      OVERLAY SFLCTL(MSGRCD) SFLSIZ(10)        A
+     A                                      SFLPAG(1) SFLDSPCTL SFLDSP SFLINZ        A N98
+     A N98                                  SFLEND                                   A
+     A            PGM                       SFLPGMQ                                  A*
+     A*                                                                              A*
