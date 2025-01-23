@@ -1,0 +1,137 @@
+:PNLGRP.
+:HELP NAME='SC0001'.
+List Screen for Program Names
+:P.
+This screen displays a list of programs available for the
+menus.
+:LINES.
+Action code 2 = amend program details
+            4 = remove program from the list
+            5 = display program details
+
+To ADD a program name to the list use F6
+:ELINES.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001MPPGMD'.
+Program Description
+:P.
+:EHELP.
+:HELP NAME='SC0001MPPGMN'.
+Program Name
+:P.
+The program name called by the option.
+:EHELP.
+:HELP NAME='SC0001MPSPGM'.
+Secondary Program Name
+:P.
+The program name passed to the program called by the option as the
+first parameter.
+:EHELP.
+:HELP NAME='SC0001PS0101'.
+Position to field-program
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0102'.
+Position to field-Second Pgm
+:P.
+:EHELP.
+:HELP NAME='SC0001WKCOMP'.
+Company heading
+:P.
+:EHELP.
+:HELP NAME='SC0002'.
+Detail Screen for Programs
+:P.
+This screen is used to enter program details, and/or amend
+or view the details.
+
+:P.The program name must be entered.
+
+:P.A program description must be entered.
+
+:P.Up to four parameters can be entered if required.
+
+:P.Program type can be entered.                                 ¹
+:EHELP.
+:HELP NAME='SC0002MPPGMD'.
+Program Description
+:P.
+:EHELP.
+:HELP NAME='SC0002MPPGMN'.
+Program Name
+:P.
+The program name called by the option.
+:EHELP.
+:HELP NAME='SC0002MPPGMT'.
+Program Type
+:P.
+This specifies whether the program is a CL command or an RPG program.
+:LINES.
+Valid values are: C  CL command
+                  R  RPG program
+                  M  Menu
+:ELINES.
+:EHELP.
+:HELP NAME='SC0002MPPRM1'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0002MPPRM2'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0002MPPRM3'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0002MPPRM4'.
+Parameter
+:P.
+Enter parameter required. Valid keywords are:
+:LINES.
+*BLANK or *BLANKS   - passes a parameter with blanks
+*USERID             - passes the user id of the user calling the
+                      program.
+*LEV1, *LEV2, *LEV3 - passes the values as specified in the user
+                      defaults or from the F18 selection
+:ELINES.
+:EHELP.
+:HELP NAME='SC0002MPSPGM'.
+Secondary Program Name
+:P.
+The program name passed as the first parameter, if it is entered, to
+the primary program.
+:EHELP.
+:HELP NAME='SC0002WKCOMP'.
+Company heading
+:P.
+:EHELP.
+:EPNLGRP.

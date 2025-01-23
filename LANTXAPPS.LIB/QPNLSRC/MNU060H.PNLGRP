@@ -1,0 +1,12 @@
+:PNLGRP.
+:HELP NAME='SC0001'.
+List Screen for Menu Options
+:P.
+This screen displays a list of options displayed on a menu
+:EHELP.
+:HELP NAME='SC0002'.
+Detail Screen for Menu
+:P.
+Lardy dar
+:EHELP.
+:EPNLGRP.

@@ -1,0 +1,483 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  DISPLAY FILE ID     -    MNU060
+     A*  DISPLAY FILE NAME   -          Display User Menus
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A                                      PRINT
+     A                                      ALTPAGEDWN(CF08)
+     A                                      CHGINPDFT
+     A                                      ALTPAGEUP(CF07)
+     A                                      INDARA
+     A                                      HLPTITLE('Display User Menus')
+     A                                      HELP
+     A          R SCR001
+     A N79                                  PUTOVR
+     A                                      SETOFF(79)
+     A  99                                  OVERLAY
+     A            USER          10   O  1  2
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      DSPATR(HI)
+     A                                      COLOR(BLU)
+     A            ZZSOFT        30   O  1 26
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      DSPATR(HI)
+     A                                  3  2'Select one of the following:'
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A          R SCR001S1
+     A                                      SFL
+     A  65                                  SFLNXTCHG
+     A            XBMNUC    R        H      REFFLD(MBMNUC MNUHED)
+     A            ##OPT          3   O  5  6
+     A            XBMNUD    R     A  O  5 10REFFLD(MBMNUD MNUHED)
+     A                                      DLTEDT
+     A                                      COLOR(GRN)
+     A  05                                  DSPATR(PC)
+     A  05                                  DSPATR(RI)
+     A            HRC04          9  0H
+     A            HBUSER    R        H      REFFLD(MBUSER MNUHED)
+     A                                      ALIAS(ALIAS00001)
+     A            HBMNUC    R        H      REFFLD(MBMNUC MNUHED)
+     A                                      ALIAS(ALIAS00002)
+     A            INSAV1        99   H
+     A          R SCR001C1
+     A N79                                  PUTOVR
+     A                                      SETOFF(79)
+     A                                      SFLCTL(SCR001S1)
+     A  64                                  SFLDSP
+     A N64                                  ERASE(SCR001S1)
+     A  63                                  SFLDSPCTL
+     A N63                                  SFLCLR
+     A  66                                  SFLINZ
+     A N67                                  SFLEND
+     A                                      OVERLAY
+     A                                      SFLPAG(14)
+     A                                      SFLSIZ(15)
+     A                                      CF01 INDTXT(01 'Help')
+     A                                      CF03 INDTXT(03 'Exit')
+     A                                      CF04 INDTXT(04 'Prompt')
+     A                                      CF12 INDTXT(12 'Previous')
+     A                                      CF21 INDTXT(21 'Command')
+     A                                      HLPCLR
+     A          H                           HLPARA(*NONE)
+     A                                      HLPPNLGRP(SC0001 -
+     A                                      MNU060H)
+     A                                 20  2'Selection:'
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 21  2'===>'
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A            ##SELC         2  0B 21  8
+     A                                      OVRDTA
+     A                                      OVRATR
+     A  02                                  DSPATR(UL)
+     A                                      COLOR(GRN)
+     A                                      EDTCDE(Z)
+     A  01                                  DSPATR(PC)
+     A  01                                  DSPATR(RI)
+     A                                 21 53'Company . . . . . .'
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A            RN0002         3   B 21 74
+     A                                      OVRDTA
+     A                                      OVRATR
+     A  04                                  DSPATR(UL)
+     A                                      COLOR(GRN)
+     A  03                                  DSPATR(PC)
+     A  03                                  DSPATR(RI)
+     A                                 23  2'F1=Help'
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A                                 23 11'F3=Exit'
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A                                 23 20'F4=Prompt'
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A                                 23 31'F12=Prev'
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A            RN0003        11   O 23 41
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A            RRN01          4S 0H      SFLRCDNBR
+     A            XRN01          4S 0H
+     A          R SCR002
+     A N79                                  PUTOVR
+     A                                      SETOFF(79)
+     A                                      PROTECT
+     A                                      OVERLAY
+     A            USER          10   O  1  2
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A            CENHED        50   O  1 16
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      DSPATR(HI)
+     A                                      COLOR(WHT)
+     A                                  3  2'Select one of the following:'
+     A                                      OVRATR
+     A                                      COLOR(BLU)
+     A          R SCR002S1
+     A                                      SFL
+     A  65                                  SFLNXTCHG
+     A            XCUSER    R        H      REFFLD(MCUSER MNUOPT)
+     A            XCSPGM    R        H      REFFLD(MCSPGM MNUOPT)
+     A            XCPRM4    R        H      REFFLD(MCPRM4 MNUOPT)
+     A            XCPRM3    R        H      REFFLD(MCPRM3 MNUOPT)
+     A            XCPRM2    R        H      REFFLD(MCPRM2 MNUOPT)
+     A            XCPRM1    R        H      REFFLD(MCPRM1 MNUOPT)
+     A            XCPGMT    R        H      REFFLD(MCPGMT MNUOPT)
+     A            XCPGMN    R        H      REFFLD(MCPGMN MNUOPT)
+     A            XCOPTC    R        H      REFFLD(MCOPTC MNUOPT)
+     A            ##NUM          3   O  5  6
+     A            XCOPTD    R     A  O  5 10REFFLD(MCOPTD MNUOPT)
+     A                                      DLTEDT
+     A                                      COLOR(GRN)
+     A  03                                  DSPATR(PC)
+     A  03                                  DSPATR(RI)
+     A            HRC05          9  0H
+     A            HCUSER    R        H      REFFLD(MCUSER MNUOPT)
+     A                                      ALIAS(ALIAS00003)
+     A            HCMNUC    R        H      REFFLD(MCMNUC MNUOPT)
+     A                                      ALIAS(ALIAS00004)
+     A            HCOPTC    R        H      REFFLD(MCOPTC MNUOPT)
+     A                                      ALIAS(ALIAS00005)
+     A            INSAV1        99   H
+     A          R SCR002C1
+     A N79                                  PUTOVR
+     A                                      SETOFF(79)
+     A                                      SFLCTL(SCR002S1)
+     A  64                                  SFLDSP
+     A N64                                  ERASE(SCR002S1)
+     A  63                                  SFLDSPCTL
+     A N63                                  SFLCLR
+     A  66                                  SFLINZ
+     A N67                                  SFLEND
+     A                                      OVERLAY
+     A                                      SFLPAG(14)
+     A                                      SFLSIZ(15)
+     A                                      CF01 INDTXT(01 'Help')
+     A                                      CF03 INDTXT(03 'Exit')
+     A                                      CF12 INDTXT(12 'Cancel')
+     A                                      CF21 INDTXT(21 'CMD Line')
+     A                                 20  2'Selection:'
+     A                                      COLOR(GRN)
+     A                                      OVRATR
+     A                                 21  2'===>'
+     A                                      COLOR(GRN)
+     A                                      OVRATR
+     A            SOPT           2  0B 21  8
+     A  02                                  DSPATR(UL)
+     A                                      COLOR(GRN)
+     A                                      EDTCDE(Z)
+     A                                      OVRDTA
+     A                                      OVRATR
+     A  01                                  DSPATR(PC)
+     A  01                                  DSPATR(RI)
+     A                                 23  2'F1=Help'
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                 23 11'F3=Home  F12=Prev'
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A            RN0003        11   O 23 30
+     A                                      COLOR(BLU)
+     A                                      OVRDTA
+     A                                      OVRATR
+     A            RRN02          4S 0H      SFLRCDNBR
+     A            XRN02          4S 0H
+     A          R SCR003
+     A N79                                  PUTOVR
+     A                                      SETOFF(79)
+     A                                      OVERLAY
+     A                                      CLRL(*NO)
+     A                                      CF12 INDTXT(12 'Cancel')
+     A                                      ROLLDOWN(62 'Bkwd')
+     A                                      ROLLUP(61 'Fwd')
+     A                                      HLPCLR
+     A          H                           HLPARA(*NONE)
+     A                                      HLPPNLGRP(SC0003 -
+     A                                      MNU060H)
+     A                                  5  7'                                  -
+     A                                                                    '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                  6  7' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                  6  9'                      '
+     A                                  6 32'Help Text'
+     A                                      DSPATR(HI)
+     A                                      COLOR(WHT)
+     A                                      OVRATR
+     A                                  6 42'                           '
+     A                                  6 70' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                  7  7' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                  7  9'                                  -
+     A                                                                '
+     A                                  7 70' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                  8  7' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A            T05001        60   O  8  9
+     A                                      COLOR(GRN)
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                  8 70' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                  9  7' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A            T05002        60   O  9  9
+     A                                      COLOR(GRN)
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                  9 70' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A                                 10  7' '
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                      OVRATR
+     A            T05003        60   O 10  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 10 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 11  7' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A            T05004        60   O 11  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 11 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 12  7' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A            T05005        60   O 12  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 12 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 13  7' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A            T05006        60   O 13  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 13 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 14  7' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A            T05007        60   O 14  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 14 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 15  7' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A            T05008        60   O 15  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 15 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 16  7' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A            T05009        60   O 16  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 16 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 17  7' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A            T05010        60   O 17  9
+     A                                      OVRDTA
+     A                                      OVRATR
+     A                                      COLOR(GRN)
+     A                                 17 70' '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A                                 18  7'                                  -
+     A                                                                    '
+     A                                      OVRATR
+     A                                      DSPATR(RI)
+     A                                      COLOR(BLU)
+     A*********************************************************************
+     A          R PSSR0001                  CLRL(*NO) OVERLAY
+     A                                  1 13'                                  -
+     A                                                             '
+     A                                      DSPATR(RI) COLOR(TRQ)
+     A                                  2 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  2 15'PSSR0001'
+     A                                  2 24'       Execution Error Handler    -
+     A                                                ' DSPATR(HI)
+     A                                  2 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                  3 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  3 15'                                  -
+     A                                                         '
+     A                                  3 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                  4 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  4 15'Job . . . . :'
+     A            WSID          10A  O  4 29COLOR(WHT)
+     A                                  4 40'  Program  . . :'
+     A            PGM           10A  O  4 57COLOR(WHT)
+     A                                  4 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                  5 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  5 15'User  . . . :'
+     A            USER          10A  O  5 29COLOR(WHT)
+     A                                  5 40'  Library  . . :'
+     A            ULIB          10A  O  5 57COLOR(WHT)
+     A                                  5 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                  6 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  6 15'Number  . . :'
+     A            UJOBN          6S 0O  6 29COLOR(WHT)
+     A                                  6 36'      Compiled . . :'
+     A            UCDAT          6Y 0O  6 57EDTCDE(Y)  COLOR(WHT)
+     A                                  6 66'  '
+     A                                  6 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                  7 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  7 15'Routine . . :'
+     A            UROUTN         8A  O  7 29COLOR(WHT)
+     A                                  7 38'                  '
+     A            UCTIM          6Y 0O  7 57EDTWRD('  :  :  ')  COLOR(WHT)
+     A                                  7 66'  '
+     A                                  7 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                  8 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  8 15'Status Code :'
+     A            USTAT4         4A  O  8 29COLOR(WHT)
+     A                                  8 34'        Source Line. :'
+     A            USRCLN         8A  O  8 57COLOR(WHT)
+     A                                  8 66'  '
+     A                                  8 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                  9 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                  9 15'Message ID  :'
+     A            MSGID          7A  O  9 29COLOR(WHT)
+     A                                  9 37'     File Name  . :'
+     A            UFILE          8A  O  9 57COLOR(WHT)
+     A                                  9 66'  '
+     A                                  9 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 10 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 10 16'                                  -
+     A                                                       '
+     A                                 10 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 11 13' ' DSPATR(RI) COLOR(TRQ)
+     A            UMESG1        51A  O 11 15DSPATR(HI) COLOR(RED)
+     A                                 11 67' '
+     A                                 11 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 12 13' ' DSPATR(RI) COLOR(TRQ)
+     A            UMESG2        51A  O 12 15DSPATR(HI) COLOR(RED)
+     A                                 12 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 13 13' ' DSPATR(RI) COLOR(TRQ)
+     A            UMESG3        30A  O 13 15DSPATR(HI) COLOR(RED)
+     A                                 13 46'                      '
+     A                                 13 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 14 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 14 15'                                  -
+     A                                                         '
+     A                                 14 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 15 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 15 15'Select one of the following option-
+     A                                      s. Then Enter.     '
+     A                                 15 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 16 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 16 15'                                  -
+     A                                                         '
+     A                                 16 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 17 13' ' DSPATR(RI) COLOR(TRQ)
+     A            UEROPT         1A  B 17 15DSPATR(UL) DSPATR(HI)
+     A                                      VALUES('1' '2' '3')
+     A                                 17 17' 1. Continue at the beginning of p-
+     A                                      rogram           '
+     A                                 17 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 18 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 18 15'   2. Cancel the processing of the-
+     A                                       program           '
+     A                                 18 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 19 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 19 15'   3. Return control to the system-
+     A                                       error handler     '
+     A                                 19 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 20 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 20 15'                                  -
+     A                                                         '
+     A                                 20 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 21 13' ' DSPATR(RI) COLOR(TRQ)
+     A                                 21 15'Enter                             -
+     A                                                         '  DSPATR(HI)
+     A                                 21 69' ' DSPATR(RI) COLOR(TRQ)
+     A                                 22 13'                                  -
+     A                                                             '
+     A                                      DSPATR(RI) COLOR(TRQ)
+     A*********************************************************************
+     A          R MSGRCD                    TEXT('MSG SFL RECORD')
+     A                                      SFL
+     A                                      SFLMSGRCD(24)
+     A            MSGKEY                    SFLMSGKEY
+     A            PGM                       SFLPGMQ
+     A*********************************************************************
+     A          R MSGCTL                    TEXT('MSG SFL CONTROL')
+     A                                      OVERLAY SFLCTL(MSGRCD) SFLSIZ(10)
+     A                                      SFLPAG(1) SFLDSPCTL SFLDSP SFLINZ
+     A N98                                  SFLEND
+     A            PGM                       SFLPGMQ
+     A*
