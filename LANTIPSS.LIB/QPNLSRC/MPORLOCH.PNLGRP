@@ -1,0 +1,161 @@
+:PNLGRP.
+:HELP NAME='SC0003'.
+List Screen for WRKPORD
+:P.
+The display shows basic details of the Purchase order with the amount
+ordered and the amount received so far.
+If details of receipts are displayed, you can use the displayed action
+ codes to display, revise or delete them.
+If there are none displayed, use function key F6 to create a new entry
+
+:EHELP.
+:HELP NAME='SC0003FL0002'.
+Action select field
+:P.
+Enter an action code from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0003PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SC0003PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SC0003POIDESC'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SC0003POITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0003PONLALL'.
+Allocated account
+:P.
+:EHELP.
+:HELP NAME='SC0003POQORD'.
+Quantity ordered
+:P.
+:EHELP.
+:HELP NAME='SC0003POQRCVD'.
+Quantity received
+:P.
+:EHELP.
+:HELP NAME='SC0003POSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0003POWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0003PS0301'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0003SVDESC'.
+Company
+:P.
+:EHELP.
+:HELP NAME='SC0003WKLOCN'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0003WKPRICE'.
+Price
+:P.
+:EHELP.
+:HELP NAME='SC0003WKQRCVD'.
+Quantity Received
+:P.
+:EHELP.
+:HELP NAME='SC0003WKSEQ'.
+Auto incr. Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0003WKWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0004'.
+Detail Screen for WRKPORD
+:P.
+:EHELP.
+:HELP NAME='SC0004POIDESC'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SC0004POITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0004SVDESC'.
+Company
+:P.
+:EHELP.
+:HELP NAME='SC0004WKLOCN'.
+Location
+:P.
+Enter a location within the selected warehouse where the item is to be
+ stored. Use F4 to prompt for a selection of those available.
+
+If the Inventory Management system is being used, this is a required e
+ntry.
+:EHELP.
+:HELP NAME='SC0004WKPRICE'.
+Price
+:P.
+Enter the cost price of the item being received.
+:EHELP.
+:HELP NAME='SC0004WKQRCVD'.
+Quantity Received
+:P.
+Enter the quantity to be received.
+:EHELP.
+:HELP NAME='SC0004WKWHSE'.
+Warehouse Number
+:P.
+Enter a warehouse number where the item is to be received into. Use F4
+ to prompt for e selection of those available.
+
+If the Inventory Management system is being used, this is a required e
+ntry
+:EHELP.
+:HELP NAME='SC0005'.
+       Select Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0005T01'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0005T02'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0005WKITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0006'.
+       Select Location
+:P.
+:EHELP.
+:HELP NAME='SC0006T03'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0006T04'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0006WKITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0006WKWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:EPNLGRP.

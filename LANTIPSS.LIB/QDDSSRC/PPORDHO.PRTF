@@ -1,0 +1,187 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PPORDHO
+     A*  APPLICATION ID      -    PPORDH
+     A*  APPLICATION NAME    -    Print Purchase Orders
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                    92'Align X in Box >  ### X-
+     A                                       ###'
+     A                                      SKIPB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - ABB')
+     A*
+     A                                    52'Deliver To             -
+     A                                                     Purchase -
+     A                                      Order No.'
+     A                                      SKIPB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            WAD1          35A       52TEXT('WAD1')
+     A                                      SPACEB(01)
+     A            WK0016    R             +3TEXT('Purchase Order Number')
+     A                                      REFFLD(PHPORD PORDH)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            WAD2          35A       52TEXT('WAD2')
+     A                                      SPACEB(01)
+     A                                   +24'Page'
+     A            PAGES          4S      115TEXT('PAGE')
+     A                                      EDTCDE(L)
+     A*
+     A            WAD3          35A       52TEXT('WAD3')
+     A                                      SPACEB(01)
+     A*
+     A            WAD4          35A       52TEXT('WAD4')
+     A                                      SPACEB(01)
+     A                                    +1'Order Placed By     Ord-
+     A                                      er Date'
+     A*
+     A            WAD5          35A       52TEXT('WAD5')
+     A                                      SPACEB(01)
+     A*
+     A            WAD6          35A       52TEXT('WAD6')
+     A                                      SPACEB(01)
+     A            WK0010    R             +1TEXT('Buyers Code')
+     A                                      REFFLD(PHBUYER PORDH)
+     A            RN0009        10A      +15TEXT('WSENTDT')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     3'Ln  Item Number        -
+     A                                        Description           -
+     A                                                  Unit     Dat-
+     A                                      e      Quantity     Unit-
+     A                                               Total      Allo-
+     A                                      cation'
+     A                                      SPACEB(01)
+     A*
+     A                                     3'No                     -
+     A                                                              -
+     A                                                         Requi-
+     A                                      red                 Pric-
+     A                                      e        Price      Code'
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - BTL')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            WOSEQ     R              1TEXT('Sequence')
+     A                                      REFFLD(POSEQ PORDD)
+     A                                      EDTCDE(Z)
+     A                                      SPACEB(01)
+     A            WOITEM    R             +1TEXT('Item Number')
+     A                                      REFFLD(POITEM PORDD)
+     A            RN0001        35A       +1TEXT('DTIDESC')
+     A            WOUOM     R             63TEXT('Unit of Measure')
+     A                                      REFFLD(POUOM PORDD)
+     A            RN0008        10A       +1TEXT('WSDLVDT')
+     A            WOQORD    R             +1TEXT('Quantity ordered')
+     A                                      REFFLD(POQORD PORDD)
+     A                                      EDTCDE(3)
+     A            WK0008    R             +1TEXT('Price')
+     A                                      REFFLD(POPRICE PORDD)
+     A                                      EDTCDE(3)
+     A            DTVAL          9S 2     +2TEXT('DTVAL')
+     A                                      EDTCDE(L)
+     A            WK0007    R             +2TEXT('Allocated account')
+     A                                      REFFLD(PONLALL PORDD)
+     A          R XD0004                    TEXT('RECORD - BTM')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            WOSEQ     R              1TEXT('Sequence')
+     A                                      REFFLD(POSEQ PORDD)
+     A                                      EDTCDE(Z)
+     A                                      SPACEB(01)
+     A            WOITEM    R             +1TEXT('Item Number')
+     A                                      REFFLD(POITEM PORDD)
+     A            RN0001        35A       +1TEXT('DTIDESC')
+     A            WOUOM     R             63TEXT('Unit of Measure')
+     A                                      REFFLD(POUOM PORDD)
+     A            WOQORD    R            +12TEXT('Quantity ordered')
+     A                                      REFFLD(POQORD PORDD)
+     A                                      EDTCDE(3)
+     A            WK0008    R             +1TEXT('Price')
+     A                                      REFFLD(POPRICE PORDD)
+     A                                      EDTCDE(3)
+     A            DTVAL          9S 2     +2TEXT('DTVAL')
+     A                                      EDTCDE(L)
+     A            WK0007    R             +2TEXT('Allocated account')
+     A                                      REFFLD(PONLALL PORDD)
+     A          R XD0005                    TEXT('RECORD - CTX')
+     A*
+     A            WDTEXT    R             28TEXT('Text')
+     A                                      REFFLD(TDTEXT IPSTXTD)
+     A                                      SPACEB(01)
+     A          R XD0006                    TEXT('RECORD - DL1')
+     A*
+     A                                     1' '
+     A                                      SKIPB(45)
+     A          R XD0007                    TEXT('RECORD - EL1')
+     A*
+     A                                    75'Purchase order total'
+     A                                      SKIPB(45)
+     A            L1VAL          9S 2     +6TEXT('total value')
+     A                                      EDTCDE(L)
+     A          R XD0008                    TEXT('RECORD - FL1')
+     A*
+     A                                     6'To'
+     A                                      SKIPB(49)
+     A            WK0011    R             +2TEXT('Contact name')
+     A                                      REFFLD(PHCONNAM PORDH)
+     A*
+     A            WK0023    R             10TEXT('Supplier name')
+     A                                      REFFLD(PHSNAME PORDH)
+     A                                      SPACEB(01)
+     A            TXT001        40A      +10TEXT('TXT')
+     A*
+     A            WK0017    R             10TEXT('Supplier Address')
+     A                                      REFFLD(PHSLIN1 PORDH)
+     A                                      SPACEB(01)
+     A            TXT002        40A      +10TEXT('TXT')
+     A*
+     A            WK0018    R             10TEXT('Line 2')
+     A                                      REFFLD(PHSLIN2 PORDH)
+     A                                      SPACEB(01)
+     A            TXT003        40A      +10TEXT('TXT')
+     A*
+     A            WK0019    R             10TEXT('Line 3')
+     A                                      REFFLD(PHSLIN3 PORDH)
+     A                                      SPACEB(01)
+     A            TXT004        40A      +10TEXT('TXT')
+     A*
+     A            WK0020    R             10TEXT('Line 4')
+     A                                      REFFLD(PHSLIN4 PORDH)
+     A                                      SPACEB(01)
+     A            TXT005        40A      +10TEXT('TXT')
+     A*
+     A            WK0024    R             10TEXT('Post code')
+     A                                      REFFLD(PHSPSTCD PORDH)
+     A                                      SPACEB(01)

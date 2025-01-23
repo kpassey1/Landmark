@@ -1,0 +1,131 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PRECVRO
+     A*  APPLICATION ID      -    PRECVR
+     A*  APPLICATION NAME    -    Stock Received Register
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      --'
+     A                                      SKIPB(01)
+     A*
+     A                                   179'Date'
+     A                                      SPACEB(01)
+     A                                    +1': -'
+     A            XDMY           6S       +1TEXT('DAY/MONTH/YEAR')
+     A                                      EDTCDE(Y)
+     A*
+     A            PGM           10A        1TEXT('PROGRAM NAME')
+     A                                      SPACEB(01)
+     A                                   +50'Stock Received Register'
+     A                                   +16'Audit No'
+     A            WK0015    R             +1TEXT('Reconciliation Audit number')
+     A                                      REFFLD(CDAUDRE IPSCPYD)
+     A                                      EDTCDE(3)
+     A                                   +61'Time'
+     A                                    +1': -'
+     A                                    +1TIME
+     A*
+     A                                   179'Page'
+     A                                      SPACEB(01)
+     A                                    +1': -'
+     A                                    +1PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      --'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    61'Warehouse Number'
+     A                                      SPACEB(01)
+     A            WRWHSE    R             +2TEXT('Warehouse Number')
+     A                                      REFFLD(GRWHSE GRNHISL1)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     2'S   Item               -
+     A                                                              -
+     A                                                           Sup-
+     A                                      plier      Purchase     -
+     A                                         Date       Date      -
+     A                                       G.R.N       <-----------
+     A                                      ----Quantities-----------
+     A                                      ------->'
+     A                                      SPACEB(01)
+     A*
+     A                                     6'Number                D-
+     A                                      escription              -
+     A                                                       Number -
+     A                                             Order/Line      R-
+     A                                      equested  Received     N-
+     A                                      o        On-Order    Ord-
+     A                                      ered     Received    On--
+     A                                      Hand'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BBB')
+     A*
+     A            WRITEM    R              6TEXT('Item Number')
+     A                                      REFFLD(GRITEM GRNHISL1)
+     A                                      SPACEB(01)
+     A            WK0005    R             +2TEXT('Item Description')
+     A                                      REFFLD(GRIDESC GRNHISL1)
+     A            WK0013    R             +2TEXT('Supplier Number')
+     A                                      REFFLD(GRSUPPN GRNHISL1)
+     A            WK0001    R             +1TEXT('Branch Number')
+     A                                      REFFLD(GRBRNBR GRNHISL1)
+     A            WRPORD    R             +2TEXT('Purchase Order Number')
+     A                                      REFFLD(GRPORD GRNHISL1)
+     A            WRSEQ     R             +1TEXT('Sequence')
+     A                                      REFFLD(GRSEQ GRNHISL1)
+     A                                      EDTCDE(4)
+     A            DATERQ        10A       +2TEXT('DATERQ')
+     A            DATERC        10A       +1TEXT('DATERC')
+     A            WK0010    R             +1TEXT('Goods Received Note no.')
+     A                                      REFFLD(GRRCAUD GRNHISL1)
+     A                                      EDTCDE(4)
+     A            WK0017    R             +3TEXT('Quantity On Order')
+     A                                      REFFLD(WDQOO WAREDET)
+     A                                      EDTCDE(L)
+     A            WRQORD    R             +2TEXT('Quantity Ordered')
+     A                                      REFFLD(GRQORD GRNHISL1)
+     A                                      EDTCDE(L)
+     A            WK0009    R             +2TEXT('Received this cycle')
+     A                                      REFFLD(GRQRCYC GRNHISL1)
+     A                                      EDTCDE(L)
+     A            WK0016    R             +2TEXT('Quantity On Hand')
+     A                                      REFFLD(WDQOH WAREDET)
+     A                                      EDTCDE(L)
+     A          R XD0003                    TEXT('RECORD - CCC')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    78'- - - End Of Report - --
+     A                                       -'
+     A                                      SPACEB(01)

@@ -1,0 +1,121 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PCOMITO
+     A*  APPLICATION ID      -    PCOMIT
+     A*  APPLICATION NAME    -    Open Order Commitment Summary
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------'
+     A                                      SKIPB(01)
+     A*
+     A                                   110'Date'
+     A                                      SPACEB(01)
+     A                                    +1':-'
+     A            XDMY           6S       +3TEXT('DAY/MONTH/YEAR')
+     A                                      EDTCDE(Y)
+     A*
+     A            PGM           10A        1TEXT('PROGRAM NAME')
+     A                                      SPACEB(01)
+     A                                   +39'Open Order Commitment S-
+     A                                      ummary'
+     A                                   +31'Time'
+     A                                    +1':-'
+     A                                    +3TIME
+     A*
+     A                                   110'Page'
+     A                                      SPACEB(01)
+     A                                    +1':-'
+     A                                    +3PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     2'MM/YY        Allocation-
+     A                                                     Account N-
+     A                                      ame                     -
+     A                                             Commitment'
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BBB')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            LMMYY          6S        2TEXT('LMMYY')
+     A                                      EDTWRD('  /    ')
+     A                                      SPACEB(01)
+     A            LALOC         15A       +6TEXT('LALOC')
+     A            ACNAME        40A      +10TEXT('ACNAME')
+     A            ACCVAL        13S 2     80TEXT('Account Value')
+     A                                      EDTCDE(L)
+     A          R XD0003                    TEXT('RECORD - CCC')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    80'--------------'
+     A                                      SPACEB(01)
+     A*
+     A                                    62'Monthly Total'
+     A                                      SPACEB(01)
+     A            MONVAL        13S 2     +5TEXT('Monthly Value')
+     A                                      EDTCDE(L)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0004                    TEXT('RECORD - DDD')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    80'--------------'
+     A                                      SPACEB(01)
+     A*
+     A                                    62'Overall Total'
+     A                                      SPACEB(01)
+     A            REPVAL        13S 2     +5TEXT('Report Value')
+     A                                      EDTCDE(L)
+     A          R XD0005                    TEXT('RECORD - EEE')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    40'- - - End Of Report - --
+     A                                       -'
+     A                                      SPACEB(01)
+     A          R XD0006                    TEXT('RECORD - FFF')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    80'--------------'
+     A                                      SPACEB(01)
+     A*
+     A                                    62'Monthly Total'
+     A                                      SPACEB(01)
+     A            MONVAL        13S 2     +5TEXT('Monthly Value')
+     A                                      EDTCDE(L)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)

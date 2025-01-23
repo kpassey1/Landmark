@@ -1,0 +1,78 @@
+:PNLGRP.
+:HELP NAME='SCR001'.
+Initial list panel
+:P.
+:EHELP.
+:HELP NAME='SCR001ACTION'.
+Action select field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SCR001CYCOYNO'.
+Company number
+:P.
+:EHELP.
+:HELP NAME='SCR001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR001POS001'.
+Reposition fld for..CYCOYNO
+:P.
+:EHELP.
+:HELP NAME='SCR002'.
+Detail panel
+:P.
+:EHELP.
+:HELP NAME='SCR002CDAUDAM'.
+Amendments Report Audit number
+:P.
+:EHELP.
+:HELP NAME='SCR002CDAUDGR'.
+Goods Received Audit number
+:P.
+:EHELP.
+:HELP NAME='SCR002CDAUDOR'.
+Ordered Report Audit number
+:P.
+:EHELP.
+:HELP NAME='SCR002CDAUDPR'.
+Payments Report Audit number
+:P.
+:EHELP.
+:HELP NAME='SCR002CDAUDRE'.
+Reconciliation Audit number
+:P.
+:EHELP.
+:HELP NAME='SCR002CDCGAS'.
+CGAS to be used
+:P.
+Is an external ledger system to be used? Y or N
+:EHELP.
+:HELP NAME='SCR002CDIMS'.
+IMS to be used
+:P.
+Will the Purchasing be used in conjunction with the Landmark Inventory
+ Management. Y or N
+:EHELP.
+:HELP NAME='SCR002CDPORD'.
+Last P.O. Number
+:P.
+:EHELP.
+:HELP NAME='SCR002CDPURL'.
+Purge fully rcd lines
+:P.
+:EHELP.
+:HELP NAME='SCR002CDPURO'.
+Purge rcd orders
+:P.
+:EHELP.
+:HELP NAME='SCR002CYCOYNO'.
+Company number
+:P.
+:EHELP.
+:HELP NAME='SCR002CYDESC'.
+Company description
+:P.
+:EHELP.
+:EPNLGRP.

@@ -1,0 +1,78 @@
+:PNLGRP.
+:HELP NAME='SCR001'.
+Initial list panel
+:P.
+:EHELP.
+:HELP NAME='SCR001ACTION'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SCR001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR001PDCONNAM'.
+Contact name
+:P.
+:EHELP.
+:HELP NAME='SCR001PDLIN1'.
+Address
+:P.
+:EHELP.
+:HELP NAME='SCR001PDWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SCR001POS002'.
+Reposition fld for..PDWHSE
+:P.
+:EHELP.
+:HELP NAME='SCR002'.
+Detail panel
+:P.
+:EHELP.
+:HELP NAME='SCR002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR002PDCONNAM'.
+Contact name
+:P.
+:EHELP.
+:HELP NAME='SCR002PDLIN1'.
+Address
+:P.
+:EHELP.
+:HELP NAME='SCR002PDLIN2'.
+Address Line 2
+:P.
+:EHELP.
+:HELP NAME='SCR002PDLIN3'.
+Address Line 3
+:P.
+:EHELP.
+:HELP NAME='SCR002PDLIN4'.
+Address Line 4
+:P.
+:EHELP.
+:HELP NAME='SCR002PDLIN5'.
+Address Line 5
+:P.
+:EHELP.
+:HELP NAME='SCR002PDLIN6'.
+Address Line 6
+:P.
+:EHELP.
+:HELP NAME='SCR002PDPSTCD'.
+Post code
+:P.
+:EHELP.
+:HELP NAME='SCR002PDTELEPH'.
+Telephone number
+:P.
+:EHELP.
+:HELP NAME='SCR002PDWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:EPNLGRP.

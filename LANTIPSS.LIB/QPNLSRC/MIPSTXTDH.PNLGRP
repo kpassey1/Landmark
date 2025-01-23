@@ -1,0 +1,38 @@
+:PNLGRP.
+:HELP NAME='SC0001'.
+List Screen for IPSTXTD
+:P.
+:EHELP.
+:HELP NAME='SC0001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0102'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0103'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0104'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001TDSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0001TDTCDE'.
+Print text code
+:P.
+:EHELP.
+:HELP NAME='SC0001TDTEXT'.
+Text
+:P.
+:EHELP.
+:EPNLGRP.

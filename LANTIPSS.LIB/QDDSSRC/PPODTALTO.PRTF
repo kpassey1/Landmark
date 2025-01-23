@@ -1,0 +1,113 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PPODTALTO
+     A*  APPLICATION ID      -    PPODTALT
+     A*  APPLICATION NAME    -    Print P.O.Detail amendments
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'Program-'
+     A                                      SKIPB(01)
+     A            PGM           10A        9TEXT('PROGRAM NAME')
+     A                                   +40'   ** KDP Software Ltd -
+     A                                      **'
+     A                                   +32'Date'
+     A                                    +1':-'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                    61'Print P.O.Detail amendm-
+     A                                      ents'
+     A                                      SPACEB(01)
+     A                                    +7'Audit No'
+     A            WK0001    R             +1TEXT('Amendments Report Audit numbe+
+     A                                      r')
+     A                                      REFFLD(CDAUDAM IPSCPYD)
+     A                                      EDTCDE(3)
+     A                                    +3'Time'
+     A                                    +1':-'
+     A                                    +1TIME
+     A*
+     A                                   116'Page'
+     A                                      SPACEB(01)
+     A                                    +1':-'
+     A                                    +1PAGNBR
+     A                                      EDTCDE(Z)
+     A          R XD0002                    TEXT('RECORD - ABB')
+     A*
+     A                                    30'Warehouse Number'
+     A                                      SPACEB(01)
+     A            WAWHSE    R             +1TEXT('Warehouse Number')
+     A                                      REFFLD(PAWHSE PODTALT)
+     A                                    +4'(S = Special Order)'
+     A*
+     A                                     2'S  Order     Date of   -
+     A                                       Supplier   Order  Item -
+     A                                                       Date   -
+     A                                                  Quantity  Or-
+     A                                      der line    Allocation  -
+     A                                          Change'
+     A                                      SPACEB(01)
+     A*
+     A                                     5'Number    Change      N-
+     A                                      umber    Line   Number  -
+     A                                                  Required    -
+     A                                      Ordered  Received     Co-
+     A                                      st                      -
+     A                                       Detail'
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - BDT')
+     A*
+     A            DTOS09         1A        1TEXT('DTOS09')
+     A                                      SPACEB(01)
+     A            WAPORD    R             +2TEXT('Purchase Order Number')
+     A                                      REFFLD(PAPORD PODTALT)
+     A            DTDATE        10A       +1TEXT('DTDATE')
+     A            WK0009    R             +1TEXT('Supplier Account')
+     A                                      REFFLD(PHSUPPN PORDH)
+     A            WK0008    R             +1TEXT('Branch Number')
+     A                                      REFFLD(PHBRNBR PORDH)
+     A            WASEQ     R             +1TEXT('Sequence')
+     A                                      REFFLD(PASEQ PODTALT)
+     A                                      EDTCDE(3)
+     A            WAITEM    R             +1TEXT('Item Number')
+     A                                      REFFLD(PAITEM PODTALT)
+     A            RN0001        10A       +1TEXT('DTDATE')
+     A            WAQORD    R             +1TEXT('Quantity ordered')
+     A                                      REFFLD(PAQORD PODTALT)
+     A                                      EDTCDE(3)
+     A            WK0007    R             +1TEXT('Quantity received')
+     A                                      REFFLD(PAQRCVD PODTALT)
+     A                                      EDTCDE(3)
+     A            WK0006    R             +1TEXT('Price')
+     A                                      REFFLD(PAPRICE PODTALT)
+     A                                      EDTCDE(3)
+     A            WK0005    R             +1TEXT('N/L Stock Account')
+     A                                      REFFLD(PANLALL PODTALT)
+     A            DTTYPE         8A       +1TEXT('DTTYPE')
+     A          R XD0004                    TEXT('RECORD - CDT')
+     A*
+     A            RN0001        10A       64TEXT('DTDATE')
+     A                                      SPACEB(01)
+     A            WAQORD    R             +1TEXT('Quantity ordered')
+     A                                      REFFLD(PAQORD PODTALT)
+     A                                      EDTCDE(3)
+     A            WK0006    R            +11TEXT('Price')
+     A                                      REFFLD(PAPRICE PODTALT)
+     A                                      EDTCDE(3)
+     A            WK0005    R             +1TEXT('N/L Stock Account')
+     A                                      REFFLD(PANLALL PODTALT)
+     A            DTTYPE         8A       +1TEXT('DTTYPE')
+     A          R XD0005                    TEXT('RECORD - CDX')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0006                    TEXT('RECORD - XXX')
+     A*
+     A                                    59'- - - End of Report - --
+     A                                       -'
+     A                                      SPACEB(01)

@@ -1,0 +1,231 @@
+:PNLGRP.
+:HELP NAME='SCRCANC'.
+Cancel all update
+:P.
+:EHELP.
+:HELP NAME='SCRCANCEXFLAG'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SCR001'.
+Initial list panel
+:P.
+Thi program will display order details so that items can be received.
+Users will also be able to add comments and messages against an order.
+:EHELP.
+:HELP NAME='SCR001ACTION'.
+Action select field
+:P.
+Enter action code 5 to display the details on an order
+:EHELP.
+:HELP NAME='SCR001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR001PHBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SCR001PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SCR001PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SCR001PHSUPPN'.
+Supplier Account
+:P.
+:EHELP.
+:HELP NAME='SCR001PHWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SCR001POS002'.
+Reposition fld for..PHPORD
+:P.
+Enter a Purchase Order number to reposition the beginning of the displ
+ayed data.
+:EHELP.
+:HELP NAME='SCR002'.
+Display all details for header
+:P.
+These are the header details for the selected Purchase Order. Press En
+ter to progress to the Details display
+:EHELP.
+:HELP NAME='SCR002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR002PHBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SCR002PHBUYER'.
+Buyers Code
+:P.
+:EHELP.
+:HELP NAME='SCR002PHCONNAM'.
+Contact name
+:P.
+:EHELP.
+:HELP NAME='SCR002PHCUSORD'.
+Our customers ref
+:P.
+:EHELP.
+:HELP NAME='SCR002PHNLALL'.
+Allocation Acc
+:P.
+:EHELP.
+:HELP NAME='SCR002PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSLIN1'.
+Supplier Address
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSLIN2'.
+Line 2
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSLIN3'.
+Line 3
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSLIN4'.
+Line 4
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSLIN5'.
+Line 5
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSLIN6'.
+Line 6
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSPSTCD'.
+Post code
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSUPPN'.
+Supplier Account
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWLIN1'.
+Address
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWLIN2'.
+Line 2
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWLIN3'.
+Line 3
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWLIN4'.
+Line 4
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWLIN5'.
+Line 5
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWNAME'.
+Wharehouse Name
+:P.
+:EHELP.
+:HELP NAME='SCR002PHWPSTCD'.
+Post code
+:P.
+:EHELP.
+:HELP NAME='SCR002WSDLVDT'.
+FL0001
+:P.
+:EHELP.
+:HELP NAME='SCR003'.
+Display order details
+:P.
+:EHELP.
+:HELP NAME='SCR003ACT'.
+FL0001
+:P.
+Enter option code 2 against this detail line to enter a received quant
+ity.
+:EHELP.
+:HELP NAME='SCR003CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR003PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SCR003POIDESC'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SCR003POITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SCR003POQORD'.
+Quantity ordered
+:P.
+:EHELP.
+:HELP NAME='SCR003POQRCVD'.
+Quantity received
+:P.
+:EHELP.
+:HELP NAME='SCR003POSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SCR003POSPOSEQ'.
+Reposition fld for..POSEQ
+:P.
+:EHELP.
+:HELP NAME='SCR003POWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SCR003WSMANF'.
+Manufactureres itrm
+:P.
+:EHELP.
+:HELP NAME='SCR003WSRCDTT'.
+FL0001
+:P.
+:EHELP.
+:HELP NAME='SETSPEC'.
+Update all receipts
+:P.
+:EHELP.
+:HELP NAME='SETSPECGRINVNUM'.
+Invoice number
+:P.
+:EHELP.
+:HELP NAME='SETSPECGRRECBY'.
+Received By
+:P.
+:EHELP.
+:HELP NAME='SETSPECWSOS07'.
+FL0001
+:P.
+:EHELP.
+:HELP NAME='SETSPECWSOS09'.
+FL0001
+:P.
+:EHELP.
+:EPNLGRP.

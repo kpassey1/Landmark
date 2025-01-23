@@ -1,0 +1,157 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PORDDRO
+     A*  APPLICATION ID      -    PORDDR
+     A*  APPLICATION NAME    -    Open Orders Report
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -----'
+     A                                      SKIPB(01)
+     A*
+     A                                   178'Date'
+     A                                      SPACEB(01)
+     A                                    +1': -'
+     A            XDMY           6S       +2TEXT('DAY/MONTH/YEAR')
+     A                                      EDTCDE(Y)
+     A*
+     A            PGM           10A        1TEXT('PROGRAM NAME')
+     A                                      SPACEB(01)
+     A                                   +69'Open Orders Report'
+     A                                   +80'Time'
+     A                                    +1': -'
+     A                                    +2TIME
+     A*
+     A                                   178'Page'
+     A                                      SPACEB(01)
+     A                                    +1': -'
+     A                                    +2PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -----'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    30'Warehouse Number'
+     A                                      SPACEB(01)
+     A            WOWHSE    R             +3TEXT('Warehouse Number')
+     A                                      REFFLD(POWHSE PORDDL3)
+     A                                    +8'(@ = Special Orders)'
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     2'S  Order       Date Of -
+     A                                        Supplier    Order   It-
+     A                                      em                      -
+     A                                                              -
+     A                                                    Delivery  -
+     A                                       Qty      Allocation    -
+     A                                         Open Order'
+     A                                      SPACEB(01)
+     A*
+     A                                     5'Number      Order     N-
+     A                                      umber      Line    Numbe-
+     A                                      r                Descrip-
+     A                                      tion                    -
+     A                                                 Requested  Op-
+     A                                      en                      -
+     A                                      Line Cost'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BBB')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            SPEC           1A        2TEXT('Special Order')
+     A                                      SPACEB(01)
+     A            WOPORD    R             +2TEXT('Purchase Order Number')
+     A                                      REFFLD(POPORD PORDDL3)
+     A            DATEO         10A       +1TEXT('DATEO')
+     A            WK0009    R             +1TEXT('Supplier Account')
+     A                                      REFFLD(PHSUPPN PORDH)
+     A            WK0007    R             +1TEXT('Branch Number')
+     A                                      REFFLD(PHBRNBR PORDH)
+     A            WOSEQ     R             +2TEXT('Sequence')
+     A                                      REFFLD(POSEQ PORDDL3)
+     A                                      EDTCDE(4)
+     A            WOITEM    R             +3TEXT('Item Number')
+     A                                      REFFLD(POITEM PORDDL3)
+     A            WK0003    R             +2TEXT('Item Description')
+     A                                      REFFLD(POIDESC PORDDL3)
+     A            DATER         10A       +2TEXT('DATER')
+     A            OPENQ          7S       +1TEXT('Open Qty')
+     A                                      EDTCDE(Z)
+     A            WK0004    R             +2TEXT('Allocated account')
+     A                                      REFFLD(PONLALL PORDDL3)
+     A            OPENV          9S 2     +2TEXT('Open Value')
+     A                                      EDTCDE(L)
+     A          R XD0003                    TEXT('RECORD - CCC')
+     A*
+     A            WOSEQ     R             39TEXT('Sequence')
+     A                                      REFFLD(POSEQ PORDDL3)
+     A                                      EDTCDE(4)
+     A                                      SPACEB(01)
+     A            WOITEM    R             +3TEXT('Item Number')
+     A                                      REFFLD(POITEM PORDDL3)
+     A            WK0003    R             +2TEXT('Item Description')
+     A                                      REFFLD(POIDESC PORDDL3)
+     A            DATER         10A       +2TEXT('DATER')
+     A            OPENQ          7S       +1TEXT('Open Qty')
+     A                                      EDTCDE(Z)
+     A            WK0004    R             +2TEXT('Allocated account')
+     A                                      REFFLD(PONLALL PORDDL3)
+     A            OPENV          9S 2     +2TEXT('Open Value')
+     A                                      EDTCDE(L)
+     A          R XD0004                    TEXT('RECORD - DDD')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                   146'--------------------'
+     A                                      SPACEB(01)
+     A*
+     A                                   111'Total Cost For Warehous-
+     A                                      e'
+     A                                      SPACEB(01)
+     A            LWH            3A       +1TEXT('Last W/h processed')
+     A            TWH           11S 2     +7TEXT('This W/h')
+     A                                      EDTCDE(4)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0005                    TEXT('RECORD - FFF')
+     A*
+     A                                   146'--------------------'
+     A                                      SPACEB(01)
+     A*
+     A                                   111'Total Cost For All Ware-
+     A                                      houses'
+     A                                      SPACEB(01)
+     A            AWH           11S 2     +6TEXT('All warehouses')
+     A                                      EDTCDE(L)

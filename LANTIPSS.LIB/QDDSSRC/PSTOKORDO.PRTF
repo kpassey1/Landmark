@@ -1,0 +1,119 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PSTOKORDO
+     A*  APPLICATION ID      -    PSTOKORD
+     A*  APPLICATION NAME    -    Stock Ordered Register
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AH1')
+     A*
+     A            PGM           10A        1TEXT('PROGRAM NAME')
+     A                                      SKIPB(01)
+     A            WYDESC    R             51TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +27'Date'
+     A                                   122':'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                     1'Audit No'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            WK0002    R             +1TEXT('Ordered Report Audit number')
+     A                                      REFFLD(CDAUDOR IPSCPYD)
+     A                                      EDTCDE(3)
+     A                                   +97'Time'
+     A                                   122':'
+     A                                    +1TIME
+     A*
+     A                                     1'Special Orders  ='
+     A                                      SPACEB(01)
+     A                                    +2'*'
+     A                                   +38'Stock Ordered Register'
+     A                                   +37'Page'
+     A                                   122':'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Warehouse'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            WHWHSE    R             +1TEXT('Warehouse')
+     A                                      REFFLD(PHWHSE PORDH)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'S  Item                -
+     A                                       Description            -
+     A                                              Supplier   Deliv-
+     A                                      ery      Unit          Q-
+     A                                      ty          Line   Alloc-
+     A                                      ation'
+     A                                      HIGHLIGHT
+     A                                      SPACEB(01)
+     A*
+     A                                     4'Number                 -
+     A                                                              -
+     A                                           Number     Date    -
+     A                                            Cost        Ordere-
+     A                                      d        Cost'
+     A                                      HIGHLIGHT
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - DD1')
+     A*
+     A            AST            1A        1TEXT('AST')
+     A                                      SPACEB(01)
+     A            WOITEM    R             +2TEXT('Item Number')
+     A                                      REFFLD(POITEM PORDDL1)
+     A            DESC          30A       +1TEXT('DESC')
+     A            WK0013    R             +1TEXT('Supplier Account')
+     A                                      REFFLD(PHSUPPN PORDH)
+     A            WK0011    R             +1TEXT('Branch Number')
+     A                                      REFFLD(PHBRNBR PORDH)
+     A            RN0001        10A       +1TEXT('##DLVDT')
+     A            WK0008    R             +1TEXT('Price')
+     A                                      REFFLD(POPRICE PORDDL1)
+     A                                      EDTCDE(3)
+     A            WOQORD    R             +1TEXT('Quantity ordered')
+     A                                      REFFLD(POQORD PORDDL1)
+     A                                      EDTCDE(3)
+     A            LTOT          11S 4     +1TEXT('WTOT')
+     A                                      EDTCDE(3)
+     A            WK0007    R             +1TEXT('Allocated account')
+     A                                      REFFLD(PONLALL PORDDL1)
+     A          R XD0003                    TEXT('RECORD - WD1')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    82'Warehouse Cost'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            WTOT          13S 4     +2TEXT('WTOT')
+     A                                      EDTCDE(3)
+     A          R XD0004                    TEXT('RECORD - ZD1')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    82'Total Cost'
+     A                                      SPACEB(01)
+     A                                    +5':'
+     A            TTOT          13S 4     +2TEXT('TTOT')
+     A                                      EDTCDE(3)

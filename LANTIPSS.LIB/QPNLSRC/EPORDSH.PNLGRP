@@ -1,0 +1,214 @@
+:PNLGRP.
+:HELP NAME='SCR001'.
+Initial list panel
+:P.
+:EHELP.
+:HELP NAME='SCR001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR001PHBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SCR001PHSUPPN'.
+Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SCR001POPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SCR001POQORD'.
+Quantity ordered
+:P.
+:EHELP.
+:HELP NAME='SCR001POQRCVD'.
+Quantity received
+:P.
+:EHELP.
+:HELP NAME='SCR001WSACT'.
+FL0001
+:P.
+:EHELP.
+:HELP NAME='SCR001WSDELD'.
+FL0002
+:P.
+:EHELP.
+:HELP NAME='SCR001WSIDES'.
+FL0003
+:P.
+:EHELP.
+:HELP NAME='SCR002'.
+Detail panel
+:P.
+:EHELP.
+:HELP NAME='SCR002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR002PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SCR002PISPITM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SCR002POCONV'.
+Conversion Qty
+:P.
+:EHELP.
+:HELP NAME='SCR002POIDESC'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SCR002POITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SCR002PONLALL'.
+Allocated account
+:P.
+:EHELP.
+:HELP NAME='SCR002POPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SCR002POPRICE'.
+Price
+:P.
+:EHELP.
+:HELP NAME='SCR002POQORD'.
+Quantity ordered
+:P.
+:EHELP.
+:HELP NAME='SCR002POQRCVD'.
+Quantity received
+:P.
+:EHELP.
+:HELP NAME='SCR002POQRCYC'.
+Received this cycle
+:P.
+:EHELP.
+:HELP NAME='SCR002POSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SCR002POUOM'.
+Unit of Measure
+:P.
+:EHELP.
+:HELP NAME='SCR002POWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SCR002WSDLVE'.
+FL0001
+:P.
+:EHELP.
+:HELP NAME='SCR003'.
+Header information
+:P.
+:EHELP.
+:HELP NAME='SCR003CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR003PHBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SCR003PHBUYER'.
+Buyers Code
+:P.
+:EHELP.
+:HELP NAME='SCR003PHCONNAM'.
+Contact name
+:P.
+:EHELP.
+:HELP NAME='SCR003PHCUSORD'.
+Our customer order number
+:P.
+:EHELP.
+:HELP NAME='SCR003PHNLALL'.
+Allocation Acc
+:P.
+:EHELP.
+:HELP NAME='SCR003PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSLIN1'.
+Supplier Address
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSLIN2'.
+Line 2
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSLIN3'.
+Line 3
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSLIN4'.
+Line 4
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSLIN5'.
+Line 5
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSLIN6'.
+Line 6
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSPSTCD'.
+Post code
+:P.
+:EHELP.
+:HELP NAME='SCR003PHSUPPN'.
+Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWLIN1'.
+Address
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWLIN2'.
+Line 2
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWLIN3'.
+Line 3
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWLIN4'.
+Line 4
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWLIN5'.
+Line 5
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWNAME'.
+Wharehouse Name
+:P.
+:EHELP.
+:HELP NAME='SCR003PHWPSTCD'.
+Post code
+:P.
+:EHELP.
+:HELP NAME='SCR003WSDLVDT'.
+FL0001
+:P.
+:EHELP.
+:EPNLGRP.

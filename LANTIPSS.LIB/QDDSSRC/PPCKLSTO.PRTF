@@ -1,0 +1,94 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PPCKLSTO
+     A*  APPLICATION ID      -    PPCKLST
+     A*  APPLICATION NAME    -         Print Picking List
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +34TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +24'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    53'     Print Picking List'
+     A                                      SPACEB(01)
+     A                                   +42'Date'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                     1'Picking List'
+     A                                      SPACEB(01)
+     A            WLSEQ     R             +1TEXT('Picking List No.')
+     A                                      REFFLD(PLSEQ PCKLST)
+     A                                      EDTCDE(Z)
+     A            ODATE         10A       +1TEXT('ODATE')
+     A            WK0004    R             +1TEXT('Created By')
+     A                                      REFFLD(PLCRBY PCKLST)
+     A                                   +77'Time'
+     A                                    +1TIME
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Warehouse'
+     A                                      SPACEB(01)
+     A            WDWHSE    R             +1TEXT('Warehouse Number')
+     A                                      REFFLD(PDWHSE PCKLSD)
+     A            WK0006    R             +2TEXT('Warehouse Description')
+     A                                      REFFLD(WHWDESC WAREHED)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     4'Location   Description -
+     A                                                              -
+     A                                           Item               -
+     A                                        Description           -
+     A                                                         Quant-
+     A                                      ity'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BBB')
+     A*
+     A            HLLOCN        10A        4TEXT('HLLOCN')
+     A                                      SPACEB(01)
+     A            WK0007    R             +1TEXT('Location Description')
+     A                                      REFFLD(WLDESC WARELOC)
+     A            HLITEM        20A       +1TEXT('HLITEM')
+     A            WK0001    R             +1TEXT('Item Description')
+     A                                      REFFLD(ITIDESC ITMMAST)
+     A            L1TQTY         9S       +1TEXT('L1TQTY')
+     A                                      EDTCDE(M)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - XXX')
+     A*
+     A                                     1'Picked By              -
+     A                                                         Check-
+     A                                      ed By                   -
+     A                                                    Received B-
+     A                                      y'
+     A                                      SPACEB(01)
+     A*
+     A                                    11'ההההההההההההההההההההההה-
+     A                                      ההההההה             הההה-
+     A                                      הההההההההההההההההההההההה-
+     A                                      הה              הההההההה-
+     A                                      הההההההההההההההההההההה'
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###   END OF REPORT   #-
+     A                                      ##'
+     A                                      SPACEB(01)

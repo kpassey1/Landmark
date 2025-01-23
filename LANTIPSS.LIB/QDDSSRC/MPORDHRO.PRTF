@@ -1,0 +1,25 @@
+     A********************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    MPORDHRDO
+     A*  APPLICATION ID      -    MPORDHR
+     A*  APPLICATION NAME    -           Receiving Input
+     A*  DATE CREATED        -    Apr 30, 2003
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - LNE')
+     A*
+     A            WK0076    R              1TEXT('Item Number')
+     A                                      REFFLD(WKITEM WRKPORD)
+     A                                      SPACEB(01)
+     A            WK0078    R             17TEXT('Location')
+     A                                      REFFLD(WKLOCN WRKPORD)
+     A            WK0080    R             28TEXT('Price')
+     A                                      REFFLD(WKPRICE WRKPORD)
+     A                                      EDTCDE(Z)
+     A            WK0081    R             40TEXT('Quantity received')
+     A                                      REFFLD(WKQRCVD WRKPORD)
+     A                                      EDTCDE(Z)
+     A            WK0083    R             50TEXT('Warehouse')
+     A                                      REFFLD(WKWHSE WRKPORD)

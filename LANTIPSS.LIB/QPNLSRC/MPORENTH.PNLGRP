@@ -1,0 +1,508 @@
+:PNLGRP.
+:HELP NAME='SCDELD'.
+Display Details before Delete
+:P.
+:EHELP.
+:HELP NAME='SCDELDCYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCDELDITEMDO'.
+FL0006
+:P.
+:EHELP.
+:HELP NAME='SCDELDPHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SCDELDPOITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SCDELDPOQORD'.
+Quantity ordered
+:P.
+:EHELP.
+:HELP NAME='SCDELDPOSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SCDELDPOWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SCDELDPS7501'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SCRADD'.
+Screen for additions
+:P.
+:EHELP.
+:HELP NAME='SCRADDCYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCRADDPHBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SCRADDPHPORD'.
+Purchase Order Number
+:P.
+Leave this fiels blank for the system to assign a Purchase Order no.
+:EHELP.
+:HELP NAME='SCRADDPHSUPPN'.
+Supplier Account
+:P.
+Enter a valid accoount number if ordering from an established account.
+:EHELP.
+:HELP NAME='SCRADDPHWHSE'.
+Warehouse
+:P.
+Enter a valid receiving warehouse.
+
+If the default receiving warehouse has already been established, this
+field will already be filled.
+:EHELP.
+:HELP NAME='SC0001'.
+List Screen for PORDH
+:P.
+:EHELP.
+:HELP NAME='SC0001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+action field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0001PHBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0001PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SC0001PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SC0001PHSUPPN'.
+Supplier Account
+:P.
+:EHELP.
+:HELP NAME='SC0001PHWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0102'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0002'.
+Detail Screen for PORDH
+:P.
+:EHELP.
+:HELP NAME='SC0002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0002PHBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0002PHBUYER'.
+Buyers Code
+:P.
+:EHELP.
+:HELP NAME='SC0002PHCONNAM'.
+Contact name
+:P.
+:EHELP.
+:HELP NAME='SC0002PHCUSORD'.
+Our customers ref
+:P.
+Any special reference
+:EHELP.
+:HELP NAME='SC0002PHNLALL'.
+Allocation Acc
+:P.
+:EHELP.
+:HELP NAME='SC0002PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSLIN1'.
+Supplier Address
+:P.
+Enter the supplier address. If a supplier account has already been ent
+ered, the details of that address will have been defaulted.
+
+This address can be over-written.
+:EHELP.
+:HELP NAME='SC0002PHSLIN2'.
+Line 2
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSLIN3'.
+Line 3
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSLIN4'.
+Line 4
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSLIN5'.
+Line 5
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSLIN6'.
+Line 6
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSPSTCD'.
+Post code
+:P.
+:EHELP.
+:HELP NAME='SC0002PHSUPPN'.
+Supplier Account
+:P.
+:EHELP.
+:HELP NAME='SC0002PHWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0002PHWLIN1'.
+Address
+:P.
+This is the address for delivery of the Purchase Order.
+
+Any defaulted details can be over-written.
+:EHELP.
+:HELP NAME='SC0002PHWLIN2'.
+Line 2
+:P.
+:EHELP.
+:HELP NAME='SC0002PHWLIN3'.
+Line 3
+:P.
+:EHELP.
+:HELP NAME='SC0002PHWLIN4'.
+Line 4
+:P.
+:EHELP.
+:HELP NAME='SC0002PHWLIN5'.
+Line 5
+:P.
+:EHELP.
+:HELP NAME='SC0002PHWNAME'.
+Warehouse Name
+:P.
+:EHELP.
+:HELP NAME='SC0002PHWPSTCD'.
+Post code
+:P.
+:EHELP.
+:HELP NAME='SC0002WKSVIA1'.
+WKSVIA1
+:P.
+Enter any special shipping details. i.e via Parcelforce a/c 1234567
+:EHELP.
+:HELP NAME='SC0002WKSVIA2'.
+WKSVIA2
+:P.
+:EHELP.
+:HELP NAME='SC0002WSDLVDT'.
+WSDLVDT
+:P.
+If entered, this will be the expected date for delivery.
+:EHELP.
+:HELP NAME='SC0003'.
+List Screen for IPSTXTH
+:P.
+:EHELP.
+:HELP NAME='SC0003CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0003FL0002'.
+Action select field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0003PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SC0003PS0301'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0003THSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0003THTCDE'.
+P/O Header - Print text code
+:P.
+Enter a B if you want the associated text printed with (B)oth the
+purchase order and the receiving list.
+:P.
+Enter a O if you only want the text printed with the Purchase (O)rder
+:P.
+Enter an R if uou only want the text printed with the (R)eceiving list
+:EHELP.
+:HELP NAME='SC0003THTEXT'.
+P/O Header Text
+:P.
+The text entered here will be printed with the relevant item at the
+header level
+:EHELP.
+:HELP NAME='SC0005'.
+List Screen for PORDD
+:P.
+:EHELP.
+:HELP NAME='SC0005CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0005FL0003'.
+Action select field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0005ITEMDO'.
+FL0006
+:P.
+:EHELP.
+:HELP NAME='SC0005PHPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SC0005POITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0005POQORD'.
+Quantity ordered
+:P.
+:EHELP.
+:HELP NAME='SC0005POSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0005POWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0005PS0501'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0005WSMANF'.
+FL0006
+:P.
+:EHELP.
+:HELP NAME='SC0006'.
+Detail Screen for PORDD
+:P.
+:EHELP.
+:HELP NAME='SC0006CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0006PHSNAME'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SC0006POIDESC'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SC0006POITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0006PONLALL'.
+Allocated account
+:P.
+:EHELP.
+:HELP NAME='SC0006POPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SC0006POPRICE'.
+Price
+:P.
+:EHELP.
+:HELP NAME='SC0006POQORD'.
+Quantity ordered
+:P.
+:EHELP.
+:HELP NAME='SC0006POSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0006POUOM'.
+Unit of Measure
+:P.
+:EHELP.
+:HELP NAME='SC0006POWHSE'.
+Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0006WSDLVDT'.
+WSDLVDT
+:P.
+:EHELP.
+:HELP NAME='SC0006WSFOC'.
+WSFOC
+:P.
+:EHELP.
+:HELP NAME='SC0007'.
+List Screen for IPSTXTD
+:P.
+:EHELP.
+:HELP NAME='SC0007CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0007FL0005'.
+Action select field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0007POPORD'.
+Purchase Order Number
+:P.
+:EHELP.
+:HELP NAME='SC0007POSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0007PS0701'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0007TDSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0007TDTCDE'.
+Print text code
+:P.
+Enter a B if you want the associated text printed with (B)oth the
+purchase order and the receiving list.
+:P.
+Enter a O if you only want the text printed with the Purchase (O)rder
+:P.
+Enter an R if uou only want the text printed with the (R)eceiving list
+:EHELP.
+:HELP NAME='SC0007TDTEXT'.
+P/o Detail Text
+:P.
+The text entered here will be printed with the relevant item
+:EHELP.
+:HELP NAME='SC0008'.
+   Valid Warehouse Numbers
+:P.
+:EHELP.
+:HELP NAME='SC0008T01'.
+Action select field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0008T02'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0008T03'.
+Address
+:P.
+:EHELP.
+:HELP NAME='SC0009'.
+      Valid Item Numbers
+:P.
+:EHELP.
+:HELP NAME='SC0009T04'.
+Action select field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0009T05'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0009T06'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SC0010'.
+   Valid Units of Measure
+:P.
+:EHELP.
+:HELP NAME='SC0010T07'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0010T08'.
+Unit of Measure
+:P.
+:EHELP.
+:HELP NAME='SC0012'.
+      Valid Suppliers
+:P.
+:EHELP.
+:HELP NAME='SC0012T12'.
+Action select field
+:P.
+Select an option number from those displayed, then press Enter.
+:EHELP.
+:HELP NAME='SC0012T13'.
+Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SC0012T14'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0012T15'.
+Supplier name
+:P.
+:EHELP.
+:HELP NAME='SDET'.
+Supplier Details changed
+:P.
+:EHELP.
+:HELP NAME='SETSPEC'.
+Set Special Details
+:P.
+:EHELP.
+:HELP NAME='SETSPECPHOS04'.
+P.O. Pending
+:P.
+:EHELP.
+:HELP NAME='SETSPECPHOS06'.
+Print P.O.Requested
+:P.
+:EHELP.
+:HELP NAME='SETSPECPHOS07'.
+Print Receiving List
+:P.
+:EHELP.
+:HELP NAME='SETSPECPHOS09'.
+special order attention
+:P.
+:EHELP.
+:HELP NAME='SUPP'.
+Supplier Changed
+:P.
+:EHELP.
+:EPNLGRP.

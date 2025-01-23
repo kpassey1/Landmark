@@ -1,0 +1,193 @@
+:PNLGRP.
+:HELP NAME='SCR001'.
+Initial list panel
+:P.
+This is the main panel to enter details of items purchased from
+specific suppliers.
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+:EHELP.
+:HELP NAME='SCR001ACTION'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SCR001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR001PIBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SCR001PIDESC'.
+Description
+:P.
+:EHELP.
+:HELP NAME='SCR001PIITEM'.
+Item Number
+:P.
+Enter the item number as used by your company
+:EHELP.
+:HELP NAME='SCR001PISUPPN'.
+Supplier Number
+:P.
+The supplier number must exist on the supplier master file
+:EHELP.
+:HELP NAME='SCR001POS002'.
+Reposition fld for..PISUPPN
+:P.
+:EHELP.
+:HELP NAME='SCR001POS003'.
+Reposition fld for..PIBRNBR
+:P.
+:EHELP.
+:HELP NAME='SCR001POS004'.
+Reposition fld for..PIITEM
+:P.
+:EHELP.
+:HELP NAME='SCR002'.
+Supplier Item Details
+:P.
+This is the details panel for each supplier item. Remember Landmark
+Purchasing allows you to purchase the same item from many suppliers.
+:EHELP.
+:HELP NAME='SCR002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR002PIBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SCR002PICNV'.
+Conversion Qty
+:P.
+The Conversion Quantity is used when receiving stock, for example: If
+an item is bought in boxes of 12 and the item is stocked individually,
+1 box is purchased but 12 items go into stock (use multiply).
+Conversely, if 12 items are bought but are sold in boxes of 1 then 12
+items are purchases but 1 items goes into stock (use divide).
+:EHELP.
+:HELP NAME='SCR002PICNVCDE'.
+Conversion Code
+:P.
+Set the Conversion Code to 0 to multiply by conversion quantity when
+adding to stock.  Set to 1 to divide by the conversion quantity when
+adding to stock.
+:P.
+The Conversion Quantity is used when receiving stock, for example: If
+an item is bought in boxes of 12 and the item is stocked individually,
+1 box is purchased but 12 items go into stock (use multiply).
+Conversely, if 12 items are bought but are sold in boxes of 1 then 12
+items are purchases but 1 items goes into stock (use divide).
+:EHELP.
+:HELP NAME='SCR002PICOST'.
+Cost Price
+:P.
+Enter The suppliers cost price
+:EHELP.
+:HELP NAME='SCR002PIDESC'.
+Description
+:P.
+Enter the item decription. This is what your companies name for the
+item.
+:P
+Remember you can refer to an item as something completely different.
+When you buy that item it can be referred to as something else.
+:EHELP.
+:HELP NAME='SCR002PIITEM'.
+Item Number
+:P.
+Enter the companies item number for this product
+:EHELP.
+:HELP NAME='SCR002PILTIM'.
+Lead Time
+:P.
+Enter the lead time in days for this product.
+:EHELP.
+:HELP NAME='SCR002PIPBRK1'.
+Break Price 1
+:P.
+:EHELP.
+:HELP NAME='SCR002PIPBRK2'.
+Break Price 2
+:P.
+:EHELP.
+:HELP NAME='SCR002PIPBRK3'.
+Break Price 3
+:P.
+:EHELP.
+:HELP NAME='SCR002PIPBRK4'.
+Break Price 4
+:P.
+:EHELP.
+:HELP NAME='SCR002PIPRCOD'.
+Pricing Code
+:P.
+Set the Pricing Code to 0 for price per quantity.  Set the Pricing
+Code to 1 for price per multiple unit.
+:EHELP.
+:HELP NAME='SCR002PIPYTD'.
+Purchase Value YTD
+:P.
+:EHELP.
+:HELP NAME='SCR002PIQBRK1'.
+Qty Break 1
+:P.
+:EHELP.
+:HELP NAME='SCR002PIQBRK2'.
+Qty Break 2
+:P.
+:EHELP.
+:HELP NAME='SCR002PIQBRK3'.
+Qty Break 3
+:P.
+:EHELP.
+:HELP NAME='SCR002PIQBRK4'.
+Qty break 4
+:P.
+:EHELP.
+:HELP NAME='SCR002PIQFIX'.
+Fixed order Qty
+:P.
+:EHELP.
+:HELP NAME='SCR002PISDESC'.
+Suppliers Description
+:P.
+This description is what the supplier calls their item and this is
+what will appear on the purchase order.
+:EHELP.
+:HELP NAME='SCR002PISPITM'.
+Suppliers Item Number
+:P.
+Enter the suppliers reference number - this will appear on P/O's to
+that supplier.
+:EHELP.
+:HELP NAME='SCR002PISUPPN'.
+Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SCR002PIUOM'.
+Unit of Measure
+:P.
+:EHELP.
+:HELP NAME='SCR002PIWGT'.
+Weight
+:P.
+:EHELP.
+:HELP NAME='SC0003'.
+        List of Items
+:P.
+:EHELP.
+:HELP NAME='SC0003T04'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0003T05'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0003T06'.
+Item Description
+:P.
+:EHELP.
+:EPNLGRP.

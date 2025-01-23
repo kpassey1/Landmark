@@ -1,0 +1,26 @@
+:PNLGRP.
+:HELP NAME='SCR01'.
+Screen 1
+:P.
+:EHELP.
+:HELP NAME='SCR01SITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SCR01SPORD'.
+Purchase Order
+:P.
+:EHELP.
+:HELP NAME='SCR01SSUP'.
+Supplier
+:P.
+Enter a valid Supplier number. If the other fields are left blank, all
+ purchase orders for this customer will be displayed.
+:EHELP.
+:HELP NAME='SCR01SSUPB'.
+Supplier branch
+:P.
+Enter a valid Supplier number. If the other fields are left blank, all
+ purchase orders for this customer will be displayed.
+:EHELP.
+:EPNLGRP.

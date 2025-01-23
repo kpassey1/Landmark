@@ -1,0 +1,184 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PGRNO
+     A*  APPLICATION ID      -    PGRN
+     A*  APPLICATION NAME    -    Goods Received Note
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AH1')
+     A*
+     A            PGM           10A        1TEXT('PROGRAM NAME')
+     A                                      SKIPB(01)
+     A            WYDESC    R             37TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +40'Date'
+     A                                   121':'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                    42'Goods Received Note'
+     A                                      SPACEB(01)
+     A                                   +56'Time'
+     A                                   121':'
+     A                                    +1TIME
+     A*
+     A                                   117'Page'
+     A                                      SPACEB(01)
+     A                                   121':'
+     A                                    +5PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - AH2')
+     A*
+     A                                     1'Supplier No'
+     A                                      SPACEB(01)
+     A            WK0014    R             +3TEXT('Supplier Number')
+     A                                      REFFLD(GRSUPPN GRNHIS)
+     A            WK0002    R             +1TEXT('Branch Number')
+     A                                      REFFLD(GRBRNBR GRNHIS)
+     A                                   +33'Ship  To'
+     A            WK0015    R             +2TEXT('Wharehouse name')
+     A                                      REFFLD(GRWNAME GRNHIS)
+     A                                    +2'GRN No'
+     A            WK0011    R             +1TEXT('Goods Received Note no.')
+     A                                      REFFLD(GRRCAUD GRNHIS)
+     A                                      EDTCDE(L)
+     A                                   127'/'
+     A            GRNPAG         3S      128TEXT('GRNPAG')
+     A                                      EDTCDE(L)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - AH3')
+     A*
+     A                                    10'Name'
+     A                                      SPACEB(01)
+     A            WUNAME    R             +1TEXT('Supplier name')
+     A                                      REFFLD(SUNAME SUPLIER)
+     A            TXT1          30A      +13TEXT('TXT1')
+     A                                    +2'Purchase Order No'
+     A            WRPORD    R             +4TEXT('Purchase Order Number')
+     A                                      REFFLD(GRPORD GRNHIS)
+     A*
+     A                                    10'Addr'
+     A                                      SPACEB(01)
+     A            WULIN1    R             +1TEXT('Address')
+     A                                      REFFLD(SULIN1 SUPLIER)
+     A            TXT2          30A      +13TEXT('TXT2')
+     A                                    +2'Suppliers Ref/D Note'
+     A            WK0007    R             +1TEXT('Invoice number')
+     A                                      REFFLD(GRINVNUM GRNHIS)
+     A*
+     A            WULIN2    R             15TEXT('Line 2')
+     A                                      REFFLD(SULIN2 SUPLIER)
+     A                                      SPACEB(01)
+     A            TXT3          30A      +13TEXT('TXT3')
+     A                                    +2'Date Received'
+     A            DATREC         8S       +8TEXT('DATREC')
+     A                                      EDTWRD('0 /  /    ')
+     A*
+     A            WULIN3    R             15TEXT('Line 3')
+     A                                      REFFLD(SULIN3 SUPLIER)
+     A                                      SPACEB(01)
+     A            TXT4          30A      +13TEXT('TXT4')
+     A*
+     A            WULIN4    R             15TEXT('Line 4')
+     A                                      REFFLD(SULIN4 SUPLIER)
+     A                                      SPACEB(01)
+     A            TXT5          30A      +13TEXT('TXT5')
+     A                                    +2'Received By'
+     A            WK0012    R            +10TEXT('Received By')
+     A                                      REFFLD(GRRECBY GRNHIS)
+     A*
+     A            WULIN5    R             15TEXT('Line 5')
+     A                                      REFFLD(SULIN5 SUPLIER)
+     A                                      SPACEB(01)
+     A*
+     A            WULIN6    R             15TEXT('Line 6')
+     A                                      REFFLD(SULIN6 SUPLIER)
+     A                                      SPACEB(01)
+     A*
+     A            WK0025    R             15TEXT('Post code')
+     A                                      REFFLD(SUPSTCD SUPLIER)
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0004                    TEXT('RECORD - AH4')
+     A*
+     A                                     2'Order  W/H   Our Item N-
+     A                                      o            Description-
+     A                                                            UO-
+     A                                      M          Quantitiy    -
+     A                                          Allocation        Re-
+     A                                      ceipt'
+     A                                      SPACEB(01)
+     A*
+     A                                     2'Line         Supplier I-
+     A                                      tem No                  -
+     A                                                              -
+     A                                              Due     Received-
+     A                                             Code            V-
+     A                                      alue'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0005                    TEXT('RECORD - DD1')
+     A*
+     A            WRSEQ     R              1TEXT('Sequence')
+     A                                      REFFLD(GRSEQ GRNHIS)
+     A                                      EDTCDE(L)
+     A                                      SPACEB(01)
+     A            WRWHSE    R             +2TEXT('Warehouse Number')
+     A                                      REFFLD(GRWHSE GRNHIS)
+     A            WRITEM    R             +3TEXT('Item Number')
+     A                                      REFFLD(GRITEM GRNHIS)
+     A            IDSC          30A       +2TEXT('IDSC')
+     A            WRUOM     R             +4TEXT('Unit of Measure')
+     A                                      REFFLD(GRUOM GRNHIS)
+     A            WRQORD    R             +2TEXT('Quantity Ordered')
+     A                                      REFFLD(GRQORD GRNHIS)
+     A                                      EDTCDE(L)
+     A            WK0010    R             88TEXT('Received this cycle')
+     A                                      REFFLD(GRQRCYC GRNHIS)
+     A                                      EDTCDE(L)
+     A            WK0008    R             +1TEXT('Allocated account')
+     A                                      REFFLD(GRNLALL GRNHIS)
+     A            RN0001        13S 2     +2TEXT('RECEIPT')
+     A                                      EDTCDE(L)
+     A          R XD0006                    TEXT('RECORD - DD2')
+     A*
+     A            WK0018    R             15TEXT('Item Number')
+     A                                      REFFLD(PISPITM IPSITEM)
+     A                                      SPACEB(01)
+     A            TXT1          30A       +2TEXT('TXT1')
+     A          R XD0007                    TEXT('RECORD - DD3')
+     A*
+     A            TXT2          30A       37TEXT('TXT2')
+     A                                      SPACEB(01)
+     A          R XD0008                    TEXT('RECORD - DD4')
+     A*
+     A            TXT3          30A       37TEXT('TXT3')
+     A                                      SPACEB(01)
+     A          R XD0009                    TEXT('RECORD - DD5')
+     A*
+     A            TXT4          30A       37TEXT('TXT4')
+     A                                      SPACEB(01)
+     A          R XD0010                    TEXT('RECORD - DD6')
+     A*
+     A            TXT5          30A       37TEXT('TXT5')
+     A                                      SPACEB(01)
+     A          R XD0011                    TEXT('RECORD - DD8')
+     A*
+     A                                     1' '
+     A                                      SKIPB(63)
+     A          R XD0012                    TEXT('RECORD - DD9')
+     A*
+     A                                    91'Continued Overleaf'
+     A                                      SPACEB(01)

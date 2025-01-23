@@ -1,0 +1,148 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PRLISTO
+     A*  APPLICATION ID      -    PRLIST
+     A*  APPLICATION NAME    -    Print Receiving Lists
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - BBB')
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------'
+     A                                      SKIPB(01)
+     A*
+     A                                   114'Date'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            XDMY           6S       +1TEXT('DAY/MONTH/YEAR')
+     A                                      EDTCDE(Y)
+     A*
+     A            PGM           10A        1TEXT('PROGRAM NAME')
+     A                                      SPACEB(01)
+     A                                   +39'Print Receiving Lists'
+     A                                   +43'Time'
+     A                                    +1':'
+     A                                    +1TIME
+     A*
+     A                                   114'Page'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A                                    +1PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Supplier No'
+     A                                      SPACEB(01)
+     A            WK0022    R             +1TEXT('Supplier Number')
+     A                                      REFFLD(PHSUPPN PORDHWH)
+     A            WK0016    R             +1TEXT('Branch Number')
+     A                                      REFFLD(PHBRNBR PORDHWH)
+     A                                   +23'Ship To'
+     A            WK0023    R             +2TEXT('Wharehouse Name')
+     A                                      REFFLD(PHWNAME PORDHWH)
+     A                                    +3'Purchase Order No'
+     A            WK0020    R             +1TEXT('Purchase Order Number')
+     A                                      REFFLD(PHPORD PORDHWH)
+     A*
+     A            WK0021    R              1TEXT('Supplier name')
+     A                                      REFFLD(PHSNAME PORDHWH)
+     A                                      SPACEB(01)
+     A*
+     A                                    46'For The Attn Of'
+     A                                      SPACEB(01)
+     A            WK0017    R             +1TEXT('Buyers Code')
+     A                                      REFFLD(PHBUYER PORDHWH)
+     A                                   +31'Purchase Order Date'
+     A            RN0002        10A       +1TEXT('##ENTDT')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------'
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Quantity     Quantity  -
+     A                                       UOM     Date     Suppli-
+     A                                      ers Item    Description -
+     A                                                  Our         -
+     A                                                W/h           -
+     A                                      Our'
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Received       Due     -
+     A                                             Expected         -
+     A                                                              -
+     A                                                  Item No     -
+     A                                                         Unit -
+     A                                      Of Measure'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - CCC')
+     A*
+     A            QTYDU          7S       14TEXT('QTYDU')
+     A                                      EDTCDE(4)
+     A                                      SPACEB(01)
+     A            WOUOM     R             +3TEXT('Unit of Measure')
+     A                                      REFFLD(POUOM PORDD)
+     A            RN0001        10A       +1TEXT('##DELVDT')
+     A            WK0005    R             +2TEXT('Item Number')
+     A                                      REFFLD(PISPITM IPSITEM)
+     A            WOITEM    R            +22TEXT('Item Number')
+     A                                      REFFLD(POITEM PORDD)
+     A            WOWHSE    R             +2TEXT('Warehouse')
+     A                                      REFFLD(POWHSE PORDD)
+     A            RUOM           5A      +10TEXT('RUOM')
+     A*
+     A            WK0012    R             60TEXT('Item Description')
+     A                                      REFFLD(POIDESC PORDD)
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - CCD')
+     A*
+     A            WDTEXT    R             60TEXT('Text')
+     A                                      REFFLD(TDTEXT IPSTXTD)
+     A                                      SPACEB(01)
+     A          R XD0004                    TEXT('RECORD - DDD')
+     A*
+     A                                     1'Received By'
+     A                                      SKIPB(56)
+     A                                    +1': _____________________-
+     A                                      ______________'
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0005                    TEXT('RECORD - EEE')
+     A*
+     A            WHTEXT    R             13TEXT('Text')
+     A                                      REFFLD(THTEXT IPSTXTH)
+     A                                      SPACEB(01)
+     A          R XD0006                    TEXT('RECORD - FFF')
+     A*
+     A            OPENL          5S        1TEXT('OPENL')
+     A                                      EDTCDE(L)
+     A                                      SKIPB(64)
+     A                                     7'Item(s) Open On This Or-
+     A                                      der'

@@ -1,0 +1,19 @@
+     A**************************************************************************
+     A* Copyright 2003    ** KDP Software Ltd **      All Rights Reserved      *
+     A**************************************************************************
+     A*                                                                        *
+     A*  File Name:         MPORDHRL2                                          *
+     A*  File Description:  Purchase Order header       PH                     *
+     A*                                                                        *
+     A*  Modifications:                                                        *
+     A*  Date---*  User-----*  Description-----------------------------------* *
+     A*                                                                        *
+     A**************************************************************************
+     A*
+     A          R PORDHF                    PFILE(PORDH     )
+     A*
+     A          K PHCOYNO
+     A          K PHPORD
+     A*
+     A          O PHOS04                    COMP(EQ 'Y')
+     A*
