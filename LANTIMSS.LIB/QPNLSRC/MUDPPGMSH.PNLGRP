@@ -1,0 +1,19 @@
+Enter a valid program name to be called by the requesting program.
+:PNLGRP.
+:HELP NAME='SC0002'.
+Display Data Area contents.
+:P.
+:EHELP.
+:HELP NAME='SC0002AREA1'.
+Data Area Posn. 1 - 10
+:P.
+:EHELP.
+:HELP NAME='SC0002AREA2'.
+Data Area Posn 11 - 20
+:P.
+:EHELP.
+:HELP NAME='SC0002AREA3'.
+Data Area Posn 21 - 30
+:P.
+:EHELP.
+:EPNLGRP.

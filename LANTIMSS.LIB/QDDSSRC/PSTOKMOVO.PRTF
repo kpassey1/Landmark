@@ -1,0 +1,96 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PSTOKMOVO
+     A*  APPLICATION ID      -    PSTOKMOV
+     A*  APPLICATION NAME    -    Print Daily Stock Transactions
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AHG')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +26TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +32'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    47'Stock Transaction Daybo-
+     A                                      ok for'
+     A                                      SPACEB(01)
+     A            PTDATE        10A       +1TEXT('INPDATE')
+     A                                   +31'Date'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   118'Time'
+     A                                      SPACEB(01)
+     A                                    +1TIME
+     A*
+     A                                    66'Transaction'
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Whs Item               -
+     A                                        Item Description      -
+     A                                                         Date -
+     A                                              Qty     Referenc-
+     A                                      e       Input Cost   Tra-
+     A                                      nsaction Type'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BD1')
+     A*
+     A            WTWHSE    R              1TEXT('Warehouse Number')
+     A                                      REFFLD(STWHSE STOKMOV5)
+     A                                      SPACEB(01)
+     A            WTITEM    R             +1TEXT('Item Number')
+     A                                      REFFLD(STITEM STOKMOV5)
+     A            WK0001    R             +1TEXT('Item Description')
+     A                                      REFFLD(ITIDESC ITMMAST)
+     A            DTDTTR        10A       +1TEXT('DTDTTR')
+     A            WTTQTY    R             +1TEXT('Transaction Quantity')
+     A                                      REFFLD(STTQTY STOKMOV5)
+     A                                      EDTCDE(Z)
+     A            WTTREF    R             +1TEXT('Transaction Reference')
+     A                                      REFFLD(STTREF STOKMOV5)
+     A            WTUCST    R             +1TEXT('Unit Cost')
+     A                                      REFFLD(STUCST STOKMOV5)
+     A                                      EDTCDE(3)
+     A            WTTTYP    R             +5TEXT('Transaction Type')
+     A                                      REFFLD(STTTYP STOKMOV5)
+     A          R XD0003                    TEXT('RECORD - BD2')
+     A*
+     A            DTDTTR        10A       67TEXT('DTDTTR')
+     A                                      SPACEB(01)
+     A            WTTQTY    R             +1TEXT('Transaction Quantity')
+     A                                      REFFLD(STTQTY STOKMOV5)
+     A                                      EDTCDE(Z)
+     A            WTTREF    R             +1TEXT('Transaction Reference')
+     A                                      REFFLD(STTREF STOKMOV5)
+     A            WTUCST    R             +1TEXT('Unit Cost')
+     A                                      REFFLD(STUCST STOKMOV5)
+     A                                      EDTCDE(3)
+     A            WTTTYP    R             +5TEXT('Transaction Type')
+     A                                      REFFLD(STTTYP STOKMOV5)
+     A          R XD0004                    TEXT('RECORD - CER')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'Number of Transactions'
+     A                                      SPACEB(01)
+     A            RN0001         5S       +1TEXT('LRCOUNT')
+     A                                      EDTCDE(L)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###   END OF REPORT   #-
+     A                                      ##'
+     A                                      SPACEB(01)

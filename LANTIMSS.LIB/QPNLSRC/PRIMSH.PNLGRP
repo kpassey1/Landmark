@@ -1,0 +1,74 @@
+:PNLGRP.
+:HELP NAME='SCR001'.
+Date Selection
+:P.
+:EHELP.
+:HELP NAME='SCR001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR001PGMDES'.
+Program Description
+:P.
+:EHELP.
+:HELP NAME='SCR001WSDATE'.
+FL0001
+:P.
+:EHELP.
+:HELP NAME='SCR002'.
+Stock Movement History Select
+:P.
+:EHELP.
+:HELP NAME='SCR002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR002FITEM'.
+From item
+:P.
+:EHELP.
+:HELP NAME='SCR002FWHSE'.
+From warehouse
+:P.
+:EHELP.
+:HELP NAME='SCR002PGMDES'.
+Program Description
+:P.
+:EHELP.
+:HELP NAME='SCR002TITEM'.
+To item
+:P.
+:EHELP.
+:HELP NAME='SCR002TWHSE'.
+To warehouse
+:P.
+:EHELP.
+:HELP NAME='SCR003'.
+Period end cut-off date
+:P.
+:EHELP.
+:HELP NAME='SCR003CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SCR003PGMDES'.
+Program Description
+:P.
+:EHELP.
+:HELP NAME='SCR003WSDATE'.
+FL0001
+:P.
+:EHELP.
+:HELP NAME='SCSUBM'.
+Submit Screen
+:P.
+:EHELP.
+:HELP NAME='SCSUBMDTSUBM'.
+How submitted
+:P.
+:EHELP.
+:HELP NAME='SCSUBMPGMDES'.
+Program Description
+:P.
+:EHELP.
+:EPNLGRP.

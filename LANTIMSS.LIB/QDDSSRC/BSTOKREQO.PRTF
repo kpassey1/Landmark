@@ -1,0 +1,138 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    BSTOKREQO
+     A*  APPLICATION ID      -    BSTOKREQ
+     A*  APPLICATION NAME    -        Stock Request Update
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AH1')
+     A*
+     A            PGM           10A        1TEXT('PROGRAM NAME')
+     A                                      SKIPB(01)
+     A            WYDESC    R             38TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +38'Time'
+     A                                   120':'
+     A                                    +1TIME
+     A*
+     A                                    38'    Stock Request Updat-
+     A                                      e'
+     A                                      SPACEB(01)
+     A                                   +54'Date'
+     A                                   120':'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   116'Page'
+     A                                      SPACEB(01)
+     A                                   120':'
+     A                                    +1PAGNBR
+     A                                      EDTCDE(Z)
+     A          R XD0002                    TEXT('RECORD - AH2')
+     A*
+     A                                     1'Sequence'
+     A                                      SPACEB(01)
+     A            PRSEQ          5S       +1TEXT('Sequence Number')
+     A                                      EDTCDE(L)
+     A                                    +1'From           To'
+     A*
+     A                                     1'Warehouse'
+     A                                      SPACEB(01)
+     A                                    +5':'
+     A            WK0011    R             16TEXT('Warehouse')
+     A                                      REFFLD(SRFWHSE STOKREQ)
+     A                                   +13':'
+     A            WK0019    R             33TEXT('Warehouse')
+     A                                      REFFLD(SRTWHSE STOKREQ)
+     A*
+     A                                     1'Stock Inv Grp'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            WK0009    R             16TEXT('Stock Inventory Group')
+     A                                      REFFLD(SRFSTIG STOKREQ)
+     A                                   +14':'
+     A            WK0017    R             33TEXT('Stock Inventory Group')
+     A                                      REFFLD(SRTSTIG STOKREQ)
+     A*
+     A                                     1'Supplier'
+     A                                      SPACEB(01)
+     A                                    +6':'
+     A            WK0010    R             16TEXT('Supplier Number')
+     A                                      REFFLD(SRFSUPPN STOKREQ)
+     A            WK0007    R             +1TEXT('Branch Number')
+     A                                      REFFLD(SRFSBRN STOKREQ)
+     A                                    +6':'
+     A            WK0018    R             33TEXT('Supplier Number')
+     A                                      REFFLD(SRTSUPPN STOKREQ)
+     A            WK0015    R             +1TEXT('Branch Number')
+     A                                      REFFLD(SRTSBRN STOKREQ)
+     A*
+     A                                     1'Item Class'
+     A                                      SPACEB(01)
+     A                                    +4':'
+     A            WK0004    R             16TEXT('Item Class')
+     A                                      REFFLD(SRFCLAS STOKREQ)
+     A                                   +13':'
+     A            WK0012    R             33TEXT('Item Class')
+     A                                      REFFLD(SRTCLAS STOKREQ)
+     A*
+     A                                     1'Item Group'
+     A                                      SPACEB(01)
+     A                                    +4':'
+     A            WK0008    R             16TEXT('Stock Group')
+     A                                      REFFLD(SRFSGRP STOKREQ)
+     A                                   +13':'
+     A            WK0016    R             33TEXT('Stock Group')
+     A                                      REFFLD(SRTSGRP STOKREQ)
+     A*
+     A                                     1'Location'
+     A                                      SPACEB(01)
+     A                                    +6':'
+     A            WK0006    R             16TEXT('Location')
+     A                                      REFFLD(SRFLOCN STOKREQ)
+     A                                    +6':'
+     A            WK0014    R             33TEXT('Location')
+     A                                      REFFLD(SRTLOCN STOKREQ)
+     A*
+     A                                     1'Item Number'
+     A                                      SPACEB(01)
+     A                                    +3':'
+     A            WK0005    R             16TEXT('Item Number')
+     A                                      REFFLD(SRFITEM STOKREQ)
+     A                                    32':'
+     A            WK0013    R             33TEXT('Item Number')
+     A                                      REFFLD(SRTITEM STOKREQ)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - AH3')
+     A*
+     A                                     1'Sequence No.      Wareh-
+     A                                      ouse    Location    Item-
+     A                                       Number'
+     A                                      SPACEB(01)
+     A          R XD0004                    TEXT('RECORD - BD1')
+     A*
+     A            WSSEQ     R              1TEXT('Sequence')
+     A                                      REFFLD(SSSEQ STOKSEL1)
+     A                                      EDTCDE(Z)
+     A                                      SPACEB(01)
+     A            WSWHSE    R            +14TEXT('Warehouse Number')
+     A                                      REFFLD(SSWHSE STOKSEL1)
+     A            WSLOCN    R            +10TEXT('Location')
+     A                                      REFFLD(SSLOCN STOKSEL1)
+     A            WSITEM    R             +2TEXT('Item Number')
+     A                                      REFFLD(SSITEM STOKSEL1)
+     A                                    +1'Details already request-
+     A                                      ed'
+     A          R XD0005                    TEXT('RECORD - BD2')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    40'No records output for s-
+     A                                      election requested'
+     A                                      SPACEB(01)

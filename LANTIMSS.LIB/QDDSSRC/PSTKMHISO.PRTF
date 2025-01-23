@@ -1,0 +1,156 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PSTKMHISO
+     A*  APPLICATION ID      -    PSTKMHIS
+     A*  APPLICATION NAME    -        Stock Movement History
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AH1')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +26TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +24'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    54'Stock Movement History -
+     A                                                              -
+     A                                               Date'
+     A                                      SPACEB(01)
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   110'Time'
+     A                                      SPACEB(01)
+     A                                    +1TIME
+     A          R XD0002                    TEXT('RECORD - AH2')
+     A*
+     A                                     1'From Warehouse'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            PRFWHS         3A       +1TEXT('From Warehouse')
+     A                                   +14'To Warehouse'
+     A                                    +1':'
+     A            PRM002         3A       +1TEXT('To Warehouse')
+     A*
+     A                                     1'From Item'
+     A                                      SPACEB(01)
+     A                                    +6':'
+     A            PRFITM        20A       +1TEXT('From Item')
+     A                                    35'To Item'
+     A                                    +6':'
+     A            PRM001        20A       +1TEXT('To Item')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - AH3')
+     A*
+     A                                     2'Warehouse'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            WTWHSE    R             +1TEXT('Warehouse Number')
+     A                                      REFFLD(STWHSE STOKMOV7)
+     A            WK0008    R             +1TEXT('Warehouse Description')
+     A                                      REFFLD(WHWDESC WAREHED)
+     A          R XD0004                    TEXT('RECORD - DD1')
+     A*
+     A                                     2'Item'
+     A                                      HIGHLIGHT
+     A                                      SPACEB(01)
+     A                                     6':'
+     A                                      HIGHLIGHT
+     A            WK0002    R             +1TEXT('Item Number')
+     A                                      HIGHLIGHT
+     A                                      REFFLD(WDITEM WAREDET)
+     A                                    +3'Desc'
+     A                                      HIGHLIGHT
+     A                                    35':'
+     A                                      HIGHLIGHT
+     A            IDESC         30A       +1TEXT('Short Item description')
+     A                                      HIGHLIGHT
+     A                                    +1'Qty Alloc'
+     A                                      HIGHLIGHT
+     A                                    77':'
+     A                                      HIGHLIGHT
+     A            WK0004    R             78TEXT('Quantity Allocated')
+     A                                      HIGHLIGHT
+     A                                      REFFLD(WDQAL WAREDET)
+     A                                      EDTCDE(M)
+     A                                    +1'Qty Avail'
+     A                                      HIGHLIGHT
+     A                                    98':'
+     A                                      HIGHLIGHT
+     A            QTYAV          9S       99TEXT('Quantity Available')
+     A                                      HIGHLIGHT
+     A                                      EDTCDE(M)
+     A                                    +1'Per.O/B'
+     A                                      HIGHLIGHT
+     A                                   117':'
+     A                                      HIGHLIGHT
+     A            WK0003    R            118TEXT('Opening balance')
+     A                                      HIGHLIGHT
+     A                                      REFFLD(WDOBAL WAREDET)
+     A                                      EDTCDE(M)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     9'Date           Type    -
+     A                                               Reference      -
+     A                                             Qty In         Qt-
+     A                                      y Out       Non-movement-
+     A                                         Balance'
+     A                                      SPACEB(01)
+     A          R XD0005                    TEXT('RECORD - DD2')
+     A*
+     A            ODATE         10A        7TEXT('Output Date')
+     A                                      SPACEB(01)
+     A            WTTTYP    R             +8TEXT('Transaction Type')
+     A                                      REFFLD(STTTYP STOKMOV7)
+     A            WTTREF    R            +14TEXT('Transaction Reference')
+     A                                      REFFLD(STTREF STOKMOV7)
+     A            QTYIN          9S       +7TEXT('Quantity in')
+     A                                      EDTCDE(M)
+     A            QTYOT          9S       +5TEXT('Quantity Out')
+     A                                      EDTCDE(M)
+     A            NMVQTY         9S       +4TEXT('Non-movement quantity')
+     A                                      EDTCDE(M)
+     A            WDCBAL         9S       +5TEXT('Calc. fld for Closing Bal.')
+     A                                      EDTCDE(M)
+     A          R XD0006                    TEXT('RECORD - DD3')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    63'Qty O/H'
+     A                                      SPACEB(01)
+     A                                    70':'
+     A            WK0005    R             71TEXT('Quantity on hand')
+     A                                      REFFLD(WDQOH WAREDET)
+     A                                      EDTCDE(M)
+     A                                    +1'Closing Bal.'
+     A                                    94':'
+     A            WDCBAL         9S       +1TEXT('Calc. fld for Closing Bal.')
+     A                                      EDTCDE(M)
+     A            ERROR         17A       +2TEXT('Error narrative')
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -----'
+     A                                      SPACEB(01)
+     A          R XD0007                    TEXT('RECORD - XXX')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###  End of Report  ###'
+     A                                      SPACEB(01)

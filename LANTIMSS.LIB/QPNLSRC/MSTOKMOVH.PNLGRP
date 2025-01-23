@@ -1,0 +1,430 @@
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+:PNLGRP.
+:HELP NAME='SCALOC'.
+        Allocate screen
+:P.
+:EHELP.
+:HELP NAME='SCALOCITSUBS'.
+Substitute item number
+:P.
+:EHELP.
+:HELP NAME='SCALOCITSUPG'.
+Superceding item 'To'
+:P.
+:EHELP.
+:HELP NAME='SCLOCT'.
+  List of Locations for Item
+:P.
+:EHELP.
+:HELP NAME='SCLOCTSTITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SCLOCTSTWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SCLOCTT14'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SCLOCTT16'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SCLOCTT18'.
+Quantity on hand
+:P.
+:EHELP.
+:HELP NAME='SCSALP'.
+  List Suppliers in Alpha Seq
+:P.
+:EHELP.
+:HELP NAME='SCSALPPSSALP'.
+FL0023
+:P.
+:EHELP.
+:HELP NAME='SCSALPTAL'.
+TAL
+:P.
+:EHELP.
+:HELP NAME='SCSALPTBR'.
+Location Description
+:P.
+:EHELP.
+:HELP NAME='SCSALPTSN'.
+TSN
+:P.
+:EHELP.
+:HELP NAME='SCSALPTSU'.
+DESC Description
+
+           The description for the code as required.
+Location
+:P.
+:EHELP.
+:HELP NAME='SCSALPT07'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SCWHST'.
+      List of Warehouses
+:P.
+:EHELP.
+:HELP NAME='SCWHSTT04'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SCWHSTT05'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SCWHSTT06'.
+Warehouse Description
+:P.
+:EHELP.
+:HELP NAME='SC0001'.
+List Screen for IMSTRN
+:P.
+:EHELP.
+:HELP NAME='SC0001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0102'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001TTDESC'.
+Description
+:P.
+:EHELP.
+:HELP NAME='SC0001TTTRNC'.
+Transaction Type
+:P.
+:EHELP.
+:HELP NAME='SC0002'.
+Detail Screen for STOKMOV
+:P.
+:EHELP.
+:HELP NAME='SC0002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0002EDCARR'.
+Carrier
+:P.
+CARR Carrier
+
+           The carrier or supplier fror a purchase order.
+           Free format text.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+WEIG  Weight
+
+           The weight allocated to the product or location.
+:EHELP.
+:HELP NAME='SC0002FL0023'.
+FL0023
+:P.
+:EHELP.
+:HELP NAME='SC0002ITIDESC'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SC0002STBRNBR'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0002STITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0002STLOCN'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0002STLOCT'.
+Other Location
+:P.
+:EHELP.
+:HELP NAME='SC0002STSUPPN'.
+Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SC0002STTIME'.
+Expected Time
+:P.
+:EHELP.
+:HELP NAME='SC0002STTQTY'.
+Transaction Quantity
+:P.
+:EHELP.
+:HELP NAME='SC0002STTREF'.
+Transaction Reference
+:P.
+:EHELP.
+:HELP NAME='SC0002STUCST'.
+Unit Cost
+:P.
+:EHELP.
+:HELP NAME='SC0002STWEIG'.
+Weight
+:P.
+:EHELP.
+:HELP NAME='SC0002STWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0002STWHST'.
+Other Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0002TTDESC'.
+DESC Description
+
+           The description for the code as required.
+Description
+:P.
+:EHELP.
+:HELP NAME='SC0002WKDESL'.
+Other location description
+:P.
+:EHELP.
+:HELP NAME='SC0002WKDESW'.
+Other warehouse description
+:P.
+:EHELP.
+:HELP NAME='SC0002WKLDES'.
+Location Description
+:P.
+:EHELP.
+:HELP NAME='SC0002WKWDES'.
+WHDESC
+:P.
+:EHELP.
+:HELP NAME='SC0003'.
+  List of Items In Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0003STWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0003T01'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0003T02'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0003T03'.
+Item description
+:P.
+:EHELP.
+:HELP NAME='SC0004'.
+      List of Warehouses
+:P.
+:EHELP.
+:HELP NAME='SC0004T04'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0004T05'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0004T06'.
+Warehouse Description
+:P.
+:EHELP.
+:HELP NAME='SC0005'.
+List of Locations in Warehouse
+:P.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+:EHELP.
+:HELP NAME='SC0005STWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0005T07'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0005T08'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0005T09'.
+Location Description
+:P.
+:EHELP.
+:HELP NAME='SC0006'.
+  List of Items in Location
+:P.
+:EHELP.
+:HELP NAME='SC0006STLOCN'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0006STWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0006T10'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0006T11'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0006T13'.
+Quantity on hand
+:P.
+:EHELP.
+:HELP NAME='SC0007'.
+  List of Locations for Item
+:P.
+:EHELP.
+:HELP NAME='SC0007STITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0007STWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0007T14'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0007T16'.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0007T18'.
+Quantity on hand
+:P.
+:EHELP.
+:HELP NAME='SC0015'.
+        List Suppliers
+:P.
+:EHELP.
+:HELP NAME='SC0015FL0021'.
+FL0021
+:P.
+:EHELP.
+:HELP NAME='SC0015FL0022'.
+FL0022
+:P.
+:EHELP.
+:HELP NAME='SC0015TBR'.
+Location Description
+:P.
+:EHELP.
+:HELP NAME='SC0015TSN'.
+TSN
+:P.
+:EHELP.
+:HELP NAME='SC0015TSU'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0015T07'.
+Action select field
+:P.
+:EHELP.
+:EPNLGRP.

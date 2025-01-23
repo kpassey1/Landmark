@@ -1,0 +1,50 @@
+:PNLGRP.
+:HELP NAME='SC0001'.
+List Screen for FSSTOR
+:P.
+:EHELP.
+:HELP NAME='SC0001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0101'.
+Reposition panel field
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0102'.
+Reposition panel field
+:P.
+:EHELP.
+:HELP NAME='SC0001WLUSDF'.
+Store Number
+:P.
+:EHELP.
+:HELP NAME='SC0001WLWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0002'.
+Detail Screen for FSSTOR
+:P.
+:EHELP.
+:HELP NAME='SC0002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0002WLCNO'.
+Company number
+:P.
+:EHELP.
+:HELP NAME='SC0002WLUSDF'.
+Store Number
+:P.
+:EHELP.
+:HELP NAME='SC0002WLWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:EPNLGRP.

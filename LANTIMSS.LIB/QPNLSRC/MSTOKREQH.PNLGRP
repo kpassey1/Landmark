@@ -1,0 +1,450 @@
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+:PNLGRP.
+:HELP NAME='SC0001'.
+List Screen for STOKREQ
+:P.
+:EHELP.
+:HELP NAME='SC0001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0102'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFCLAS'.
+From Item Class
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFITEM'.
+From Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFLOCN'.
+From Location
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFSBRN'.
+From Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFSGRP'.
+FromStock Group
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFSTIG'.
+From Stock Inventory Group
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFSUPPN'.
+From Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SC0001SRFWHSE'.
+From Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0001SRSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTCLAS'.
+To Item Class
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTITEM'.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+To Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTLOCN'.
+To Location
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTSBRN'.
+To Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTSGRP'.
+To Stock Group
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTSTIG'.
+To Stock Inventory Group
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTSUPPN'.
+To Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SC0001SRTWHSE'.
+To Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0002'.
+Detail Screen for STOKREQ
+:P.
+:EHELP.
+:HELP NAME='SC0002CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0002SRFCLAS'.
+From Item Class
+:P.
+:EHELP.
+:HELP NAME='SC0002SRFITEM'.
+From Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0002SRFLOCN'.
+From Location
+:P.
+:EHELP.
+:HELP NAME='SC0002SRFSBRN'.
+From Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0002SRFSGRP'.
+FromStock Group
+:P.
+:EHELP.
+:HELP NAME='SC0002SRFSTIG'.
+From Stock Inventory Group
+:P.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+Item Class
+
+            To group items together by class this may be
+  used to produce reports in class order.
+:EHELP.
+:HELP NAME='SC0002SRFSUPPN'.
+From Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SC0002SRFWHSE'.
+From Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0002SRSEQ'.
+Sequence
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTCLAS'.
+To Item Class
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTITEM'.
+To Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTLOCN'.
+To Location
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTSBRN'.
+To Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTSGRP'.
+To Stock Group
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTSTIG'.
+To Stock Inventory Group
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTSUPPN'.
+To Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SC0002SRTWHSE'.
+To Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0003'.
+     List of Item Classes
+:P.
+:EHELP.
+:HELP NAME='SC0003T01'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0003T02'.
+Item Class
+:P.
+:EHELP.
+:HELP NAME='SC0003T03'.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+Item Class Description
+:P.
+:EHELP.
+:HELP NAME='SC0004'.
+        List of Items
+:P.
+:EHELP.
+:HELP NAME='SC0004T04'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0004T05'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0004T06'.
+Item Description
+:P.
+:EHELP.
+:HELP NAME='SC0005'.
+   List of Inventory Groups
+:P.
+:EHELP.
+:HELP NAME='SC0005T07'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0005T08'.
+Stock Inventory Group
+:P.
+:EHELP.
+:HELP NAME='SC0005T09'.
+S.I.G. Description
+:P.
+:EHELP.
+:HELP NAME='SC0006'.
+     List of Stock Groups
+:P.
+:EHELP.
+:HELP NAME='SC0006T10'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0006T11'.
+Stock Group
+:P.
+:EHELP.
+:HELP NAME='SC0006T12'.
+Stock Group Description
+:P.
+:EHELP.
+:HELP NAME='SC0007'.
+      List of Suppliers
+:P.
+:EHELP.
+:HELP NAME='SC0007T13'.
+Action select field
+:P.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+Branch Number
+
+             If the account or supplier is a branch of a
+master account.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+DESC Description
+
+           The description for the code as required.
+:EHELP.
+:HELP NAME='SC0007T14'.
+Supplier Number
+:P.
+:EHELP.
+:HELP NAME='SC0007T15'.
+Branch Number
+:P.
+:EHELP.
+:HELP NAME='SC0007T16'.
+Customer name
+:P.
+:EHELP.
+:HELP NAME='SC0008'.
+      List of Warehouses
+:P.
+:EHELP.
+:HELP NAME='SC0008T17'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0008T18'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0008T19'.
+Warehouse Description
+:P.
+:EHELP.
+:HELP NAME='SC0009'.
+List of Locations in Warehouse
+:P.
+:EHELP.
+:HELP NAME='SC0009T20'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0009T21'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0009T22'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0009T23'.
+Location Description
+:P.
+:EHELP.
+:EPNLGRP.

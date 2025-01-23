@@ -1,0 +1,70 @@
+Created by
+
+
+          The user who actually created this record.
+LOCN Location
+
+           The location code where items are stored in a
+           warehouse.
+:PNLGRP.
+:HELP NAME='SCCHEK'.
+Check request is correct
+:P.
+:EHELP.
+:HELP NAME='SC0001'.
+List Screen for PCKLST
+:P.
+:EHELP.
+:HELP NAME='SC0001CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0001FL0001'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0001FL0003'.
+FL0003
+:P.
+:EHELP.
+:HELP NAME='SC0001PLCRBY'.
+Created By
+:P.
+:EHELP.
+:HELP NAME='SC0001PLSEQ'.
+Picking List No.
+:P.
+:EHELP.
+:HELP NAME='SC0001PS0102'.
+Action select field
+:P.
+:EHELP.
+:HELP NAME='SC0004'.
+List Screen for PCKLSD
+:P.
+:EHELP.
+:HELP NAME='SC0004CYDESC'.
+Company description
+:P.
+:EHELP.
+:HELP NAME='SC0004PDITEM'.
+Item Number
+:P.
+:EHELP.
+:HELP NAME='SC0004PDLOCN'.
+Location
+:P.
+:EHELP.
+:HELP NAME='SC0004PDTQTY'.
+Transaction Quantity
+:P.
+:EHELP.
+:HELP NAME='SC0004PDWHSE'.
+Warehouse Number
+:P.
+:EHELP.
+:HELP NAME='SC0004PLSEQ'.
+Picking List No.
+:P.
+:EHELP.
+:EPNLGRP.

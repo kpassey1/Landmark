@@ -1,0 +1,196 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PSTOKVARO
+     A*  APPLICATION ID      -    PSTOKVAR
+     A*  APPLICATION NAME    -      Stock Take Variance Report
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AH1')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +26TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +32'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    51'  Stock Take Variance R-
+     A                                      eport'
+     A                                      SPACEB(01)
+     A                                   +39'Date'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   118'Time'
+     A                                      SPACEB(01)
+     A                                    +1TIME
+     A          R XD0002                    TEXT('RECORD - AH2')
+     A*
+     A                                     1'Sequence'
+     A                                      SPACEB(01)
+     A                                    +2':'
+     A            WRSEQ     R             12TEXT('Sequence')
+     A                                      REFFLD(SRSEQ STOKREQ)
+     A                                      EDTCDE(Z)
+     A                                    +2'From                   -
+     A                                       To'
+     A*
+     A                                     1'Warehouse'
+     A                                      SPACEB(01)
+     A                                    +8':'
+     A            WK0009    R             19TEXT('From Warehouse Number')
+     A                                      REFFLD(SRFWHSE STOKREQ)
+     A                                   +20':'
+     A            WK0017    R             43TEXT('To Warehouse Number')
+     A                                      REFFLD(SRTWHSE STOKREQ)
+     A*
+     A                                     1'Stock Inv Group'
+     A                                      SPACEB(01)
+     A                                    +2':'
+     A            WK0007    R             19TEXT('From Stock Inventory Group')
+     A                                      REFFLD(SRFSTIG STOKREQ)
+     A                                   +21':'
+     A            WK0015    R             43TEXT('To Stock Inventory Group')
+     A                                      REFFLD(SRTSTIG STOKREQ)
+     A*
+     A                                     1'Supplier'
+     A                                      SPACEB(01)
+     A                                    +9':'
+     A            WK0008    R             19TEXT('From Supplier Number')
+     A                                      REFFLD(SRFSUPPN STOKREQ)
+     A            WK0005    R             +1TEXT('From Branch Number')
+     A                                      REFFLD(SRFSBRN STOKREQ)
+     A                                   +13':'
+     A            WK0016    R             43TEXT('To Supplier Number')
+     A                                      REFFLD(SRTSUPPN STOKREQ)
+     A            WK0013    R             +1TEXT('To Branch Number')
+     A                                      REFFLD(SRTSBRN STOKREQ)
+     A*
+     A                                     1'Item Class'
+     A                                      SPACEB(01)
+     A                                    +7':'
+     A            WK0002    R             19TEXT('From Item Class')
+     A                                      REFFLD(SRFCLAS STOKREQ)
+     A                                   +20':'
+     A            WK0010    R             43TEXT('To Item Class')
+     A                                      REFFLD(SRTCLAS STOKREQ)
+     A*
+     A                                     1'Item Group'
+     A                                      SPACEB(01)
+     A                                    +7':'
+     A            WK0006    R             19TEXT('FromStock Group')
+     A                                      REFFLD(SRFSGRP STOKREQ)
+     A                                   +20':'
+     A            WK0014    R             43TEXT('To Stock Group')
+     A                                      REFFLD(SRTSGRP STOKREQ)
+     A*
+     A                                     1'Location'
+     A                                      SPACEB(01)
+     A                                    +9':'
+     A            WK0004    R             19TEXT('From Location')
+     A                                      REFFLD(SRFLOCN STOKREQ)
+     A                                   +13':'
+     A            WK0012    R             43TEXT('To Location')
+     A                                      REFFLD(SRTLOCN STOKREQ)
+     A*
+     A                                     1'Item Number'
+     A                                      SPACEB(01)
+     A                                    +6':'
+     A            WK0003    R             19TEXT('From Item Number')
+     A                                      REFFLD(SRFITEM STOKREQ)
+     A                                    +3':'
+     A            WK0011    R             43TEXT('To Item Number')
+     A                                      REFFLD(SRTITEM STOKREQ)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - AH3')
+     A*
+     A                                     1'Warehouse'
+     A                                      SPACEB(01)
+     A            WSWHSE    R             +1TEXT('Warehouse Number')
+     A                                      REFFLD(SSWHSE STOKSEL)
+     A            WK0020    R             +2TEXT('Warehouse Description')
+     A                                      REFFLD(WHWDESC WAREHED)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Location   Item Number -
+     A                                               Description    -
+     A                                              Standard     On -
+     A                                      Hand  Physical          -
+     A                                           Shortage      Surpl-
+     A                                      us'
+     A                                      SPACEB(01)
+     A*
+     A                                    58'Cost       Balance     -
+     A                                      Count  Variance      Val-
+     A                                      ue          Value'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0004                    TEXT('RECORD - BD1')
+     A*
+     A            WSLOCN    R              1TEXT('Location')
+     A                                      REFFLD(SSLOCN STOKSEL)
+     A                                      SPACEB(01)
+     A            WSITEM    R             +1TEXT('Item Number')
+     A                                      REFFLD(SSITEM STOKSEL)
+     A            IDESC         20A       +1TEXT('IDESC')
+     A            WTSTUC    R             +1TEXT('Standard unit cost')
+     A                                      REFFLD(ITSTUC ITMMAST)
+     A                                      EDTCDE(3)
+     A            WK0021    R             +1TEXT('Quantity on hand')
+     A                                      REFFLD(WIQOH WLOCITM)
+     A                                      EDTCDE(M)
+     A            WK0018    R             78TEXT('Quantity counted')
+     A                                      REFFLD(SSQUANT STOKSEL)
+     A                                      EDTCDE(M)
+     A            VARIAN         9S       88TEXT('VARIAN')
+     A                                      EDTCDE(M)
+     A            RN0001        11S 2     +1TEXT('Shortage Value')
+     A                                      EDTCDE(L)
+     A            SURVAL        11S 2    112TEXT('SUTOT')
+     A                                      EDTCDE(L)
+     A          R XD0005                    TEXT('RECORD - TT1')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    63'Warehouse Totals'
+     A                                      SPACEB(01)
+     A            SHTOT         11S 2    +20TEXT('SUTOT')
+     A                                      EDTCDE(L)
+     A            SUTOT         11S 2    112TEXT('SUTOT')
+     A                                      EDTCDE(L)
+     A          R XD0006                    TEXT('RECORD - ZZZ')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    63'Request Totals'
+     A                                      SPACEB(01)
+     A            LSHTOT        11S 2    +22TEXT('SUTOT')
+     A                                      EDTCDE(L)
+     A            LSUTOT        11S 2    112TEXT('SUTOT')
+     A                                      EDTCDE(L)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###   END OF REPORT   #-
+     A                                      ##'
+     A                                      SPACEB(01)

@@ -1,0 +1,83 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    BPEDELO
+     A*  APPLICATION ID      -    BPEDEL
+     A*  APPLICATION NAME    -         Expected Deliveries
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +31TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +19'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    51'     Expected Deliverie-
+     A                                      s'
+     A                                      SPACEB(01)
+     A                                   +35'Date'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                     5'Expected Delivery Date'
+     A                                      SPACEB(01)
+     A            ODATE         10A       +1TEXT('ODATE')
+     A                                   +72'Time'
+     A                                    +1TIME
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     5'Transaction Reference  -
+     A                                        Supplier      Carrier -
+     A                                                      Time Exp-
+     A                                      ected  Item             -
+     A                                                              -
+     A                                      Qty'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BBB')
+     A*
+     A            WDTREF    R              5TEXT('Transaction Reference')
+     A                                      REFFLD(EDTREF EXPDEL)
+     A                                      SPACEB(01)
+     A            WK0003    R            +10TEXT('Supplier Number')
+     A                                      REFFLD(EDSUPPN EXPDEL)
+     A            WK0001    R             +1TEXT('Branch Number')
+     A                                      REFFLD(EDBRNBR EXPDEL)
+     A            WDCARR    R             +4TEXT('Carrier')
+     A                                      REFFLD(EDCARR EXPDEL)
+     A            WDTIME    R             +4TEXT('Expected time')
+     A                                      REFFLD(EDTIME EXPDEL)
+     A                                      EDTCDE(Z)
+     A            WTITEM    R             +8TEXT('Item Number')
+     A                                      REFFLD(STITEM STOKMOV6)
+     A            ITSD          20A       98TEXT('Description')
+     A            WTTQTY    R             +1TEXT('Transaction Quantity')
+     A                                      REFFLD(STTQTY STOKMOV6)
+     A                                      EDTCDE(M)
+     A          R XD0003                    TEXT('RECORD - CCC')
+     A*
+     A            WTITEM    R             82TEXT('Item Number')
+     A                                      REFFLD(STITEM STOKMOV6)
+     A                                      SPACEB(01)
+     A            ITSD          20A       98TEXT('Description')
+     A            WTTQTY    R             +1TEXT('Transaction Quantity')
+     A                                      REFFLD(STTQTY STOKMOV6)
+     A                                      EDTCDE(M)
+     A          R XD0004                    TEXT('RECORD - XXX')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###  End of Report  ###'
+     A                                      SPACEB(01)

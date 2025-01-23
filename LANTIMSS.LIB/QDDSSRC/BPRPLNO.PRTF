@@ -1,0 +1,72 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    BPRPLNO
+     A*  APPLICATION ID      -    BPRPLN
+     A*  APPLICATION NAME    -    Replenishment Report
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +25TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +25'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    56'Replenishment Report   -
+     A                                                              -
+     A                                             Date'
+     A                                      SPACEB(01)
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   110'Time'
+     A                                      SPACEB(01)
+     A                                    +1TIME
+     A*
+     A                                     2'Warehouse'
+     A                                      SPACEB(01)
+     A            WK0009    R             +1TEXT('Warehouse Number')
+     A                                      REFFLD(WDWHSE WAREDET)
+     A            WK0011    R             +1TEXT('Warehouse Description')
+     A                                      REFFLD(WHWDESC WAREHED)
+     A*
+     A                                    69'Quantity     Minimum   -
+     A                                       Lead Time'
+     A                                      SPACEB(01)
+     A*
+     A                                     2'Item Number            -
+     A                                      Supplier                -
+     A                                                          on H-
+     A                                      and      Balance     in -
+     A                                      Days'
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BBB')
+     A*
+     A            WK0003    R              2TEXT('Item Number')
+     A                                      REFFLD(WDITEM WAREDET)
+     A                                      SPACEB(01)
+     A            WUNAME    R             +3TEXT('Customer name')
+     A                                      REFFLD(SUNAME SUPLIER)
+     A            WK0006    R             +3TEXT('Quantity on hand')
+     A                                      REFFLD(WDQOH WAREDET)
+     A                                      EDTCDE(M)
+     A            WK0005    R             +2TEXT('Minimum Balance')
+     A                                      REFFLD(WDMINB WAREDET)
+     A                                      EDTCDE(M)
+     A            WK0004    R             +6TEXT('Lead Time in days')
+     A                                      REFFLD(WDLTIM WAREDET)
+     A                                      EDTCDE(Z)
+     A          R XD0003                    TEXT('RECORD - XXX')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###  End of Report  ###'
+     A                                      SPACEB(01)

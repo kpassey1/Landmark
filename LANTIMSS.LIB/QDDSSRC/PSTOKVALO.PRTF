@@ -1,0 +1,110 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PSTOKVALO
+     A*  APPLICATION ID      -    PSTOKVAL
+     A*  APPLICATION NAME    -     Theoretical Stock Valuation
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AH1')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +26TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +24'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    52'Theoretical Stock Valua-
+     A                                      tion                    -
+     A                                                 Date'
+     A                                      SPACEB(01)
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   110'Time'
+     A                                      SPACEB(01)
+     A                                    +1TIME
+     A          R XD0002                    TEXT('RECORD - AH2')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'From Warehouse'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            PRFWHS         3A       +1TEXT('From Warehouse')
+     A                                   +14'To Warehouse'
+     A                                    +1':'
+     A            PRTWHS         3A       +1TEXT('To Warehouse')
+     A*
+     A                                     1'From Item'
+     A                                      SPACEB(01)
+     A                                    +6':'
+     A            PRFITM        20A       +1TEXT('From Item')
+     A                                    35'To Item'
+     A                                    +6':'
+     A            PRTITM        20A       +1TEXT('To Item')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - AH3')
+     A*
+     A                                     1'Warehouse'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            WK0009    R             +1TEXT('Warehouse Number')
+     A                                      REFFLD(WDWHSE WAREDET)
+     A            WK0011    R             +1TEXT('Warehouse Description')
+     A                                      REFFLD(WHWDESC WAREHED)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Item                 De-
+     A                                      scription               -
+     A                                                      Quantity-
+     A                                           Unit of Measure    -
+     A                                       Unit Cost      Value'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0004                    TEXT('RECORD - DD1')
+     A*
+     A            WK0003    R              1TEXT('Item Number')
+     A                                      REFFLD(WDITEM WAREDET)
+     A                                      SPACEB(01)
+     A            WK0001    R             +1TEXT('Item Description')
+     A                                      REFFLD(ITIDESC ITMMAST)
+     A            WK0005    R             +2TEXT('Quantity on hand')
+     A                                      REFFLD(WDQOH WAREDET)
+     A                                      EDTCDE(M)
+     A            WK0008    R             +7TEXT('Unit of Measure')
+     A                                      REFFLD(WDUOM WAREDET)
+     A            COST          12S 5     +9TEXT('Cost')
+     A                                      EDTCDE(L)
+     A            LVAL          11S 2     +1TEXT('Line Value')
+     A                                      EDTCDE(M)
+     A          R XD0005                    TEXT('RECORD - TL1')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    11'Warehouse Total'
+     A                                      SPACEB(01)
+     A            WQNTY          9S      +38TEXT('Warehouse quantity total')
+     A                                      EDTCDE(M)
+     A            WTOT          13S 2    +34TEXT('Warehouse Value total')
+     A                                      EDTCDE(M)
+     A          R XD0006                    TEXT('RECORD - XXX')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###  End of Report  ###'
+     A                                      SPACEB(01)

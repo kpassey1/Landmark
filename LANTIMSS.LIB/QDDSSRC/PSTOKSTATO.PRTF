@@ -1,0 +1,140 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PSTOKSTATO
+     A*  APPLICATION ID      -    PSTOKSTAT
+     A*  APPLICATION NAME    -         Stock Status Report
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AH1')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +26TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +31'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    55'Stock Status Report    -
+     A                                                              -
+     A                                                     Date'
+     A                                      SPACEB(01)
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   117'Time'
+     A                                      SPACEB(01)
+     A                                    +1TIME
+     A          R XD0002                    TEXT('RECORD - AH2')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'From Warehouse'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            PRFWHS         3A       +1TEXT('From Warehouse')
+     A                                   +16'To Warehouse'
+     A                                    +1':'
+     A            PRTWHS         3A       +1TEXT('To Warehouse')
+     A                                   +29'Exception Codes'
+     A                                    +1': 1 - Below Minimum Bal-
+     A                                      ance'
+     A*
+     A                                     1'From Item'
+     A                                      SPACEB(01)
+     A                                    +6':'
+     A            PRFITM        20A       +1TEXT('From Item')
+     A                                    37'To Item'
+     A                                    +6':'
+     A            PRTITM        20A       +1TEXT('To Item')
+     A                                   +30'2 - Above Maximum Balan-
+     A                                      ce'
+     A*
+     A                                   102'3 - On Backorder'
+     A                                      SPACEB(01)
+     A*
+     A                                   102'4 - Cost Deviation'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - AH3')
+     A*
+     A                                     1'Warehouse'
+     A                                      SPACEB(01)
+     A                                    +1':'
+     A            WK0018    R             +1TEXT('Warehouse Number')
+     A                                      REFFLD(WDWHSE WAREDET)
+     A            WK0020    R             +1TEXT('Warehouse Description')
+     A                                      REFFLD(WHWDESC WAREHED)
+     A*
+     A                                    69'Trans                  -
+     A                                                          Open-
+     A                                      ing  Exception'
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Item            Item De-
+     A                                      scription               -
+     A                                                Supplier   Qua-
+     A                                      ntity  On Hand  Allocate-
+     A                                      d  Available    Balance -
+     A                                       Warning'
+     A                                      SPACEB(01)
+     A          R XD0004                    TEXT('RECORD - DD1')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            WK0005    R              1TEXT('Item Number')
+     A                                      REFFLD(WDITEM WAREDET)
+     A                                      SPACEB(01)
+     A            WK0003    R             17TEXT('Item Description')
+     A                                      REFFLD(ITIDESC ITMMAST)
+     A            WK0016    R             +1TEXT('Supplier Number')
+     A                                      REFFLD(WDSUPPN WAREDET)
+     A            WK0015    R             +1TEXT('Branch Number')
+     A                                      REFFLD(WDSBRN WAREDET)
+     A            WK0012    R             +9TEXT('Quantity on hand')
+     A                                      REFFLD(WDQOH WAREDET)
+     A                                      EDTCDE(M)
+     A            WK0010    R             +1TEXT('Quantity Allocated')
+     A                                      REFFLD(WDQAL WAREDET)
+     A                                      EDTCDE(M)
+     A            QTYAV          9S       +1TEXT('Quantity Available')
+     A                                      EDTCDE(M)
+     A            WK0009    R             +1TEXT('Opening balance')
+     A                                      REFFLD(WDOBAL WAREDET)
+     A                                      EDTCDE(M)
+     A            EXCEPT         4A       +1TEXT('Output field for Exception')
+     A          R XD0005                    TEXT('RECORD - DD2')
+     A*
+     A            WTDESC    R             17TEXT('Description')
+     A                                      REFFLD(TTDESC IMSTRN)
+     A                                      SPACEB(01)
+     A            WK0025    R            +11TEXT('Trans Period Quantity')
+     A                                      REFFLD(WTTRPQ WRITTYP)
+     A                                      EDTCDE(M)
+     A          R XD0006                    TEXT('RECORD - TT1')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A            NITEMS         5S       69TEXT('NITEMS')
+     A                                      EDTCDE(M)
+     A                                      SPACEB(01)
+     A                                    75'Items Listed'
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0007                    TEXT('RECORD - XXX')
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###  End of Report  ###'
+     A                                      SPACEB(01)

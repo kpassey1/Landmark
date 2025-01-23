@@ -1,0 +1,239 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    FS0102O
+     A*  APPLICATION ID      -    FS010
+     A*  APPLICATION NAME    -    Print Picking List - FS Mod
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0004                    TEXT('RECORD - AAA')
+     A*
+     A            WFNAR         20A        2TEXT('WFRNAR')
+     A                                      HIGHLIGHT
+     A                                      SKIPB(01)
+     A                                   154'Invoice'
+     A                                      HIGHLIGHT
+     A*
+     A            WFLIN1        40A        2TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A                                   +88'+--------------+--------
+     A                                      -------+'
+     A*
+     A            WFLIN2        40A        2TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A                                   +88'³  Ship Date   ³  Invoi-
+     A                                      ce #   ³'
+     A*
+     A            WFLIN3        40A        2TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A                                   +88'+--------------+--------
+     A                                      -------+'
+     A*
+     A            WFLIN4        40A        2TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A                                   +88'³'
+     A            ODATE          8S       +2TEXT('Output Date')
+     A                                      EDTWRD('0 /  /    ')
+     A                                    +2'³'
+     A            INVNO          8S       +2TEXT('INVNO')
+     A                                    +4'³'
+     A*
+     A            WFLIN5        40A        2TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A                                   +88'+--------------+--------
+     A                                      -------+'
+     A*
+     A            WFLIN6        40A        2TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A*
+     A                                     2'Vendor #'
+     A                                      SPACEB(01)
+     A            RN0001         4A       +2TEXT('#FSTOE')
+     A*
+     A                                     7'+-----------------------
+     A                                      --------------------+   -
+     A                                                              -
+     A                                                              -
+     A                                        +----------------------
+     A                                      -------------------------
+     A                                      ----------+'
+     A                                      SPACEB(01)
+     A*
+     A                                     7'³ STORE NUMBER'
+     A                                      SPACEB(01)
+     A            RN0002         4A       +2TEXT('#FSTOE')
+     A                                   +23'³                      -
+     A                                                              -
+     A                                             ³ STORE STAMP    -
+     A                                                              -
+     A                                                     ³'
+     A*
+     A                                     7'+-----------------------
+     A                                      --------------------+   -
+     A                                                              -
+     A                                                              -
+     A                                        +----------------------
+     A                                      -------------------------
+     A                                      ----------+'
+     A                                      SPACEB(01)
+     A*
+     A                                     7'³'
+     A                                      SPACEB(01)
+     A            WTNARR        12A       +1TEXT('WTNARR')
+     A                                   +29'³                      -
+     A                                                              -
+     A                                             ³                -
+     A                                                              -
+     A                                                     ³'
+     A*
+     A                                     7'³'
+     A                                      SPACEB(01)
+     A            WTLIN1        40A       +1TEXT('WTLIN1')
+     A                                    +1'³                      -
+     A                                                              -
+     A                                             ³                -
+     A                                                              -
+     A                                                     ³'
+     A*
+     A                                     7'³'
+     A                                      SPACEB(01)
+     A            WTLIN2        40A       +1TEXT('WTLIN1')
+     A                                    +1'³                      -
+     A                                                              -
+     A                                             +-----------------
+     A                                      -------------------------
+     A                                      ---------------+'
+     A*
+     A                                     7'³'
+     A                                      SPACEB(01)
+     A            WTLIN3        40A       +1TEXT('WTLIN1')
+     A                                    +1'³'
+     A*
+     A                                     7'³'
+     A                                      SPACEB(01)
+     A            WTLIN4        40A       +1TEXT('WTLIN1')
+     A                                    +1'³                      -
+     A                                                +--------------
+     A                                      -+----------------+------
+     A                                      ---------------+---------
+     A                                      ---------------+'
+     A*
+     A                                     7'³'
+     A                                      SPACEB(01)
+     A            WTLIN5        40A       +1TEXT('WTLIN1')
+     A                                    +1'³                      -
+     A                                                ³ Enter Date  -
+     A                                       ³  Selected by   ³   Ci-
+     A                                      garettes by    ³       C-
+     A                                      ost            ³'
+     A*
+     A                                     7'³'
+     A                                      SPACEB(01)
+     A            WTLIN6        40A       +1TEXT('WTLIN1')
+     A                                    +1'³                      -
+     A                                                +--------------
+     A                                      -+----------------+------
+     A                                      ---------------+---------
+     A                                      ---------------+'
+     A*
+     A                                     7'³ Contact'
+     A                                      SPACEB(01)
+     A            RN0008        20A       +1TEXT('WTCONNAM')
+     A                                   +13'³                      -
+     A                                                ³'
+     A            RN0007         8S       +1TEXT('WKCRDT')
+     A                                      EDTWRD('  0 /  /  ')
+     A                                    +3'³                ³     -
+     A                                                     ³        -
+     A                                                     ³'
+     A*
+     A                                     7'+-----------------------
+     A                                      --------------------+   -
+     A                                                              -
+     A                                           +--------------+----
+     A                                      -------------+-----------
+     A                                      ----------+--------------
+     A                                      ----------+'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A*
+     A                                     1'+------------+----------
+     A                                      --------+------------+---
+     A                                      ---------+-----------+---
+     A                                      -------------------------
+     A                                      ----------------+--------
+     A                                      ----------+--------------
+     A                                      -+--------------+'
+     A                                      SPACEB(01)
+     A*
+     A                                     1'³    LOC.    ³      ITE-
+     A                                      M       ³   QTY.     ³  -
+     A                                      CASE PK  ³    SIZE   ³ D-
+     A                                      ESCRIPTION              -
+     A                                                      ³'
+     A                                      SPACEB(01)
+     A            WK0004    R             +1TEXT('User Field 1 Heading')
+     A                                      REFFLD(CDHEAD1 IMSCPYD)
+     A                                    +1'³   Retail     ³ EXTEND-
+     A                                      ED     ³'
+     A          R XD0005                    TEXT('RECORD - BBB')
+     A*
+     A                                     1'³'
+     A                                      SPACEB(01)
+     A            HLLOCN        10A       +1TEXT('HLLOCN')
+     A                                    +1'³'
+     A            HLITEM        15A       +1TEXT('HLITEM')
+     A                                    +1'³'
+     A            L1TQTY         9S       +1TEXT('L1TQTY')
+     A                                      EDTCDE(M)
+     A                                    +1'³'
+     A            WTQTYO    R             +1TEXT('Outer Quantity')
+     A                                      REFFLD(ITQTYO ITMMAST)
+     A                                      EDTCDE(Z)
+     A                                    +1'³'
+     A            WKUQ           3S       +1TEXT('WKUQ')
+     A                                      EDTCDE(Z)
+     A            WKUOM          5A       +1TEXT('WKUOM')
+     A                                    +1'³'
+     A            WK0012    R             +1TEXT('Item Description')
+     A                                      REFFLD(ITIDESC ITMMAST)
+     A                                    +1'³'
+     A            WTUDF1    R             +1TEXT('User Defined 1')
+     A                                      REFFLD(ITUDF1 ITMMAST)
+     A                                   +11'³'
+     A            WTLPRC    R             +1TEXT('List Price')
+     A                                      REFFLD(ITLPRC ITMMAST)
+     A                                      EDTCDE(3)
+     A                                    +1'³'
+     A            EXTEND        11S 2     +1TEXT('EXTEND')
+     A                                      EDTCDE(3)
+     A                                    +1'³'
+     A*
+     A                                     1'+------------+----------
+     A                                      --------+------------+---
+     A                                      ---------+-----------+---
+     A                                      -------------------------
+     A                                      ----------------+--------
+     A                                      ----------+--------------
+     A                                      -+--------------+'
+     A                                      SPACEB(01)
+     A          R XD0006                    TEXT('RECORD - XXX')
+     A*
+     A                                   122'+-------------------+---
+     A                                      ---------------+'
+     A                                      SPACEB(01)
+     A*
+     A                                   122'³ TOTAL RETAIL'
+     A                                      SPACEB(01)
+     A                                   136':     ³'
+     A            RN0003        13S 2     +2TEXT('Total')
+     A                                      EDTCDE(3)
+     A                                    +1'³'
+     A*
+     A                                   122'+-------------------+---
+     A                                      ---------------+'
+     A                                      SPACEB(01)

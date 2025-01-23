@@ -1,0 +1,136 @@
+     A********************************************************************
+     A* Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+     A********************************************************************
+     A*
+     A*  REPORT FILE ID      -    PPCKLSTO
+     A*  APPLICATION ID      -    PPCKLST
+     A*  APPLICATION NAME    -    Print Picking List
+     A*  DATE CREATED        -    Jan 11, 2012
+     A*
+     A******************************************************************
+     A          R XD0001                    TEXT('RECORD - AAA')
+     A*
+     A                                     1'Report -'
+     A                                      SKIPB(01)
+     A            PGM           10A       +1TEXT('PROGRAM NAME')
+     A            WYDESC    R            +34TEXT('Company description')
+     A                                      REFFLD(CYDESC COMPANY)
+     A                                   +24'Page'
+     A                                    +4PAGNBR
+     A                                      EDTCDE(Z)
+     A*
+     A                                    64'*'
+     A                                      SPACEB(01)
+     A                                    65'*'
+     A                                    66'* Packing List'
+     A                                    +1'*'
+     A                                    82'*'
+     A                                    83'*                      -
+     A                                                  Date'
+     A                                    +1DATE
+     A                                      EDTCDE(Y)
+     A*
+     A                                   118'Time'
+     A                                      SPACEB(01)
+     A                                    +1TIME
+     A*
+     A            WFNAR         20A       26TEXT('WFRNAR')
+     A                                      SPACEB(01)
+     A            WTNARR        12A      +35TEXT('WTNARR')
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------'
+     A                                      SPACEB(01)
+     A*
+     A                                     1'Picking List'
+     A                                      SPACEB(01)
+     A            WLSEQ     R             +1TEXT('Picking List No.')
+     A                                      REFFLD(PLSEQ PCKLST)
+     A                                      EDTCDE(Z)
+     A            WFLIN1        40A       +7TEXT('WFLIN1')
+     A            WTLIN1        40A      +15TEXT('WTLIN1')
+     A*
+     A                                     1'Date'
+     A                                      SPACEB(01)
+     A            ODATE         10A       +9TEXT('Output Date')
+     A            WFLIN2        40A       +2TEXT('WFLIN1')
+     A            WTLIN2        40A      +15TEXT('WTLIN1')
+     A*
+     A                                     1'User'
+     A                                      SPACEB(01)
+     A            WK0009    R             +9TEXT('Created By')
+     A                                      REFFLD(PLCRBY PCKLST)
+     A            WFLIN3        40A       +2TEXT('WFLIN1')
+     A            WTLIN3        40A      +15TEXT('WTLIN1')
+     A*
+     A            WFLIN4        40A       26TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A            WTLIN4        40A      +15TEXT('WTLIN1')
+     A*
+     A            WFLIN5        40A       26TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A            WTLIN5        40A      +15TEXT('WTLIN1')
+     A*
+     A            WFLIN6        40A       26TEXT('WFLIN1')
+     A                                      SPACEB(01)
+     A            WTLIN6        40A      +15TEXT('WTLIN1')
+     A*
+     A                                    81'Contact'
+     A                                      SPACEB(01)
+     A            RN0010        20A       +1TEXT('WTCONNAM')
+     A*
+     A                                     1'------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------------------
+     A                                      -------------'
+     A                                      SPACEB(01)
+     A*
+     A                                     4'Location   Description -
+     A                                                              -
+     A                                           Item               -
+     A                                        Description           -
+     A                                                         Quant-
+     A                                      ity'
+     A                                      SPACEB(01)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0002                    TEXT('RECORD - BBB')
+     A*
+     A            HLLOCN        10A        4TEXT('HLLOCN')
+     A                                      SPACEB(01)
+     A            WK0012    R             +1TEXT('Location Description')
+     A                                      REFFLD(WLDESC WARELOC)
+     A            HLITEM        20A       +1TEXT('HLITEM')
+     A            WK0005    R             +1TEXT('Item Description')
+     A                                      REFFLD(ITIDESC ITMMAST)
+     A            L1TQTY         9S       +1TEXT('L1TQTY')
+     A                                      EDTCDE(M)
+     A*
+     A                                     1' '
+     A                                      SPACEB(01)
+     A          R XD0003                    TEXT('RECORD - XXX')
+     A*
+     A                                     1'Picked By              -
+     A                                                         Check-
+     A                                      ed By                   -
+     A                                                    Received B-
+     A                                      y'
+     A                                      SKIPB(60)
+     A*
+     A                                    11'ההההההההההההההההההההההה-
+     A                                      ההההההה             הההה-
+     A                                      הההההההההההההההההההההההה-
+     A                                      הה              הההההההה-
+     A                                      הההההההההההההההההההההה'
+     A                                      SPACEB(01)
+     A*
+     A                                    54'###   END OF REPORT   #-
+     A                                      ##'
+     A                                      SPACEB(01)
