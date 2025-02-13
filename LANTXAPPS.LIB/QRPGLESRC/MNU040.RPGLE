@@ -7,7 +7,7 @@
      F*  Application ID      -    MNU040
      F*  Application Name    -    Check user security
      F*  Date Generated      -    Jan 11, 2012
-     F*
+     F*  LM1SQL-41
      F********************************************************************
      F*  Files Usage
      F*
