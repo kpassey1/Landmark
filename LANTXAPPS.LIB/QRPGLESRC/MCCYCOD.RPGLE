@@ -110,7 +110,7 @@
                                     infds(fids01)
                                     infsr(sferr);
 
-
+       // -- git test
        // --*STAND ALONE-------------------------------------------
        Dcl-S appcol              Packed(3:0);
        Dcl-S apppgm                Char(10);
