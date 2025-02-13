@@ -14,7 +14,7 @@
      F*  UOM         - (U/DISK   ) IMS Unit of measure         UM
      F*  COMPANY     - (I/DISK   ) Company screen headings     CY
      F*  MUOMD       - (C/WORKSTN) Generated display file
-     F*
+     F*  branch development = working in the development branch
      F********************************************************************
      F*  Function Of Indicators
      F*
