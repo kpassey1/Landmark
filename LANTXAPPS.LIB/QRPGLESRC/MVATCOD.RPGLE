@@ -12,6 +12,7 @@
        //  Application ID      -    MVATCOD
        //  Application Name    -         Work with TAX Codes
        //  Date Generated      -    Jan 11, 2012
+       //  LMSQL1-39           - changed to Free format
 
        //*******************************************************************
        //  Files Usage
