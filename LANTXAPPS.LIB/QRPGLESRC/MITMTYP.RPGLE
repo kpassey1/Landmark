@@ -5,13 +5,13 @@
                datfmt(*iso) timfmt(*iso) option(*nodebugio);
       /TITLE MITMTYP      Work with Item Types
        //*******************************************************************
-       // Copyright 2012    ** KDP Software Ltd **      All Rights Reserved
+       // Copyright 2025    ** KDP Software Ltd **      All Rights Reserved
        //*******************************************************************
 
        //  Program ID          -    MITMTYP
        //  Application ID      -    MITMTYP
        //  Application Name    -         Work with Item Types
-       //  Date Generated      -    Jan 11, 2012
+       //  Date Generated      -    Jan 11, 2025
 
        //*******************************************************************
        //  Files Usage
