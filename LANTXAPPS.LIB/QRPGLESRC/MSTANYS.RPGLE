@@ -9,6 +9,8 @@
      F*  Date Generated      -    Jan 11, 2012
      F*
      F********************************************************************
+     F*  Program Description - Work with Stock Analysis Codes
+     F****************************************************************
      F*  Files Usage
      F*
      F*  STANYS      - (U/DISK   ) IMS Stock analysis codes    SA
