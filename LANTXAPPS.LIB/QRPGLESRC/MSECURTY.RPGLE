@@ -9,6 +9,8 @@
      F*  Date Generated      -    Jan 11, 2012
      F*
      F********************************************************************
+     F* Program Description - Work with Security Details
+     F********************************************************************
      F*  Files Usage
      F*
      F*  SECIMS      - (U/DISK   ) IMS User Security           US
